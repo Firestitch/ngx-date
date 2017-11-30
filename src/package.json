@@ -1,0 +1,28 @@
+{
+  "name": "@firestitch/date",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Firestitch/fs-date"
+  },
+  "author": {
+    "name": "Maksim Sergeev",
+    "email": "sergeev.maxs@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Firestitch/fs-date/issues"
+  },
+  "main": "fsdate.umd.js",
+  "module": "fsdate.js",
+  "jsnext:main": "fsdate.js",
+  "typings": "fsdate.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
