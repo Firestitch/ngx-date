@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FsUtil } from './../common/fsutil.service';
-import { FsMath } from './../common/fsmath.service';
-import * as moment from 'moment-timezone';
+import { FsUtil, FsMath } from '@firestitch/common';
+import moment from 'moment-timezone';
 
 export const SECONDS = {
   YEAR: 3600 * 24 * 365,

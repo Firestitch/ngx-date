@@ -1,9 +1,9 @@
 {
-  "name": "@fs/api",
+  "name": "@firestitch/date",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Firestitch/fs-api"
+    "url": "https://github.com/Firestitch/fs-date"
   },
   "author": {
     "name": "Maksim Sergeev",
@@ -14,12 +14,12 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Firestitch/fs-api/issues"
+    "url": "https://github.com/Firestitch/fs-date/issues"
   },
-  "main": "fs-api.umd.js",
-  "module": "fs-api.js",
-  "jsnext:main": "fs-api.js",
-  "typings": "fs-api.d.ts",
+  "main": "fs-date.umd.js",
+  "module": "fs-date.js",
+  "jsnext:main": "fs-date.js",
+  "typings": "fs-date.d.ts",
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "rxjs": "^5.1.0",
