@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@firestitch/common'), require('moment-timezone'), require('@angular/forms'), require('@angular/common'), require('fsdate.service')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@firestitch/common', 'moment-timezone', '@angular/forms', '@angular/common', 'fsdate.service'], factory) :
-	(factory((global['fs-date'] = {}),global.core,global.common,global.moment,global.forms,global.common$1,global.fsdate_service));
-}(this, (function (exports,core,common,moment,forms,common$1,fsdate_service) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@firestitch/common'), require('moment-timezone'), require('@angular/forms'), require('@angular/common')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@firestitch/common', 'moment-timezone', '@angular/forms', '@angular/common'], factory) :
+	(factory((global['fs-date'] = {}),global.core,global.common,global.moment,global.forms,global.common$1));
+}(this, (function (exports,core,common,moment,forms,common$1) { 'use strict';
 
 moment = moment && moment.hasOwnProperty('default') ? moment['default'] : moment;
 
@@ -17,8 +17,8 @@ var SECONDS = {
     HOUR: 3600,
     MINUTE: 60
 };
-var FsDate$1 = (function () {
-    function FsDate$$1(FsUtil$$1, FsMath$$1) {
+var FsDate = (function () {
+    function FsDate(FsUtil$$1, FsMath$$1) {
         this.FsUtil = FsUtil$$1;
         this.FsMath = FsMath$$1;
     }
@@ -27,7 +27,7 @@ var FsDate$1 = (function () {
      * @param {?} options
      * @return {?}
      */
-    FsDate$$1.prototype.duration = /**
+    FsDate.prototype.duration = /**
      * @param {?} time
      * @param {?} options
      * @return {?}
@@ -162,7 +162,7 @@ var FsDate$1 = (function () {
      * @param {?=} options
      * @return {?}
      */
-    FsDate$$1.prototype.granularDuration = /**
+    FsDate.prototype.granularDuration = /**
      * @param {?} time
      * @param {?=} options
      * @return {?}
@@ -179,7 +179,7 @@ var FsDate$1 = (function () {
      * @param {?} date
      * @return {?}
      */
-    FsDate$$1.prototype.iso8601 = /**
+    FsDate.prototype.iso8601 = /**
      * @param {?} date
      * @return {?}
      */
@@ -194,7 +194,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.ago = /**
+    FsDate.prototype.ago = /**
      * @param {?} date
      * @param {?=} format
      * @return {?}
@@ -230,7 +230,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.format = /**
+    FsDate.prototype.format = /**
      * @param {?} date
      * @param {?=} format
      * @return {?}
@@ -245,7 +245,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.range = /**
+    FsDate.prototype.range = /**
      * @param {?} from
      * @param {?} to
      * @param {?=} format
@@ -318,7 +318,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.get_format_string = /**
+    FsDate.prototype.get_format_string = /**
      * @param {?} date
      * @param {?=} format
      * @return {?}
@@ -371,7 +371,7 @@ var FsDate$1 = (function () {
      * @param {?} options
      * @return {?}
      */
-    FsDate$$1.prototype.formatOptions = /**
+    FsDate.prototype.formatOptions = /**
      * @param {?} options
      * @return {?}
      */
@@ -393,15 +393,15 @@ var FsDate$1 = (function () {
         options.precision = precision;
         return options;
     };
-    FsDate$$1.decorators = [
+    FsDate.decorators = [
         { type: core.Injectable },
     ];
     /** @nocollapse */
-    FsDate$$1.ctorParameters = function () { return [
+    FsDate.ctorParameters = function () { return [
         { type: common.FsUtil, },
         { type: common.FsMath, },
     ]; };
-    return FsDate$$1;
+    return FsDate;
 }());
 
 /**
@@ -432,7 +432,7 @@ var FsDatePipe = (function () {
     ];
     /** @nocollapse */
     FsDatePipe.ctorParameters = function () { return [
-        { type: FsDate$1, },
+        { type: FsDate, },
     ]; };
     return FsDatePipe;
 }());
@@ -465,7 +465,7 @@ var FsDateAgoPipe = (function () {
     ];
     /** @nocollapse */
     FsDateAgoPipe.ctorParameters = function () { return [
-        { type: FsDate$1, },
+        { type: FsDate, },
     ]; };
     return FsDateAgoPipe;
 }());
@@ -723,7 +723,7 @@ var FsDateModule = (function () {
     function () {
         return {
             ngModule: FsDateModule,
-            providers: [fsdate_service.FsDate]
+            providers: [FsDate]
         };
     };
     FsDateModule.decorators = [
@@ -738,7 +738,7 @@ var FsDateModule = (function () {
                         FsDateAgoPipe
                     ],
                     providers: [
-                        fsdate_service.FsDate,
+                        FsDate,
                         common.FsMath,
                         common.FsUtil
                     ],
@@ -757,7 +757,7 @@ exports.FsDateModule = FsDateModule;
 exports.FsDatePipe = FsDatePipe;
 exports.TIMEZONES = TIMEZONES;
 exports.SECONDS = SECONDS;
-exports.FsDate = FsDate$1;
+exports.FsDate = FsDate;
 exports.FsDateAgoPipe = FsDateAgoPipe;
 
 Object.defineProperty(exports, '__esModule', { value: true });

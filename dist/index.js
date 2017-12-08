@@ -3,7 +3,6 @@ import { FsMath, FsUtil } from '@firestitch/common';
 import moment from 'moment-timezone';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FsDate } from 'fsdate.service';
 
 /**
  * @fileoverview added by tsickle
@@ -16,8 +15,8 @@ var SECONDS = {
     HOUR: 3600,
     MINUTE: 60
 };
-var FsDate$1 = (function () {
-    function FsDate$$1(FsUtil$$1, FsMath$$1) {
+var FsDate = (function () {
+    function FsDate(FsUtil$$1, FsMath$$1) {
         this.FsUtil = FsUtil$$1;
         this.FsMath = FsMath$$1;
     }
@@ -26,7 +25,7 @@ var FsDate$1 = (function () {
      * @param {?} options
      * @return {?}
      */
-    FsDate$$1.prototype.duration = /**
+    FsDate.prototype.duration = /**
      * @param {?} time
      * @param {?} options
      * @return {?}
@@ -161,7 +160,7 @@ var FsDate$1 = (function () {
      * @param {?=} options
      * @return {?}
      */
-    FsDate$$1.prototype.granularDuration = /**
+    FsDate.prototype.granularDuration = /**
      * @param {?} time
      * @param {?=} options
      * @return {?}
@@ -178,7 +177,7 @@ var FsDate$1 = (function () {
      * @param {?} date
      * @return {?}
      */
-    FsDate$$1.prototype.iso8601 = /**
+    FsDate.prototype.iso8601 = /**
      * @param {?} date
      * @return {?}
      */
@@ -193,7 +192,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.ago = /**
+    FsDate.prototype.ago = /**
      * @param {?} date
      * @param {?=} format
      * @return {?}
@@ -229,7 +228,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.format = /**
+    FsDate.prototype.format = /**
      * @param {?} date
      * @param {?=} format
      * @return {?}
@@ -244,7 +243,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.range = /**
+    FsDate.prototype.range = /**
      * @param {?} from
      * @param {?} to
      * @param {?=} format
@@ -317,7 +316,7 @@ var FsDate$1 = (function () {
      * @param {?=} format
      * @return {?}
      */
-    FsDate$$1.prototype.get_format_string = /**
+    FsDate.prototype.get_format_string = /**
      * @param {?} date
      * @param {?=} format
      * @return {?}
@@ -370,7 +369,7 @@ var FsDate$1 = (function () {
      * @param {?} options
      * @return {?}
      */
-    FsDate$$1.prototype.formatOptions = /**
+    FsDate.prototype.formatOptions = /**
      * @param {?} options
      * @return {?}
      */
@@ -392,15 +391,15 @@ var FsDate$1 = (function () {
         options.precision = precision;
         return options;
     };
-    FsDate$$1.decorators = [
+    FsDate.decorators = [
         { type: Injectable },
     ];
     /** @nocollapse */
-    FsDate$$1.ctorParameters = function () { return [
+    FsDate.ctorParameters = function () { return [
         { type: FsUtil, },
         { type: FsMath, },
     ]; };
-    return FsDate$$1;
+    return FsDate;
 }());
 
 /**
@@ -431,7 +430,7 @@ var FsDatePipe = (function () {
     ];
     /** @nocollapse */
     FsDatePipe.ctorParameters = function () { return [
-        { type: FsDate$1, },
+        { type: FsDate, },
     ]; };
     return FsDatePipe;
 }());
@@ -464,7 +463,7 @@ var FsDateAgoPipe = (function () {
     ];
     /** @nocollapse */
     FsDateAgoPipe.ctorParameters = function () { return [
-        { type: FsDate$1, },
+        { type: FsDate, },
     ]; };
     return FsDateAgoPipe;
 }());
@@ -752,4 +751,4 @@ var FsDateModule = (function () {
     return FsDateModule;
 }());
 
-export { FsDateModule, FsDatePipe, TIMEZONES, SECONDS, FsDate$1 as FsDate, FsDateAgoPipe };
+export { FsDateModule, FsDatePipe, TIMEZONES, SECONDS, FsDate, FsDateAgoPipe };

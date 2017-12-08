@@ -3,7 +3,7 @@ import { FsDateAgoPipe } from './fsdateago.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FsDate } from 'fsdate.service';
+import { FsDate } from './fsdate.service';
 import { FsMath, FsUtil } from '@firestitch/common';
 
 export * from './fsdate.pipe';
