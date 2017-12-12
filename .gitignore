@@ -33,3 +33,5 @@ Desktop.ini
 
 # Playground tmp files
 playground/*
+/dist
+/.playground
