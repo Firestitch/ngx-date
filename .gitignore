@@ -32,6 +32,5 @@ Desktop.ini
 # dist/*
 
 # Playground tmp files
-playground/*
 /dist
 /.playground
