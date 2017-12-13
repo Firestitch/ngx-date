@@ -1,6 +1,6 @@
 {
-  "name": "@firestitch/datae",
-  "version": "0.1.0",
+  "name": "@firestitch/date",
+  "version": "0.1.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/fs-date"

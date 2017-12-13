@@ -34,3 +34,5 @@ Desktop.ini
 # Playground tmp files
 /dist
 /.playground
+/build
+/.tmp
