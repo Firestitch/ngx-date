@@ -1,0 +1,13 @@
+.table {
+  border: 1px solid #ccc;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 100%
+}
+
+.table td {
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
