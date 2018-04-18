@@ -1,5 +1,5 @@
 import * as moment from 'moment-timezone';
-import { toMomentFormat } from './toMomentFormat';
+import { toMomentFormat } from './tomomentformat';
 
 export function format(date, format?: String): String {
 
