@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{},"exports":[{"from":"./fs-date.module"},{"from":"./fsdate.pipe"},{"from":"./fsdate.service"},{"from":"./fsdate.timezones"},{"from":"./fsdateago.pipe"}]}]

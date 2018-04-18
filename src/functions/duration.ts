@@ -2,6 +2,7 @@ import { round, isNumber } from 'lodash';
 import { SECONDS } from '../constants/seconds';
 
 export function duration(time: any, options) {
+    
     if (!isNumber(time)) {
       return '';
     }
