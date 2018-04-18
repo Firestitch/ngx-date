@@ -7,8 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FsDateModule } from '../src';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app/material.module';
-import { FirstExampleComponent } from './app/components/first-example/first-example.component';
+import { FormatExampleComponent } from './app/components/format-example/format-example.component';
+import { AgoExampleComponent } from './app/components/ago-example/ago-example.component';
 import { FsExampleModule } from '@firestitch/example';
+import { FsExamplesComponent } from '../tools/components/examples/examples.component';
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -24,7 +26,9 @@ import { FsExampleModule } from '@firestitch/example';
   ],
   declarations: [
     AppComponent,
-    FirstExampleComponent
+    FormatExampleComponent,
+    FsExamplesComponent,
+    AgoExampleComponent
   ],
   providers: [
   ],

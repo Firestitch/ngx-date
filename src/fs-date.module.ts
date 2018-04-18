@@ -1,10 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FsCommonModule } from '@firestitch/common';
-
-import { FsDatePipe } from './fsdate.pipe';
-import { FsDate } from './fsdate.service';
-import { FsDateAgoPipe } from './fsdateago.pipe';
+import { FsDatePipe } from './pipes';
+import { FsDateAgoPipe } from './pipes';
 
 @NgModule({
   imports: [
@@ -22,14 +20,12 @@ import { FsDateAgoPipe } from './fsdateago.pipe';
     FsDateAgoPipe
   ],
   providers: [
-    FsDate
   ],
 })
 export class FsDateModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: FsDateModule,
-      providers: [FsDate]
+      ngModule: FsDateModule
     };
   }
 }
