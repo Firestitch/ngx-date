@@ -11,7 +11,6 @@ import { FormatExampleComponent } from './app/components/format-example/format-e
 import { AgoExampleComponent } from './app/components/ago-example/ago-example.component';
 import { FsExampleModule } from '@firestitch/example';
 import { FsIFrameModule } from '@firestitch/iframe';
-import { FsExamplesComponent } from '../tools/components/examples/examples.component';
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -29,7 +28,6 @@ import { FsExamplesComponent } from '../tools/components/examples/examples.compo
   declarations: [
     AppComponent,
     FormatExampleComponent,
-    FsExamplesComponent,
     AgoExampleComponent
   ],
   providers: [
