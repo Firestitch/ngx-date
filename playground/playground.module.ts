@@ -10,6 +10,7 @@ import { AppMaterialModule } from './app/material.module';
 import { FormatExampleComponent } from './app/components/format-example/format-example.component';
 import { AgoExampleComponent } from './app/components/ago-example/ago-example.component';
 import { FsExampleModule } from '@firestitch/example';
+import { FsIFrameModule } from '@firestitch/iframe';
 import { FsExamplesComponent } from '../tools/components/examples/examples.component';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FsExamplesComponent } from '../tools/components/examples/examples.compo
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
-    FsExampleModule
+    FsExampleModule,
+    FsIFrameModule
   ],
   entryComponents: [
   ],
