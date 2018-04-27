@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FsCommonModule } from '@firestitch/common';
 import { FsDatePipe } from './pipes';
 import { FsDateAgoPipe } from './pipes';
+import { FsDateDurationPipe } from './pipes/fs-date-duration.pipe';
 
 @NgModule({
   imports: [
@@ -11,13 +12,15 @@ import { FsDateAgoPipe } from './pipes';
   ],
   exports: [
     FsDatePipe,
-    FsDateAgoPipe
+    FsDateAgoPipe,
+    FsDateDurationPipe
   ],
   entryComponents: [
   ],
   declarations: [
     FsDatePipe,
-    FsDateAgoPipe
+    FsDateAgoPipe,
+    FsDateDurationPipe
   ],
   providers: [
   ],

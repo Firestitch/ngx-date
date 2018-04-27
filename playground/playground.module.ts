@@ -1,34 +1,47 @@
 import './../tools/assets/playground.scss';
 
+// Angular
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app/app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FsDateModule } from '../src';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Material
 import { AppMaterialModule } from './app/material.module';
-import { FormatExampleComponent } from './app/components/format-example/format-example.component';
-import { AgoExampleComponent } from './app/components/ago-example/ago-example.component';
+
+// FireStitch
 import { FsExampleModule } from '@firestitch/example';
 import { FsIFrameModule } from '@firestitch/iframe';
+
+// Current module
+import { AppComponent } from './app/app.component';
+import { FsDateModule } from '../src';
+import { FormatExampleComponent } from './app/components/format-example/format-example.component';
+import { AgoExampleComponent } from './app/components/ago-example/ago-example.component';
+import { DurationExampleComponent } from './app/components/duration-example/duration-example.component';
 
 @NgModule({
   bootstrap: [ AppComponent ],
   imports: [
     BrowserModule,
-    FsDateModule,
     BrowserAnimationsModule,
-    AppMaterialModule,
     FormsModule,
+
+    AppMaterialModule,
+
     FsExampleModule,
-    FsIFrameModule
+    FsIFrameModule,
+
+    FsDateModule,
   ],
   entryComponents: [
   ],
   declarations: [
     AppComponent,
+
     FormatExampleComponent,
-    AgoExampleComponent
+    AgoExampleComponent,
+    DurationExampleComponent
   ],
   providers: [
   ],

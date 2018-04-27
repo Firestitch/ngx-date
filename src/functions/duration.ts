@@ -1,8 +1,8 @@
 import { round, isNumber } from 'lodash';
 import { SECONDS } from '../constants/seconds';
 
-export function duration(time: any, options) {
-    
+export function duration(time: any, options?) {
+
     if (!isNumber(time)) {
       return '';
     }
@@ -29,7 +29,7 @@ export function duration(time: any, options) {
     options = Object.assign({}, options);
     options.unit = options.unit === undefined ? 'second' : options.unit;
     options.abr = options.abr === undefined ? true : options.abr;
-    options.suffix = options.suffix === true ? (time > 0 ? " ago" : " from now") : "";
+    options.suffix = options.suffix === true ? (time > 0 ? ' ago' : ' from now') : '';
     options.seconds = options.seconds === undefined ? true : options.seconds;
     options.minutes = options.minutes === undefined ? true : options.minutes;
     options.hours = options.hours === undefined ? true : options.hours;
@@ -54,7 +54,7 @@ export function duration(time: any, options) {
         seconds:    { abr: 's', single: 'second', plural: 'seconds', seconds: 1, next: null },
     };
 
-    let pieces = {
+    const pieces = {
         years: 0,
         months: 0,
         days: 0,
@@ -66,7 +66,7 @@ export function duration(time: any, options) {
     let remainder = time;
 
     if (options.years) {
-      let years = remainder / SECONDS.YEAR;
+      const years = remainder / SECONDS.YEAR;
       if (years >= 1) {
         pieces.years = Math.floor(years);
         remainder = remainder - (pieces.years * SECONDS.YEAR);
@@ -74,7 +74,7 @@ export function duration(time: any, options) {
     }
 
     if (options.months) {
-      let months = remainder / SECONDS.MONTH;
+      const months = remainder / SECONDS.MONTH;
 
       if (months >= 1) {
         pieces.months =  Math.floor(months);
@@ -83,7 +83,7 @@ export function duration(time: any, options) {
     }
 
     if (options.days) {
-      let days = remainder / SECONDS.DAY;
+      const days = remainder / SECONDS.DAY;
       if (days >= 1) {
         pieces.days = Math.floor(days);
         remainder = remainder - (pieces.days * SECONDS.DAY);
@@ -91,7 +91,7 @@ export function duration(time: any, options) {
     }
 
     if (options.hours) {
-      let hours = remainder / SECONDS.HOUR;
+      const hours = remainder / SECONDS.HOUR;
       if (hours >= 1) {
         pieces.hours = Math.floor(hours);
         remainder = remainder - (pieces.hours * SECONDS.HOUR);
@@ -99,7 +99,7 @@ export function duration(time: any, options) {
     }
 
     if (options.minutes) {
-      let minutes = remainder / 60;
+      const minutes = remainder / 60;
       if (minutes >= 1) {
         pieces.minutes = Math.floor(minutes);
         remainder = remainder - (pieces.minutes * SECONDS.MINUTE);
@@ -108,13 +108,14 @@ export function duration(time: any, options) {
 
     pieces.seconds = Math.floor(remainder);
 
-    let enabled = [], total_seconds = 0;
+    const enabled = [];
+    let totalSeconds = 0;
     for (const name in units) {
       if (units.hasOwnProperty(name)) {
         if (options[name]) {
           enabled.push(name);
         }
-        total_seconds += pieces[name] * units[name].seconds;
+        totalSeconds += pieces[name] * units[name].seconds;
       }
     }
 
@@ -122,7 +123,7 @@ export function duration(time: any, options) {
     if (enabled.length === 1) {
         const precision = options.precision === undefined ? 1 : options.precision;
         const name = enabled.join('');
-        const value = round(total_seconds / units[name]['seconds'], precision);
+        const value = round(totalSeconds / units[name]['seconds'], precision);
         output.push(value + (options.abr ? units[name].abr :  ' ' + (value == 1 ? units[name].single : units[name].plural)));
 
     } else {
