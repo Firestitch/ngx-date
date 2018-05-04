@@ -1,6 +1,6 @@
 import * as moment from 'moment-timezone';
 
-export function toMomentFormat(date, format: String = 'date') {
+export function toMomentFormat(date, format: string = 'date') {
 
     const formatParts = format.split('-');
 
