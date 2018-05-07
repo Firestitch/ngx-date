@@ -5,7 +5,7 @@ import { ago } from '../functions';
   name: 'fsDateAgo'
 })
 export class FsDateAgoPipe implements PipeTransform {
-  transform(value: any, format?: String): String {
+  transform(value: any, format?: string): string {
     return ago(value, format);
   }
 }

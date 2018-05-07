@@ -1,6 +1,6 @@
 {
   "name": "@firestitch/date",
-  "version": "0.1.7",
+  "version": "0.1.12",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/fs-date"
@@ -85,6 +85,12 @@
     "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.30.1",
     "inquirer": "^4.0.1",
+    "@firestitch/common": "^0.1.27",
+    "@firestitch/example": "^0.2.1",
+    "ucfirst": "^1.0.0",
+    "gulp-regex-rename": "^0.1.0",
+    "gulp-babel": "^7.0.0",
+    "babel-core": "^6.26.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",

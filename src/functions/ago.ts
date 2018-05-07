@@ -3,7 +3,7 @@ import { round } from 'lodash';
 import { format } from './format';
 import { duration } from './duration';
 
-export function ago(date, frmt: String = 'date') {
+export function ago(date, frmt: string = 'date') {
 
     if (!date) {
       return '';
