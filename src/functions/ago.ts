@@ -23,7 +23,7 @@ export function ago(date, frmt: string = 'date') {
       return 'now';
      } else {
       return duration(minDiff, {
-        unit: 'minute',
+        unit: 'minutes',
         suffix: true,
         minutes: true
       });

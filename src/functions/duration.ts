@@ -52,9 +52,9 @@ export function duration(time: any, options?) {
       options.years = options.years === undefined ? false : options.years;
     }
 
-    if (options.unit === 'minute') {
+    if (options.unit === 'minutes') {
         time = time * 60;
-    } else if (options.unit === 'hour') {
+    } else if (options.unit === 'hours') {
         time = time * 60 * 60;
     }
 
