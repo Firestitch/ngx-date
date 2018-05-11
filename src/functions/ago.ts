@@ -23,9 +23,9 @@ export function ago(date, frmt: string = 'date') {
       return 'now';
      } else {
       return duration(minDiff, {
-          unit: 'minute',
-          suffix: true,
-          seconds: false
+        unit: 'minute',
+        suffix: true,
+        minutes: true
       });
     }
 }

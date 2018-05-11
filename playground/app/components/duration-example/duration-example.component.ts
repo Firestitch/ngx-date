@@ -27,21 +27,21 @@ export class DurationExampleComponent {
       },
       {
         input: 6000,
-        codePipe: '{{ number | fsDateDuration: {minute: true, second: true} }}',
-        codeService: 'duration(number, {minute: true, second: true})',
-        result: duration(6000, {minute: true, second: true} )
+        codePipe: '{{ number | fsDateDuration: {hours: true, minutes: true} }}',
+        codeService: 'duration(number, {hours: true, minutes: true})',
+        result: duration(6000, {hours: true, minutes: true} )
       },
       {
         input: 940800,
-        codePipe: '{{ number | fsDateDuration: {day: true, hour: true} }}',
-        codeService: 'duration(number, {day: true, hour: true})',
-        result: duration(940800, {day: true, hour: true} )
+        codePipe: '{{ number | fsDateDuration: {days: true, hours: true} }}',
+        codeService: 'duration(number, {days: true, hours: true})',
+        result: duration(940800, {days: true, hours: true} )
       },
       {
         input: 18940800,
-        codePipe: '{{ number | fsDateDuration: {month: true, day: true} }}',
-        codeService: 'duration(number, {month: true, day: true})',
-        result: duration(18940800, {month: true, day: true} )
+        codePipe: '{{ number | fsDateDuration: {months: true, days: true} }}',
+        codeService: 'duration(number, {months: true, days: true})',
+        result: duration(18940800, {months: true, days: true} )
       },
     ]
   }
@@ -50,15 +50,15 @@ export class DurationExampleComponent {
     this.examplesWithSuffix = [
       {
         input: 129600,
-        codePipe: '{{ number | fsDateDuration: {suffix: true, minute: true, second: true} }}',
-        codeService: 'duration(number, {suffix: true, minute: true, second: true})',
-        result: duration(129600, {suffix: true, minute: true, second: true})
+        codePipe: '{{ number | fsDateDuration: {suffix: true, days: true, hours: true} }}',
+        codeService: 'duration(number, {suffix: true, days: true, hours: true})',
+        result: duration(129600, {suffix: true, days: true, hours: true})
       },
       {
         input: 172800,
-        codePipe: '{{ number | fsDateDuration: {suffix: true, day: true} }}',
-        codeService: 'duration(number, {suffix: true, day: true})',
-        result: duration(172800, {suffix: true, day: true} )
+        codePipe: '{{ number | fsDateDuration: {suffix: true, days: true} }}',
+        codeService: 'duration(number, {suffix: true, days: true})',
+        result: duration(172800, {suffix: true, days: true} )
       }
     ]
   }
@@ -74,7 +74,7 @@ export class DurationExampleComponent {
       {
         input: 199200,
         codePipe: "{{ number | fsDateDuration: 'hour-minute' }}",
-        codeService: "duration(number, 'hour-minute')",
+        codeService: "duration(number, 'hour-minutes')",
         result: duration(199200, 'hour-minute' )
       },
       {

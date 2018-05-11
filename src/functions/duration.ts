@@ -1,10 +1,15 @@
 import { round, isNumber } from 'lodash';
 import { SECONDS } from '../constants/seconds';
+import { parse } from './parse';
 
 export function duration(time: any, options?) {
 
     if (!isNumber(time)) {
-      return '';
+      time = parse(time);
+      if (!time) {
+        return '';
+      }
+      options.unit = 'seconds';
     }
 
     if (typeof options === 'string') {
@@ -21,21 +26,31 @@ export function duration(time: any, options?) {
             if (option) {
                 precision++;
             }
-        };
+        }
 
         options.precision = precision;
     }
 
     options = Object.assign({}, options);
-    options.unit = options.unit === undefined ? 'second' : options.unit;
+    options.unit = options.unit === undefined ? 'seconds' : options.unit;
     options.abr = options.abr === undefined ? true : options.abr;
     options.suffix = options.suffix === true ? (time > 0 ? ' ago' : ' from now') : '';
-    options.seconds = options.seconds === undefined ? true : options.seconds;
-    options.minutes = options.minutes === undefined ? true : options.minutes;
-    options.hours = options.hours === undefined ? true : options.hours;
-    options.days = options.days === undefined ? true : options.days;
-    options.months = options.months === undefined ? true : options.months;
-    options.years = options.years === undefined ? true : options.years;
+
+    if (!options.seconds && !options.minutes && !options.hours && !options.days && !options.months && !options.years) {
+      options.seconds = true;
+      options.minutes = false;
+      options.hours = false;
+      options.days = false;
+      options.months = false;
+      options.years = false;
+    } else {
+      options.seconds = options.seconds === undefined ? false : options.seconds;
+      options.minutes = options.minutes === undefined ? false : options.minutes;
+      options.hours = options.hours === undefined ? false : options.hours;
+      options.days = options.days === undefined ? false : options.days;
+      options.months = options.months === undefined ? false : options.months;
+      options.years = options.years === undefined ? false : options.years;
+    }
 
     if (options.unit === 'minute') {
         time = time * 60;
@@ -125,9 +140,8 @@ export function duration(time: any, options?) {
         const name = enabled.join('');
         const value = round(totalSeconds / units[name]['seconds'], precision);
         output.push(value + (options.abr ? units[name].abr :  ' ' + (value == 1 ? units[name].single : units[name].plural)));
-
     } else {
-        const precision = options.precision === undefined ? 2 : options.precision;
+        const precision = options.precision === undefined ? enabled.length : options.precision;
 
         for (const name in units) {
           if (units.hasOwnProperty(name)) {

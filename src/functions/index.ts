@@ -5,3 +5,4 @@ export * from './format';
 export * from './range';
 export * from './granularduration';
 export * from './tomomentformat';
+export * from './parse';
