@@ -5,10 +5,18 @@ import { parse } from './parse';
 export function duration(time: any, options?) {
 
     if (!isNumber(time)) {
-      time = parse(time);
-      if (!time) {
-        return '';
+      let parsedResult;
+
+      parse(time).subscribe((result: any) => {
+        parsedResult = result;
+      });
+
+      if (parsedResult && parsedResult.error || !parsedResult.time) {
+        return parsedResult.error;
+      } else {
+        time = parsedResult.time;
       }
+
       options.unit = 'seconds';
     }
 

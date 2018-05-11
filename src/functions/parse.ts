@@ -1,9 +1,13 @@
 import { SECONDS } from '../constants/seconds';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 
-export function parse(value: string) {
+export function parse(value: string): Observable<Object> {
+
+  let time = 0;
 
   if (!value && typeof value !== 'string') {
-    return 0;
+    return of({error: 'Invalid duration format'});
   }
 
   value = value
@@ -12,18 +16,12 @@ export function parse(value: string) {
     .replace(/\s+/,' ')
     .replace(/^\./,'0.');
 
-  if (value.match(/^\d*(\.\d*)?$/)) {
-    value += 'h';
-  }
-
-  let seconds = 0;
-
   value.split(' ').forEach((chunk) => {
 
     const matches = chunk.match(/^(\d+\.?\d*)([YMdhms])$/);
 
     if (!matches) {
-      throw 'Invalid duration format';
+      return;
     }
 
     const factor = {
@@ -35,8 +33,8 @@ export function parse(value: string) {
       s: 1
     }[matches[2]];
 
-    seconds += +matches[1] * factor;
+    time += +matches[1] * factor;
   });
 
-  return seconds;
+  return of({time: time});
 }
