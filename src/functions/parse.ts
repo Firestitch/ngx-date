@@ -33,7 +33,7 @@ export function parse(value: string): Observable<Object> {
       s: 1
     }[matches[2]];
 
-    time += +matches[1] * factor;
+    time += Math.round(+matches[1]) * factor;
   });
 
   return of({time: time});

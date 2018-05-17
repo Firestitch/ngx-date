@@ -12,7 +12,7 @@ export function duration(time: any, options?) {
       });
 
       if (parsedResult && parsedResult.error || !parsedResult.time) {
-        return parsedResult.error;
+        return 'error';
       } else {
         time = parsedResult.time;
       }
@@ -91,16 +91,23 @@ export function duration(time: any, options?) {
     if (options.years) {
       const years = remainder / SECONDS.YEAR;
       if (years >= 1) {
-        pieces.years = Math.floor(years);
+        if (!options.months && !options.days && !options.hours && !options.minutes && !options.seconds) {
+          pieces.years = Math.round(years);
+        } else {
+          pieces.years = Math.floor(years);
+        }
         remainder = remainder - (pieces.years * SECONDS.YEAR);
       }
     }
 
     if (options.months) {
       const months = remainder / SECONDS.MONTH;
-
       if (months >= 1) {
-        pieces.months =  Math.floor(months);
+        if (!options.days && !options.hours && !options.minutes && !options.seconds) {
+          pieces.months = Math.round(months);
+        } else {
+          pieces.months = Math.floor(months);
+        }
         remainder = remainder - (pieces.months * SECONDS.MONTH);
       }
     }
@@ -108,7 +115,11 @@ export function duration(time: any, options?) {
     if (options.days) {
       const days = remainder / SECONDS.DAY;
       if (days >= 1) {
-        pieces.days = Math.floor(days);
+        if (!options.hours && !options.minutes && !options.seconds) {
+          pieces.days = Math.round(days);
+        } else {
+          pieces.days = Math.floor(days);
+        }
         remainder = remainder - (pieces.days * SECONDS.DAY);
       }
     }
@@ -116,7 +127,11 @@ export function duration(time: any, options?) {
     if (options.hours) {
       const hours = remainder / SECONDS.HOUR;
       if (hours >= 1) {
-        pieces.hours = Math.floor(hours);
+        if (!options.minutes && !options.seconds) {
+          pieces.hours = Math.round(hours);
+        } else {
+          pieces.hours = Math.floor(hours);
+        }
         remainder = remainder - (pieces.hours * SECONDS.HOUR);
       }
     }
@@ -124,12 +139,16 @@ export function duration(time: any, options?) {
     if (options.minutes) {
       const minutes = remainder / 60;
       if (minutes >= 1) {
-        pieces.minutes = Math.floor(minutes);
+        if (!options.seconds) {
+          pieces.minutes = Math.round(minutes);
+        } else {
+          pieces.minutes = Math.floor(minutes);
+        }
         remainder = remainder - (pieces.minutes * SECONDS.MINUTE);
       }
     }
 
-    pieces.seconds = Math.floor(remainder);
+    pieces.seconds = Math.round(remainder);
 
     const enabled = [];
     let totalSeconds = 0;
