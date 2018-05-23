@@ -5,7 +5,8 @@ import {
   FsDatePipe,
   FsDateAgoPipe,
   FsDateDurationPipe,
-  FsDateFormatPipe
+  FsDateFormatPipe,
+  FsDateRangePipe
 } from './pipes';
 
 @NgModule({
@@ -17,7 +18,8 @@ import {
     FsDatePipe,
     FsDateAgoPipe,
     FsDateDurationPipe,
-    FsDateFormatPipe
+    FsDateFormatPipe,
+    FsDateRangePipe
   ],
   entryComponents: [
   ],
@@ -25,7 +27,8 @@ import {
     FsDatePipe,
     FsDateAgoPipe,
     FsDateDurationPipe,
-    FsDateFormatPipe
+    FsDateFormatPipe,
+    FsDateRangePipe
   ],
   providers: [
   ],

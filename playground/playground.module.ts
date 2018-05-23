@@ -19,6 +19,7 @@ import { FsDateModule } from '../src';
 import { FormatExampleComponent } from './app/components/format-example/format-example.component';
 import { AgoExampleComponent } from './app/components/ago-example/ago-example.component';
 import { DurationExampleComponent } from './app/components/duration-example/duration-example.component';
+import { RangeExampleComponent } from './app/components/range-example/range-example.component';
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -41,7 +42,8 @@ import { DurationExampleComponent } from './app/components/duration-example/dura
 
     FormatExampleComponent,
     AgoExampleComponent,
-    DurationExampleComponent
+    DurationExampleComponent,
+    RangeExampleComponent
   ],
   providers: [
   ],
