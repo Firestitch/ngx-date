@@ -18,18 +18,20 @@ export function range(from, to, format = 'date') {
     if (formatParts.indexOf('time') !== -1) {
       // date and time
       if (from.year() == to.year()) {
-        toFormat = toFormat.replace(' YYYY', '').replace(',', '');
+        toFormat = toFormat
+          .replace(' YYYY', '')
+          .replace(',', '');
 
         if (from.month() == to.month()) {
           if (from.day() == to.day()) {
             toFormat = toFormat
-                .replace(' MMMM', '')
-                .replace(' MMM', '')
+                .replace('MMMM', '')
+                .replace('MMM', '')
                 .replace('dddd', '')
                 .replace('ddd', '')
                 .replace(' Do', '')
                 .replace(' D', '')
-                ;
+                .trim();
           } else {
             // add comma after day
             toFormat = toFormat
@@ -46,12 +48,18 @@ export function range(from, to, format = 'date') {
     } else {
       // date only
       if (from.year() == to.year()) {
-        fromFormat = fromFormat.replace(' YYYY', '').replace(',', '');
+        fromFormat = fromFormat
+          .replace(' YYYY', '')
+          .replace(',', '')
+          .trim();
 
         if (from.month() == to.month()) {
 
           if (formatParts.indexOf('day') == -1) {
-            toFormat = toFormat.replace(' MMMM', '').replace(' MMM', '');
+            toFormat = toFormat
+              .replace('MMMM', '')
+              .replace('MMM', '')
+              .trim();
           }
 
           if (from.day() == to.day()) {
