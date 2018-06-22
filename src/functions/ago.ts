@@ -25,7 +25,8 @@ export function ago(date, frmt: string = 'date') {
       return duration(minDiff, {
         unit: 'minutes',
         suffix: true,
-        minutes: true
+        minutes: true,
+        hours: true
       });
     }
 }

@@ -7,7 +7,7 @@ import { ago } from './../../../../src';
   templateUrl: 'ago-example.component.html'
 })
 export class AgoExampleComponent {
-  
+
   examples = [
     {
       name: 'none',
