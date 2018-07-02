@@ -23,7 +23,7 @@ export function range(from, to, format = 'date') {
           .replace(',', '');
 
         if (from.month() == to.month()) {
-          if (from.day() == to.day()) {
+          if (from.date() == to.date()) {
             toFormat = toFormat
                 .replace('MMMM', '')
                 .replace('MMM', '')
@@ -62,7 +62,7 @@ export function range(from, to, format = 'date') {
               .trim();
           }
 
-          if (from.day() == to.day()) {
+          if (from.date() == to.date()) {
             if (formatParts.indexOf('time') == -1) {
               fromFormat = toMomentFormat(from, format);
               toFormat = '';

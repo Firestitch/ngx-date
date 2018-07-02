@@ -3,6 +3,7 @@ import { range } from './../../../../src';
 
 import * as moment from 'moment-timezone';
 
+
 @Component({
   selector: 'range-example',
   templateUrl: 'range-example.component.html'
