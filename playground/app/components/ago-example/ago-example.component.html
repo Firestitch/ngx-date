@@ -3,12 +3,14 @@
     <tr>
       <th>Output</th>
       <th>Pipe</th>
-      <th>Service</th>
+      <th>Component</th>
+      <th>Directive</th>
     </tr>
   </thead>
   <tr *ngFor="let example of examples">
       <td>{{ example.result }}</td>
       <td>{{ example.codePipe }}</td>
-      <td>{{ example.codeService }}</td>
+      <td>{{ example.codeComponent }}</td>
+      <td>{{ example.codeDirective }}</td>
   </tr>
 </table>
