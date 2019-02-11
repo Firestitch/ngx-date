@@ -3,247 +3,30 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@firestitch/date documentation</title>
+        <title>Application documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	    <link rel="stylesheet" href="./styles/style.css">
+	      <link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">@firestitch/date documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <a href="./" class="navbar-brand">Application documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="./index.html">@firestitch/date documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="./overview.html" 
-                                         href="./overview.html" 
-                                        >
-                                        <span class="fa fa-fw fa-th"></span>Overview
-                                    </a>
-                                </li>
-                                <li class="link">
-                                  <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
-                            <div class="menu-toggler linked" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            >
-                                <span class="fa fa-fw fa-archive"></span>
-                                <span class="link-name">Modules</span>
-                                <span class="fa fa-angle-down"></span>
-                            </div>
-                        </a>
-                        <ul class="links collapse "
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="./modules/FsDateModule.html" >FsDateModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-            
-            
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-pipes-links"
-                            >
-                            <span class="fa fa-fw fa-plus"></span>
-                            <span>Pipes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-pipes-links"
-                            >
-                                <li class="link">
-                                    <a href="./pipes/FsDateAgoPipe.html" >FsDateAgoPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="./pipes/FsDateFormatPipe.html" >FsDateFormatPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="./pipes/FsDatePipe.html" >FsDatePipe</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-miscellaneous-links"
-                            >
-                            <span class="fa fa-fw fa-cubes"></span>
-                            <span>Miscellaneous</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-miscellaneous-links"
-                            >
-                                <li class="link">
-                                  <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
-                                </li>
-                                <li class="link">
-                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="./index.html">@firestitch/date documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="./overview.html" 
-                                                href="./overview.html" 
-                                               >
-                                               <span class="fa fa-fw fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
-                                   <div class="menu-toggler linked" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   >
-                                       <span class="fa fa-fw fa-archive"></span>
-                                       <span class="link-name">Modules</span>
-                                       <span class="fa fa-angle-down"></span>
-                                   </div>
-                               </a>
-                               <ul class="links collapse "
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="./modules/FsDateModule.html" >FsDateModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#pipes-links"
-                   >
-                                   <span class="fa fa-fw fa-plus"></span>
-                                   <span>Pipes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="pipes-links"
-                   >
-                                       <li class="link">
-                                           <a href="./pipes/FsDateAgoPipe.html" >FsDateAgoPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="./pipes/FsDateFormatPipe.html" >FsDateFormatPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="./pipes/FsDatePipe.html" >FsDatePipe</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#miscellaneous-links"
-                   >
-                                   <span class="fa fa-fw fa-cubes"></span>
-                                   <span>Miscellaneous</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="miscellaneous-links"
-                   >
-                                       <li class="link">
-                                         <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content coverage">
                    <div class="content-data">
 
@@ -260,11 +43,15 @@
 
 
 
+
+
 <ol class="breadcrumb">
-  <li>Documentation coverage</li>
+    <li>Documentation coverage</li>
 </ol>
 
-<img src="./images/coverage-badge.svg">
+<div>
+    <img src="./images/coverage-badge-documentation.svg">
+</div>
 
 <table class="table table-bordered coverage" id="coverage-table">
     <thead class="coverage-header">
@@ -279,14 +66,22 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./miscellaneous/variables.html#SECONDS">src/constants/seconds.ts</a>
+                <a href="./components/FsDateAgoComponent.html">/Users/basters/dev/frontend/firestitch/date/src/app/components/date-ago/date-ago.component.ts</a>
             </td>
+            <td>component</td>
+            <td>FsDateAgoComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
             <td>
-                variable
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#moment">/Users/basters/dev/frontend/firestitch/date/src/app/components/date-ago/date-ago.component.ts</a>
             </td>
-            <td>
-                SECONDS
-            </td>
+            <td>variable</td>
+            <td>moment</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -295,14 +90,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./miscellaneous/variables.html#TIMEZONES">src/constants/timezones.ts</a>
+                <a href="./miscellaneous/variables.html#SECONDS">/Users/basters/dev/frontend/firestitch/date/src/app/constants/seconds.ts</a>
             </td>
-            <td>
-                variable
-            </td>
-            <td>
-                TIMEZONES
-            </td>
+            <td>variable</td>
+            <td>SECONDS</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -311,14 +102,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href=".//functions.html#ago">src/functions/ago.ts</a>
+                <a href="./miscellaneous/variables.html#TIMEZONES">/Users/basters/dev/frontend/firestitch/date/src/app/constants/timezones.ts</a>
             </td>
-            <td>
-                function
-            </td>
-            <td>
-                ago
-            </td>
+            <td>variable</td>
+            <td>TIMEZONES</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -327,14 +114,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href=".//functions.html#duration">src/functions/duration.ts</a>
+                <a href="./pipes/FsDateAgoPipe.html">/Users/basters/dev/frontend/firestitch/date/src/app/pipes/date-ago.pipe.ts</a>
             </td>
-            <td>
-                function
-            </td>
-            <td>
-                duration
-            </td>
+            <td>pipe</td>
+            <td>FsDateAgoPipe</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -343,14 +126,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href=".//functions.html#format">src/functions/format.ts</a>
+                <a href="./pipes/FsDateDurationPipe.html">/Users/basters/dev/frontend/firestitch/date/src/app/pipes/date-duration.pipe.ts</a>
             </td>
-            <td>
-                function
-            </td>
-            <td>
-                format
-            </td>
+            <td>pipe</td>
+            <td>FsDateDurationPipe</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -359,14 +138,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href=".//functions.html#granularDuration">src/functions/granularduration.ts</a>
+                <a href="./pipes/FsDateFormatPipe.html">/Users/basters/dev/frontend/firestitch/date/src/app/pipes/date-format.pipe.ts</a>
             </td>
-            <td>
-                function
-            </td>
-            <td>
-                granularDuration
-            </td>
+            <td>pipe</td>
+            <td>FsDateFormatPipe</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -375,14 +150,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href=".//functions.html#iso8601">src/functions/iso8601.ts</a>
+                <a href="./pipes/FsDateRangePipe.html">/Users/basters/dev/frontend/firestitch/date/src/app/pipes/date-range.pipe.ts</a>
             </td>
-            <td>
-                function
-            </td>
-            <td>
-                iso8601
-            </td>
+            <td>pipe</td>
+            <td>FsDateRangePipe</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -391,14 +162,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href=".//functions.html#range">src/functions/range.ts</a>
+                <a href="./pipes/FsDatePipe.html">/Users/basters/dev/frontend/firestitch/date/src/app/pipes/date.pipe.ts</a>
             </td>
-            <td>
-                function
-            </td>
-            <td>
-                range
-            </td>
+            <td>pipe</td>
+            <td>FsDatePipe</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -407,14 +174,22 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href=".//functions.html#toMomentFormat">src/functions/tomomentformat.ts</a>
+                <a href="./injectables/FsDateAgoFactory.html">/Users/basters/dev/frontend/firestitch/date/src/app/services/date-ago-factory.service.ts</a>
             </td>
+            <td>injectable</td>
+            <td>FsDateAgoFactory</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
             <td>
-                function
+                <!-- miscellaneous -->
+                <a href=".//functions.html#ago">/Users/basters/dev/frontend/firestitch/date/src/libs/ago.ts</a>
             </td>
-            <td>
-                toMomentFormat
-            </td>
+            <td>function</td>
+            <td>ago</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -423,14 +198,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./pipes/FsDatePipe.html">src/pipes/fsdate.pipe.ts</a>
+                <a href="./miscellaneous/variables.html#moment">/Users/basters/dev/frontend/firestitch/date/src/libs/ago.ts</a>
             </td>
-            <td>
-                pipe
-            </td>
-            <td>
-                FsDatePipe
-            </td>
+            <td>variable</td>
+            <td>moment</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -439,14 +210,10 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./pipes/FsDateAgoPipe.html">src/pipes/fsdateago.pipe.ts</a>
+                <a href=".//functions.html#duration">/Users/basters/dev/frontend/firestitch/date/src/libs/duration.ts</a>
             </td>
-            <td>
-                pipe
-            </td>
-            <td>
-                FsDateAgoPipe
-            </td>
+            <td>function</td>
+            <td>duration</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -455,14 +222,142 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
-                    <a href="./pipes/FsDateFormatPipe.html">src/pipes/fsdateformat.pipe.ts</a>
+                <a href=".//functions.html#format">/Users/basters/dev/frontend/firestitch/date/src/libs/format.ts</a>
             </td>
+            <td>function</td>
+            <td>format</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
             <td>
-                pipe
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#moment">/Users/basters/dev/frontend/firestitch/date/src/libs/format.ts</a>
             </td>
+            <td>variable</td>
+            <td>moment</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
             <td>
-                FsDateFormatPipe
+                <!-- miscellaneous -->
+                <a href=".//functions.html#granularDuration">/Users/basters/dev/frontend/firestitch/date/src/libs/granularduration.ts</a>
             </td>
+            <td>function</td>
+            <td>granularDuration</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href=".//functions.html#iso8601">/Users/basters/dev/frontend/firestitch/date/src/libs/iso8601.ts</a>
+            </td>
+            <td>function</td>
+            <td>iso8601</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#moment">/Users/basters/dev/frontend/firestitch/date/src/libs/iso8601.ts</a>
+            </td>
+            <td>variable</td>
+            <td>moment</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href=".//functions.html#parse">/Users/basters/dev/frontend/firestitch/date/src/libs/parse.ts</a>
+            </td>
+            <td>function</td>
+            <td>parse</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href=".//functions.html#range">/Users/basters/dev/frontend/firestitch/date/src/libs/range.ts</a>
+            </td>
+            <td>function</td>
+            <td>range</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#moment">/Users/basters/dev/frontend/firestitch/date/src/libs/range.ts</a>
+            </td>
+            <td>variable</td>
+            <td>moment</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href=".//functions.html#toMomentFormat">/Users/basters/dev/frontend/firestitch/date/src/libs/tomomentformat.ts</a>
+            </td>
+            <td>function</td>
+            <td>toMomentFormat</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#moment">/Users/basters/dev/frontend/firestitch/date/src/libs/tomomentformat.ts</a>
+            </td>
+            <td>variable</td>
+            <td>moment</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#context">/Users/basters/dev/frontend/firestitch/date/src/test.ts</a>
+            </td>
+            <td>variable</td>
+            <td>context</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#require">/Users/basters/dev/frontend/firestitch/date/src/test.ts</a>
+            </td>
+            <td>variable</td>
+            <td>require</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/1)</span>
@@ -479,7 +374,7 @@
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -487,8 +382,21 @@
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
+            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 
@@ -499,17 +407,16 @@
 
        <script src="./js/compodoc.js"></script>
 
-       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 0;</script>
-
-       <script src="./js/search/search.js"></script>
-       <script src="./js/search/lunr.min.js"></script>
-       <script src="./js/search/search-lunr.js"></script>
-
        <script src="./js/tabs.js"></script>
        <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
        <script src="./js/libs/prism.js"></script>
        <script src="./js/sourceCode.js"></script>
-       <script src="./js/search/search_index.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
 
 
     </body>

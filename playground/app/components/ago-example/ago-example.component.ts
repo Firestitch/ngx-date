@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import * as moment from 'moment-timezone';
+import * as moment from 'moment';
 
-import { ago } from './../../../../src';
+import { ago } from '@firestitch/date';
 
 
 @Component({

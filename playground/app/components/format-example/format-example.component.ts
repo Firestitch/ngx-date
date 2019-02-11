@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { format } from './../../../../src';
+import { format } from '@firestitch/date';
 
 @Component({
   selector: 'format-example',

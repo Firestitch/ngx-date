@@ -3,249 +3,34 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@firestitch/date documentation</title>
+        <title>Application documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@firestitch/date documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <a href="../" class="navbar-brand">Application documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../index.html">@firestitch/date documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="../overview.html" 
-                                         href="../overview.html" 
-                                        >
-                                        <span class="fa fa-fw fa-th"></span>Overview
-                                    </a>
-                                </li>
-                                <li class="link">
-                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../modules.html" >
-                            <div class="menu-toggler linked" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            >
-                                <span class="fa fa-fw fa-archive"></span>
-                                <span class="link-name">Modules</span>
-                                <span class="fa fa-angle-down"></span>
-                            </div>
-                        </a>
-                        <ul class="links collapse "
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/FsDateModule.html" >FsDateModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-            
-            
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-pipes-links"
-                            >
-                            <span class="fa fa-fw fa-plus"></span>
-                            <span>Pipes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-pipes-links"
-                            >
-                                <li class="link">
-                                    <a href="../pipes/FsDateAgoPipe.html" >FsDateAgoPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/FsDateFormatPipe.html" >FsDateFormatPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/FsDatePipe.html" >FsDatePipe</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-miscellaneous-links"
-                            >
-                            <span class="fa fa-fw fa-cubes"></span>
-                            <span>Miscellaneous</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-miscellaneous-links"
-                            >
-                                <li class="link">
-                                  <a href="../miscellaneous/functions.html" data-type="entity-link"  class="active" >Functions</a>
-                                </li>
-                                <li class="link">
-                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../index.html">@firestitch/date documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="../overview.html" 
-                                                href="../overview.html" 
-                                               >
-                                               <span class="fa fa-fw fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../modules.html" >
-                                   <div class="menu-toggler linked" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   >
-                                       <span class="fa fa-fw fa-archive"></span>
-                                       <span class="link-name">Modules</span>
-                                       <span class="fa fa-angle-down"></span>
-                                   </div>
-                               </a>
-                               <ul class="links collapse "
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/FsDateModule.html" >FsDateModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#pipes-links"
-                   >
-                                   <span class="fa fa-fw fa-plus"></span>
-                                   <span>Pipes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="pipes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../pipes/FsDateAgoPipe.html" >FsDateAgoPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/FsDateFormatPipe.html" >FsDateFormatPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/FsDatePipe.html" >FsDatePipe</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#miscellaneous-links"
-                   >
-                                   <span class="fa fa-fw fa-cubes"></span>
-                                   <span>Miscellaneous</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="miscellaneous-links"
-                   >
-                                       <li class="link">
-                                         <a href="../miscellaneous/functions.html" data-type="entity-link"  class="active" >Functions</a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content miscellaneous-functions">
                    <div class="content-data">
+
+
 
 
 
@@ -272,25 +57,28 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#ago">ago</a>
+                            <a href="#ago" title="/Users/basters/dev/frontend/firestitch/date/src/libs/ago.ts"><b>ago</b>&nbsp;&nbsp;&nbsp;(/.../ago.ts)</a>
                         </li>
                         <li>
-                            <a href="#duration">duration</a>
+                            <a href="#duration" title="/Users/basters/dev/frontend/firestitch/date/src/libs/duration.ts"><b>duration</b>&nbsp;&nbsp;&nbsp;(/.../duration.ts)</a>
                         </li>
                         <li>
-                            <a href="#format">format</a>
+                            <a href="#format" title="/Users/basters/dev/frontend/firestitch/date/src/libs/format.ts"><b>format</b>&nbsp;&nbsp;&nbsp;(/.../format.ts)</a>
                         </li>
                         <li>
-                            <a href="#granularDuration">granularDuration</a>
+                            <a href="#granularDuration" title="/Users/basters/dev/frontend/firestitch/date/src/libs/granularduration.ts"><b>granularDuration</b>&nbsp;&nbsp;&nbsp;(/.../granularduration.ts)</a>
                         </li>
                         <li>
-                            <a href="#iso8601">iso8601</a>
+                            <a href="#iso8601" title="/Users/basters/dev/frontend/firestitch/date/src/libs/iso8601.ts"><b>iso8601</b>&nbsp;&nbsp;&nbsp;(/.../iso8601.ts)</a>
                         </li>
                         <li>
-                            <a href="#range">range</a>
+                            <a href="#parse" title="/Users/basters/dev/frontend/firestitch/date/src/libs/parse.ts"><b>parse</b>&nbsp;&nbsp;&nbsp;(/.../parse.ts)</a>
                         </li>
                         <li>
-                            <a href="#toMomentFormat">toMomentFormat</a>
+                            <a href="#range" title="/Users/basters/dev/frontend/firestitch/date/src/libs/range.ts"><b>range</b>&nbsp;&nbsp;&nbsp;(/.../range.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#toMomentFormat" title="/Users/basters/dev/frontend/firestitch/date/src/libs/tomomentformat.ts"><b>toMomentFormat</b>&nbsp;&nbsp;&nbsp;(/.../tomomentformat.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -299,528 +87,569 @@
     </table>
 </section>
 
-    <h3>src/functions/ago.ts</h3>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/ago.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="ago"></a>
-                            <span class="name">
-                                <b>
-                                ago
-                                </b>
-                                <a href="#ago"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>ago(date: , frmt: typeReference)</code>
-                        </td>
-                    </tr>
-    
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
-                                                <tr>
-                                                    <td>Name</td>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ago"></a>
+                        <span class="name">
+                            <b>
+                            ago
+                            </b>
+                            <a href="#ago"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ago(date, frmt: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
                                                     <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>date</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>frmt</td>
-                                                      <td>
-                                                              <code>typeReference</code>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                </div>
-                                <div>
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-    <h3>src/functions/duration.ts</h3>
+                                                <tr>
+                                                        <td>frmt</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/duration.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="duration"></a>
-                            <span class="name">
-                                <b>
-                                duration
-                                </b>
-                                <a href="#duration"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>duration(time: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, options: )</code>
-                        </td>
-                    </tr>
-    
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
-                                                <tr>
-                                                    <td>Name</td>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="duration"></a>
+                        <span class="name">
+                            <b>
+                            duration
+                            </b>
+                            <a href="#duration"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>duration(time: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, options?)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
                                                     <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>time</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>time</td>
-                                                      <td>
-                                                              <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>options</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                </div>
-                                <div>
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-    <h3>src/functions/format.ts</h3>
+                                                <tr>
+                                                        <td>options</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/format.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="format"></a>
-                            <span class="name">
-                                <b>
-                                format
-                                </b>
-                                <a href="#format"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>format(date: , format?: typeReference)</code>
-                        </td>
-                    </tr>
-    
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="format"></a>
+                        <span class="name">
+                            <b>
+                            format
+                            </b>
+                            <a href="#format"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>format(date, format?)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                                                 <tr>
-                                                    <td>Name</td>
-                                                    <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
+                                                        <td>date</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>date</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>format</td>
-                                                      <td>
-                                                              <code>typeReference</code>
-                                                      </td>
-                                                      <td>
-                                                          yes
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
+                                                <tr>
+                                                        <td>format</td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
                                 </div>
-                                <div>
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-    <h3>src/functions/granularduration.ts</h3>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/granularduration.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="granularDuration"></a>
-                            <span class="name">
-                                <b>
-                                granularDuration
-                                </b>
-                                <a href="#granularDuration"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>granularDuration(time: , options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank">object</a>)</code>
-                        </td>
-                    </tr>
-    
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
-                                                <tr>
-                                                    <td>Name</td>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="granularDuration"></a>
+                        <span class="name">
+                            <b>
+                            granularDuration
+                            </b>
+                            <a href="#granularDuration"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>granularDuration(time, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank">object</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
                                                     <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>time</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>time</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>options</td>
-                                                      <td>
-                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                </div>
-                                <div>
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-    <h3>src/functions/iso8601.ts</h3>
+                                                <tr>
+                                                        <td>options</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/iso8601.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="iso8601"></a>
-                            <span class="name">
-                                <b>
-                                iso8601
-                                </b>
-                                <a href="#iso8601"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>iso8601(date: )</code>
-                        </td>
-                    </tr>
-    
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="iso8601"></a>
+                        <span class="name">
+                            <b>
+                            iso8601
+                            </b>
+                            <a href="#iso8601"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>iso8601(date)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                                                 <tr>
-                                                    <td>Name</td>
-                                                    <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
+                                                        <td>date</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>date</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                </div>
-                                <div>
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-    <h3>src/functions/range.ts</h3>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/parse.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="range"></a>
-                            <span class="name">
-                                <b>
-                                range
-                                </b>
-                                <a href="#range"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>range(from: , to: , format: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                        </td>
-                    </tr>
-    
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="parse"></a>
+                        <span class="name">
+                            <b>
+                            parse
+                            </b>
+                            <a href="#parse"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>parse(value)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                                                 <tr>
-                                                    <td>Name</td>
-                                                    <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
+                                                        <td>value</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>from</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>to</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>format</td>
-                                                      <td>
-                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Observable&lt;Object&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
                                 </div>
-                                <div>
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
-    <h3>src/functions/tomomentformat.ts</h3>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/range.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="toMomentFormat"></a>
-                            <span class="name">
-                                <b>
-                                toMomentFormat
-                                </b>
-                                <a href="#toMomentFormat"><span class="fa fa-link"></span></a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>toMomentFormat(date: , format: typeReference)</code>
-                        </td>
-                    </tr>
-    
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                        <b>Parameters :</b>
-                                        <table class="params">
-                                            <thead>
-                                                <tr>
-                                                    <td>Name</td>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="range"></a>
+                        <span class="name">
+                            <b>
+                            range
+                            </b>
+                            <a href="#range"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>range(from, to, format: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
                                                     <td>Type</td>
-                                                    <td>Optional</td>
-                                                    <td>Default value</td>
-                                                    <td>Description</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>from</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                    <tr>
-                                                      <td>date</td>
-                                                      <td>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>format</td>
-                                                      <td>
-                                                              <code>typeReference</code>
-                                                      </td>
-                                                      <td>
-                                                          no
-                                                      </td>
-                                                      <td>
-                                                          <code></code>
-                                                      </td>
-                                                      <td></td>
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-                                </div>
-                                <div>
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
+                                                <tr>
+                                                        <td>to</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>format</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/tomomentformat.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toMomentFormat"></a>
+                        <span class="name">
+                            <b>
+                            toMomentFormat
+                            </b>
+                            <a href="#toMomentFormat"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>toMomentFormat(date, format: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>format</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -828,8 +657,21 @@
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-functions';
+            var COMPODOC_CURRENT_PAGE_URL = 'functions.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -840,17 +682,16 @@
 
        <script src="../js/compodoc.js"></script>
 
-       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
-
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
        <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
        <script src="../js/libs/prism.js"></script>
        <script src="../js/sourceCode.js"></script>
-       <script src="../js/search/search_index.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
 
 
     </body>

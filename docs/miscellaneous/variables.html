@@ -3,249 +3,34 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@firestitch/date documentation</title>
+        <title>Application documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	    <link rel="stylesheet" href="../styles/style.css">
+	      <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">@firestitch/date documentation</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <a href="../" class="navbar-brand">Application documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
-                <input type="text" placeholder="Type to search">
-            </div>
-            <nav>
-            
-                <ul class="list">
-            
-                    <li class="title">
-                        <a href="../index.html">@firestitch/date documentation</a>
-                    </li>
-            
-                    <li class="divider"></li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                        <ul class="links">
-                                <li class="link">
-                                    <a 
-                                        
-                                         href="../overview.html" 
-                                         href="../overview.html" 
-                                        >
-                                        <span class="fa fa-fw fa-th"></span>Overview
-                                    </a>
-                                </li>
-                                <li class="link">
-                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../modules.html" >
-                            <div class="menu-toggler linked" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            >
-                                <span class="fa fa-fw fa-archive"></span>
-                                <span class="link-name">Modules</span>
-                                <span class="fa fa-angle-down"></span>
-                            </div>
-                        </a>
-                        <ul class="links collapse "
-                                id="xs-modules-links"
-                            >
-                                <li class="link">
-                                    <a href="../modules/FsDateModule.html" >FsDateModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-            
-            
-            
-            
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-pipes-links"
-                            >
-                            <span class="fa fa-fw fa-plus"></span>
-                            <span>Pipes</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-pipes-links"
-                            >
-                                <li class="link">
-                                    <a href="../pipes/FsDateAgoPipe.html" >FsDateAgoPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/FsDateFormatPipe.html" >FsDateFormatPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/FsDatePipe.html" >FsDatePipe</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-                    <li class="chapter">
-                        <div class="simple menu-toggler" data-toggle="collapse"
-                                data-target="#xs-miscellaneous-links"
-                            >
-                            <span class="fa fa-fw fa-cubes"></span>
-                            <span>Miscellaneous</span>
-                            <span class="fa fa-angle-down"></span>
-                        </div>
-                        <ul class="links collapse "
-                                id="xs-miscellaneous-links"
-                            >
-                                <li class="link">
-                                  <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
-                                </li>
-                                <li class="link">
-                                  <a href="../miscellaneous/variables.html" data-type="entity-link"  class="active" >Variables</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-                    </li>
-            
-            
-                </ul>
-            
-            </nav>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-                   
-                       <ul class="list">
-                   
-                           <li class="title">
-                               <a href="../index.html">@firestitch/date documentation</a>
-                           </li>
-                   
-                           <li class="divider"></li>
-                   
-                               <div id="book-search-input" role="search">
-                                   <input type="text" placeholder="Type to search">
-                               </div>
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
-                               <ul class="links">
-                                       <li class="link">
-                                           <a 
-                                               
-                                                href="../overview.html" 
-                                                href="../overview.html" 
-                                               >
-                                               <span class="fa fa-fw fa-th"></span>Overview
-                                           </a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../modules.html" >
-                                   <div class="menu-toggler linked" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   >
-                                       <span class="fa fa-fw fa-archive"></span>
-                                       <span class="link-name">Modules</span>
-                                       <span class="fa fa-angle-down"></span>
-                                   </div>
-                               </a>
-                               <ul class="links collapse "
-                                       id="modules-links"
-                   >
-                                       <li class="link">
-                                           <a href="../modules/FsDateModule.html" >FsDateModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#pipes-links"
-                   >
-                                   <span class="fa fa-fw fa-plus"></span>
-                                   <span>Pipes</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="pipes-links"
-                   >
-                                       <li class="link">
-                                           <a href="../pipes/FsDateAgoPipe.html" >FsDateAgoPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/FsDateFormatPipe.html" >FsDateFormatPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/FsDatePipe.html" >FsDatePipe</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                           <li class="chapter">
-                               <div class="simple menu-toggler" data-toggle="collapse"
-                                       data-target="#miscellaneous-links"
-                   >
-                                   <span class="fa fa-fw fa-cubes"></span>
-                                   <span>Miscellaneous</span>
-                                   <span class="fa fa-angle-down"></span>
-                               </div>
-                               <ul class="links collapse "
-                                       id="miscellaneous-links"
-                   >
-                                       <li class="link">
-                                         <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
-                                       </li>
-                                       <li class="link">
-                                         <a href="../miscellaneous/variables.html" data-type="entity-link"  class="active" >Variables</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-                           </li>
-                   
-                   
-                       </ul>
-                   
-                   </nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
+               <!-- START CONTENT -->
                <div class="content miscellaneous-variables">
                    <div class="content-data">
+
+
 
 
 
@@ -272,10 +57,34 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#SECONDS">SECONDS</a>
+                            <a href="#context" title="/Users/basters/dev/frontend/firestitch/date/src/test.ts"><b>context</b>&nbsp;&nbsp;&nbsp;(/.../test.ts)</a>
                         </li>
                         <li>
-                            <a href="#TIMEZONES">TIMEZONES</a>
+                            <a href="#moment" title="/Users/basters/dev/frontend/firestitch/date/src/libs/format.ts"><b>moment</b>&nbsp;&nbsp;&nbsp;(/.../format.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#moment" title="/Users/basters/dev/frontend/firestitch/date/src/libs/ago.ts"><b>moment</b>&nbsp;&nbsp;&nbsp;(/.../ago.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#moment" title="/Users/basters/dev/frontend/firestitch/date/src/libs/iso8601.ts"><b>moment</b>&nbsp;&nbsp;&nbsp;(/.../iso8601.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#moment" title="/Users/basters/dev/frontend/firestitch/date/src/libs/range.ts"><b>moment</b>&nbsp;&nbsp;&nbsp;(/.../range.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#moment" title="/Users/basters/dev/frontend/firestitch/date/src/libs/tomomentformat.ts"><b>moment</b>&nbsp;&nbsp;&nbsp;(/.../tomomentformat.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#moment" title="/Users/basters/dev/frontend/firestitch/date/src/app/components/date-ago/date-ago.component.ts"><b>moment</b>&nbsp;&nbsp;&nbsp;(/.../date-ago.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#require" title="/Users/basters/dev/frontend/firestitch/date/src/test.ts"><b>require</b>&nbsp;&nbsp;&nbsp;(/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SECONDS" title="/Users/basters/dev/frontend/firestitch/date/src/app/constants/seconds.ts"><b>SECONDS</b>&nbsp;&nbsp;&nbsp;(/.../seconds.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TIMEZONES" title="/Users/basters/dev/frontend/firestitch/date/src/app/constants/timezones.ts"><b>TIMEZONES</b>&nbsp;&nbsp;&nbsp;(/.../timezones.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -284,321 +93,498 @@
     </table>
 </section>
 
-    <h3>src/constants/seconds.ts</h3>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/test.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="context"></a>
+                        <span class="name">
+                            <b>
+                            context</b>
+                            <a href="#context"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <a name="SECONDS"></a>
-                            <span class="name">
-                                <b>
-                                SECONDS
-                                </b>
-                                <a href="#SECONDS"><span class="fa fa-link"></span></a>
-                            </span>
+                            <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
                         </td>
                     </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="require"></a>
+                        <span class="name">
+                            <b>
+                            require</b>
+                            <a href="#require"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>SECONDS:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-    </code>
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>{
-        YEAR: 3600 * 24 * 365,
-        MONTH: 3600 * 24 * 30.417,
-        DAY: 3600 * 24,
-        HOUR: 3600,
-        MINUTE: 60
-    }</code>
-                            </td>
-                        </tr>
-    
-    
-                </tbody>
-            </table>
-    </section>
-    <h3>src/constants/timezones.ts</h3>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/format.ts</h3>
     <section>
-        <h3></h3>        <table class="table table-sm table-bordered">
-                <tbody>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moment"></a>
+                        <span class="name">
+                            <b>
+                            moment</b>
+                            <a href="#moment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <a name="TIMEZONES"></a>
-                            <span class="name">
-                                <b>
-                                TIMEZONES
-                                </b>
-                                <a href="#TIMEZONES"><span class="fa fa-link"></span></a>
-                            </span>
+                            <i>Default value : </i><code>moment_</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/ago.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moment"></a>
+                        <span class="name">
+                            <b>
+                            moment</b>
+                            <a href="#moment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>moment_</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/iso8601.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moment"></a>
+                        <span class="name">
+                            <b>
+                            moment</b>
+                            <a href="#moment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>moment_</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/range.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moment"></a>
+                        <span class="name">
+                            <b>
+                            moment</b>
+                            <a href="#moment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>moment_</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/libs/tomomentformat.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moment"></a>
+                        <span class="name">
+                            <b>
+                            moment</b>
+                            <a href="#moment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>moment_</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/app/components/date-ago/date-ago.component.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moment"></a>
+                        <span class="name">
+                            <b>
+                            moment</b>
+                            <a href="#moment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>moment_</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/app/constants/seconds.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SECONDS"></a>
+                        <span class="name">
+                            <b>
+                            SECONDS</b>
+                            <a href="#SECONDS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>TIMEZONES:     <code>[]</code>
-    </code>
+                            <i>Default value : </i><code>{
+    YEAR: 3600 * 24 * 365,
+    MONTH: 3600 * 24 * 30.417,
+    DAY: 3600 * 24,
+    HOUR: 3600,
+    MINUTE: 60
+}</code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Type : </i>    <code>[]</code>
-    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>[
-        { name: &#x27;A&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;ACDT&#x27;, value: &#x27;10:30&#x27; },
-        { name: &#x27;ACST&#x27;, value: &#x27;9:30&#x27; },
-        { name: &#x27;ADT&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;ADT&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;AEDT&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;AEST&#x27;, value: &#x27;10&#x27; },
-        { name: &#x27;AFT&#x27;, value: &#x27;4:30&#x27; },
-        { name: &#x27;AKDT&#x27;, value: &#x27;-8&#x27; },
-        { name: &#x27;AKST&#x27;, value: &#x27;-9&#x27; },
-        { name: &#x27;ALMT&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;AMST&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;AMST&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;AMT&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;AMT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;ANAST&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;ANAT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;AQTT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;ART&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;AST&#x27;, value: &#x27;3&#x27; },
-        { name: &#x27;AST&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;AWDT&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;AWST&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;AZOST&#x27;, value: &#x27;0&#x27; },
-        { name: &#x27;AZOT&#x27;, value: &#x27;-1&#x27; },
-        { name: &#x27;AZST&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;AZT&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;B&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;BNT&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;BOT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;BRST&#x27;, value: &#x27;-2&#x27; },
-        { name: &#x27;BRT&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;BST&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;BST&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;BTT&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;C&#x27;, value: &#x27;3&#x27; },
-        { name: &#x27;CAST&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;CAT&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;CCT&#x27;, value: &#x27;6:30&#x27; },
-        { name: &#x27;CDT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;CDT&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;CEST&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;CET&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;CHADT&#x27;, value: &#x27;13:45&#x27; },
-        { name: &#x27;CHAST&#x27;, value: &#x27;12:45&#x27; },
-        { name: &#x27;CKT&#x27;, value: &#x27;-10&#x27; },
-        { name: &#x27;CLST&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;CLT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;COT&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;CST&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;CST&#x27;, value: &#x27;-6&#x27; },
-        { name: &#x27;CST&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;CVT&#x27;, value: &#x27;-1&#x27; },
-        { name: &#x27;CXT&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;ChST&#x27;, value: &#x27;10&#x27; },
-        { name: &#x27;D&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;DAVT&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;E&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;EASST&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;EAST&#x27;, value: &#x27;-6&#x27; },
-        { name: &#x27;EAT&#x27;, value: &#x27;3&#x27; },
-        { name: &#x27;EAT&#x27;, value: &#x27;3&#x27; },
-        { name: &#x27;ECT&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;EDT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;EEST&#x27;, value: &#x27;3&#x27; },
-        { name: &#x27;EET&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;EGST&#x27;, value: &#x27;0&#x27; },
-        { name: &#x27;EGT&#x27;, value: &#x27;-1&#x27; },
-        { name: &#x27;EST&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;ET&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;F&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;FJST&#x27;, value: &#x27;13&#x27; },
-        { name: &#x27;FJT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;FKST&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;FKT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;FNT&#x27;, value: &#x27;-2&#x27; },
-        { name: &#x27;G&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;GALT&#x27;, value: &#x27;-6&#x27; },
-        { name: &#x27;GAMT&#x27;, value: &#x27;-9&#x27; },
-        { name: &#x27;GET&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;GFT&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;GILT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;GMT&#x27;, value: &#x27;0&#x27; },
-        { name: &#x27;GST&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;GYT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;H&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;HAA&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;HAC&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;HADT&#x27;, value: &#x27;-9&#x27; },
-        { name: &#x27;HAE&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;HAP&#x27;, value: &#x27;-7&#x27; },
-        { name: &#x27;HAR&#x27;, value: &#x27;-6&#x27; },
-        { name: &#x27;HAST&#x27;, value: &#x27;-10&#x27; },
-        { name: &#x27;HAT&#x27;, value: &#x27;-2:30&#x27; },
-        { name: &#x27;HAY&#x27;, value: &#x27;-8&#x27; },
-        { name: &#x27;HKT&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;HLV&#x27;, value: &#x27;-4:30&#x27; },
-        { name: &#x27;HNA&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;HNC&#x27;, value: &#x27;-6&#x27; },
-        { name: &#x27;HNE&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;HNP&#x27;, value: &#x27;-8&#x27; },
-        { name: &#x27;HNR&#x27;, value: &#x27;-7&#x27; },
-        { name: &#x27;HNT&#x27;, value: &#x27;-3:30&#x27; },
-        { name: &#x27;HNY&#x27;, value: &#x27;-9&#x27; },
-        { name: &#x27;HOVT&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;I&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;ICT&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;IDT&#x27;, value: &#x27;3&#x27; },
-        { name: &#x27;IOT&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;IRDT&#x27;, value: &#x27;4:30&#x27; },
-        { name: &#x27;IRKST&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;IRKT&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;IRST&#x27;, value: &#x27;3:30&#x27; },
-        { name: &#x27;IST&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;IST&#x27;, value: &#x27;5:30&#x27; },
-        { name: &#x27;IST&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;JST&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;K&#x27;, value: &#x27;10&#x27; },
-        { name: &#x27;KGT&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;KRAST&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;KRAT&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;KST&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;KUYT&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;L&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;LHDT&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;LHST&#x27;, value: &#x27;10:30&#x27; },
-        { name: &#x27;LINT&#x27;, value: &#x27;14&#x27; },
-        { name: &#x27;M&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;MAGST&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;MAGT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;MART&#x27;, value: &#x27;-9:30&#x27; },
-        { name: &#x27;MAWT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;MDT&#x27;, value: &#x27;-6&#x27; },
-        { name: &#x27;MESZ&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;MEZ&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;MHT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;MMT&#x27;, value: &#x27;6:30&#x27; },
-        { name: &#x27;MSD&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;MSK&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;MST&#x27;, value: &#x27;-7&#x27; },
-        { name: &#x27;MUT&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;MVT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;MYT&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;N&#x27;, value: &#x27;-1&#x27; },
-        { name: &#x27;NCT&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;NDT&#x27;, value: &#x27;-2:30&#x27; },
-        { name: &#x27;NFT&#x27;, value: &#x27;11:30&#x27; },
-        { name: &#x27;NOVST&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;NOVT&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;NPT&#x27;, value: &#x27;5:45&#x27; },
-        { name: &#x27;NST&#x27;, value: &#x27;-3:30&#x27; },
-        { name: &#x27;NUT&#x27;, value: &#x27;-11&#x27; },
-        { name: &#x27;NZDT&#x27;, value: &#x27;13&#x27; },
-        { name: &#x27;NZST&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;O&#x27;, value: &#x27;-2&#x27; },
-        { name: &#x27;OMSST&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;OMST&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;P&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;PDT&#x27;, value: &#x27;-7&#x27; },
-        { name: &#x27;PET&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;PETST&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;PETT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;PGT&#x27;, value: &#x27;10&#x27; },
-        { name: &#x27;PHOT&#x27;, value: &#x27;13&#x27; },
-        { name: &#x27;PHT&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;PKT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;PMDT&#x27;, value: &#x27;-2&#x27; },
-        { name: &#x27;PMST&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;PONT&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;PST&#x27;, value: &#x27;-8&#x27; },
-        { name: &#x27;PST&#x27;, value: &#x27;-8&#x27; },
-        { name: &#x27;PT&#x27;, value: &#x27;-8&#x27; },
-        { name: &#x27;PWT&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;PYST&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;PYT&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;Q&#x27;, value: &#x27;-4&#x27; },
-        { name: &#x27;R&#x27;, value: &#x27;-5&#x27; },
-        { name: &#x27;RET&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;S&#x27;, value: &#x27;-6&#x27; },
-        { name: &#x27;SAMT&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;SAST&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;SBT&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;SCT&#x27;, value: &#x27;4&#x27; },
-        { name: &#x27;SGT&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;SRT&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;SST&#x27;, value: &#x27;-11&#x27; },
-        { name: &#x27;T&#x27;, value: &#x27;-7&#x27; },
-        { name: &#x27;TAHT&#x27;, value: &#x27;-10&#x27; },
-        { name: &#x27;TFT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;TJT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;TKT&#x27;, value: &#x27;13&#x27; },
-        { name: &#x27;TLT&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;TMT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;TVT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;U&#x27;, value: &#x27;-8&#x27; },
-        { name: &#x27;ULAT&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;UTC&#x27;, value: &#x27;0&#x27; },
-        { name: &#x27;UYST&#x27;, value: &#x27;-2&#x27; },
-        { name: &#x27;UYT&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;UZT&#x27;, value: &#x27;5&#x27; },
-        { name: &#x27;V&#x27;, value: &#x27;-9&#x27; },
-        { name: &#x27;VET&#x27;, value: &#x27;-4:30&#x27; },
-        { name: &#x27;VLAST&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;VLAT&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;VUT&#x27;, value: &#x27;11&#x27; },
-        { name: &#x27;W&#x27;, value: &#x27;-10&#x27; },
-        { name: &#x27;WAST&#x27;, value: &#x27;2&#x27; },
-        { name: &#x27;WAT&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;WEST&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;WESZ&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;WET&#x27;, value: &#x27;0&#x27; },
-        { name: &#x27;WEZ&#x27;, value: &#x27;0&#x27; },
-        { name: &#x27;WFT&#x27;, value: &#x27;12&#x27; },
-        { name: &#x27;WGST&#x27;, value: &#x27;-2&#x27; },
-        { name: &#x27;WGT&#x27;, value: &#x27;-3&#x27; },
-        { name: &#x27;WIB&#x27;, value: &#x27;7&#x27; },
-        { name: &#x27;WIT&#x27;, value: &#x27;9&#x27; },
-        { name: &#x27;WITA&#x27;, value: &#x27;8&#x27; },
-        { name: &#x27;WST&#x27;, value: &#x27;1&#x27; },
-        { name: &#x27;WST&#x27;, value: &#x27;13&#x27; },
-        { name: &#x27;WT&#x27;, value: &#x27;0&#x27; },
-        { name: &#x27;X&#x27;, value: &#x27;-11&#x27; },
-        { name: &#x27;Y&#x27;, value: &#x27;-12&#x27; },
-        { name: &#x27;YAKST&#x27;, value: &#x27;10&#x27; },
-        { name: &#x27;YAKT&#x27;, value: &#x27;10&#x27; },
-        { name: &#x27;YAPT&#x27;, value: &#x27;10&#x27; },
-        { name: &#x27;YEKST&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;YEKT&#x27;, value: &#x27;6&#x27; },
-        { name: &#x27;Z&#x27;, value: &#x27;0&#x27; },
-    ]</code>
-                            </td>
-                        </tr>
-    
-    
-                </tbody>
-            </table>
-    </section>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>/Users/basters/dev/frontend/firestitch/date/src/app/constants/timezones.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TIMEZONES"></a>
+                        <span class="name">
+                            <b>
+                            TIMEZONES</b>
+                            <a href="#TIMEZONES"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { name: &#x27;A&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;ACDT&#x27;, value: &#x27;10:30&#x27; },
+    { name: &#x27;ACST&#x27;, value: &#x27;9:30&#x27; },
+    { name: &#x27;ADT&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;ADT&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;AEDT&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;AEST&#x27;, value: &#x27;10&#x27; },
+    { name: &#x27;AFT&#x27;, value: &#x27;4:30&#x27; },
+    { name: &#x27;AKDT&#x27;, value: &#x27;-8&#x27; },
+    { name: &#x27;AKST&#x27;, value: &#x27;-9&#x27; },
+    { name: &#x27;ALMT&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;AMST&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;AMST&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;AMT&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;AMT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;ANAST&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;ANAT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;AQTT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;ART&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;AST&#x27;, value: &#x27;3&#x27; },
+    { name: &#x27;AST&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;AWDT&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;AWST&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;AZOST&#x27;, value: &#x27;0&#x27; },
+    { name: &#x27;AZOT&#x27;, value: &#x27;-1&#x27; },
+    { name: &#x27;AZST&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;AZT&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;B&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;BNT&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;BOT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;BRST&#x27;, value: &#x27;-2&#x27; },
+    { name: &#x27;BRT&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;BST&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;BST&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;BTT&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;C&#x27;, value: &#x27;3&#x27; },
+    { name: &#x27;CAST&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;CAT&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;CCT&#x27;, value: &#x27;6:30&#x27; },
+    { name: &#x27;CDT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;CDT&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;CEST&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;CET&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;CHADT&#x27;, value: &#x27;13:45&#x27; },
+    { name: &#x27;CHAST&#x27;, value: &#x27;12:45&#x27; },
+    { name: &#x27;CKT&#x27;, value: &#x27;-10&#x27; },
+    { name: &#x27;CLST&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;CLT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;COT&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;CST&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;CST&#x27;, value: &#x27;-6&#x27; },
+    { name: &#x27;CST&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;CVT&#x27;, value: &#x27;-1&#x27; },
+    { name: &#x27;CXT&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;ChST&#x27;, value: &#x27;10&#x27; },
+    { name: &#x27;D&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;DAVT&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;E&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;EASST&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;EAST&#x27;, value: &#x27;-6&#x27; },
+    { name: &#x27;EAT&#x27;, value: &#x27;3&#x27; },
+    { name: &#x27;EAT&#x27;, value: &#x27;3&#x27; },
+    { name: &#x27;ECT&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;EDT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;EEST&#x27;, value: &#x27;3&#x27; },
+    { name: &#x27;EET&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;EGST&#x27;, value: &#x27;0&#x27; },
+    { name: &#x27;EGT&#x27;, value: &#x27;-1&#x27; },
+    { name: &#x27;EST&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;ET&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;F&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;FJST&#x27;, value: &#x27;13&#x27; },
+    { name: &#x27;FJT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;FKST&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;FKT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;FNT&#x27;, value: &#x27;-2&#x27; },
+    { name: &#x27;G&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;GALT&#x27;, value: &#x27;-6&#x27; },
+    { name: &#x27;GAMT&#x27;, value: &#x27;-9&#x27; },
+    { name: &#x27;GET&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;GFT&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;GILT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;GMT&#x27;, value: &#x27;0&#x27; },
+    { name: &#x27;GST&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;GYT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;H&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;HAA&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;HAC&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;HADT&#x27;, value: &#x27;-9&#x27; },
+    { name: &#x27;HAE&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;HAP&#x27;, value: &#x27;-7&#x27; },
+    { name: &#x27;HAR&#x27;, value: &#x27;-6&#x27; },
+    { name: &#x27;HAST&#x27;, value: &#x27;-10&#x27; },
+    { name: &#x27;HAT&#x27;, value: &#x27;-2:30&#x27; },
+    { name: &#x27;HAY&#x27;, value: &#x27;-8&#x27; },
+    { name: &#x27;HKT&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;HLV&#x27;, value: &#x27;-4:30&#x27; },
+    { name: &#x27;HNA&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;HNC&#x27;, value: &#x27;-6&#x27; },
+    { name: &#x27;HNE&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;HNP&#x27;, value: &#x27;-8&#x27; },
+    { name: &#x27;HNR&#x27;, value: &#x27;-7&#x27; },
+    { name: &#x27;HNT&#x27;, value: &#x27;-3:30&#x27; },
+    { name: &#x27;HNY&#x27;, value: &#x27;-9&#x27; },
+    { name: &#x27;HOVT&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;I&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;ICT&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;IDT&#x27;, value: &#x27;3&#x27; },
+    { name: &#x27;IOT&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;IRDT&#x27;, value: &#x27;4:30&#x27; },
+    { name: &#x27;IRKST&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;IRKT&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;IRST&#x27;, value: &#x27;3:30&#x27; },
+    { name: &#x27;IST&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;IST&#x27;, value: &#x27;5:30&#x27; },
+    { name: &#x27;IST&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;JST&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;K&#x27;, value: &#x27;10&#x27; },
+    { name: &#x27;KGT&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;KRAST&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;KRAT&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;KST&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;KUYT&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;L&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;LHDT&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;LHST&#x27;, value: &#x27;10:30&#x27; },
+    { name: &#x27;LINT&#x27;, value: &#x27;14&#x27; },
+    { name: &#x27;M&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;MAGST&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;MAGT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;MART&#x27;, value: &#x27;-9:30&#x27; },
+    { name: &#x27;MAWT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;MDT&#x27;, value: &#x27;-6&#x27; },
+    { name: &#x27;MESZ&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;MEZ&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;MHT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;MMT&#x27;, value: &#x27;6:30&#x27; },
+    { name: &#x27;MSD&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;MSK&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;MST&#x27;, value: &#x27;-7&#x27; },
+    { name: &#x27;MUT&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;MVT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;MYT&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;N&#x27;, value: &#x27;-1&#x27; },
+    { name: &#x27;NCT&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;NDT&#x27;, value: &#x27;-2:30&#x27; },
+    { name: &#x27;NFT&#x27;, value: &#x27;11:30&#x27; },
+    { name: &#x27;NOVST&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;NOVT&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;NPT&#x27;, value: &#x27;5:45&#x27; },
+    { name: &#x27;NST&#x27;, value: &#x27;-3:30&#x27; },
+    { name: &#x27;NUT&#x27;, value: &#x27;-11&#x27; },
+    { name: &#x27;NZDT&#x27;, value: &#x27;13&#x27; },
+    { name: &#x27;NZST&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;O&#x27;, value: &#x27;-2&#x27; },
+    { name: &#x27;OMSST&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;OMST&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;P&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;PDT&#x27;, value: &#x27;-7&#x27; },
+    { name: &#x27;PET&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;PETST&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;PETT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;PGT&#x27;, value: &#x27;10&#x27; },
+    { name: &#x27;PHOT&#x27;, value: &#x27;13&#x27; },
+    { name: &#x27;PHT&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;PKT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;PMDT&#x27;, value: &#x27;-2&#x27; },
+    { name: &#x27;PMST&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;PONT&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;PST&#x27;, value: &#x27;-8&#x27; },
+    { name: &#x27;PST&#x27;, value: &#x27;-8&#x27; },
+    { name: &#x27;PT&#x27;, value: &#x27;-8&#x27; },
+    { name: &#x27;PWT&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;PYST&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;PYT&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;Q&#x27;, value: &#x27;-4&#x27; },
+    { name: &#x27;R&#x27;, value: &#x27;-5&#x27; },
+    { name: &#x27;RET&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;S&#x27;, value: &#x27;-6&#x27; },
+    { name: &#x27;SAMT&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;SAST&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;SBT&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;SCT&#x27;, value: &#x27;4&#x27; },
+    { name: &#x27;SGT&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;SRT&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;SST&#x27;, value: &#x27;-11&#x27; },
+    { name: &#x27;T&#x27;, value: &#x27;-7&#x27; },
+    { name: &#x27;TAHT&#x27;, value: &#x27;-10&#x27; },
+    { name: &#x27;TFT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;TJT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;TKT&#x27;, value: &#x27;13&#x27; },
+    { name: &#x27;TLT&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;TMT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;TVT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;U&#x27;, value: &#x27;-8&#x27; },
+    { name: &#x27;ULAT&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;UTC&#x27;, value: &#x27;0&#x27; },
+    { name: &#x27;UYST&#x27;, value: &#x27;-2&#x27; },
+    { name: &#x27;UYT&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;UZT&#x27;, value: &#x27;5&#x27; },
+    { name: &#x27;V&#x27;, value: &#x27;-9&#x27; },
+    { name: &#x27;VET&#x27;, value: &#x27;-4:30&#x27; },
+    { name: &#x27;VLAST&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;VLAT&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;VUT&#x27;, value: &#x27;11&#x27; },
+    { name: &#x27;W&#x27;, value: &#x27;-10&#x27; },
+    { name: &#x27;WAST&#x27;, value: &#x27;2&#x27; },
+    { name: &#x27;WAT&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;WEST&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;WESZ&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;WET&#x27;, value: &#x27;0&#x27; },
+    { name: &#x27;WEZ&#x27;, value: &#x27;0&#x27; },
+    { name: &#x27;WFT&#x27;, value: &#x27;12&#x27; },
+    { name: &#x27;WGST&#x27;, value: &#x27;-2&#x27; },
+    { name: &#x27;WGT&#x27;, value: &#x27;-3&#x27; },
+    { name: &#x27;WIB&#x27;, value: &#x27;7&#x27; },
+    { name: &#x27;WIT&#x27;, value: &#x27;9&#x27; },
+    { name: &#x27;WITA&#x27;, value: &#x27;8&#x27; },
+    { name: &#x27;WST&#x27;, value: &#x27;1&#x27; },
+    { name: &#x27;WST&#x27;, value: &#x27;13&#x27; },
+    { name: &#x27;WT&#x27;, value: &#x27;0&#x27; },
+    { name: &#x27;X&#x27;, value: &#x27;-11&#x27; },
+    { name: &#x27;Y&#x27;, value: &#x27;-12&#x27; },
+    { name: &#x27;YAKST&#x27;, value: &#x27;10&#x27; },
+    { name: &#x27;YAKT&#x27;, value: &#x27;10&#x27; },
+    { name: &#x27;YAPT&#x27;, value: &#x27;10&#x27; },
+    { name: &#x27;YEKST&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;YEKT&#x27;, value: &#x27;6&#x27; },
+    { name: &#x27;Z&#x27;, value: &#x27;0&#x27; },
+]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -606,8 +592,21 @@
     </div>
 </div>
 </div>
+               <!-- END CONTENT -->
            </div>
        </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -618,17 +617,16 @@
 
        <script src="../js/compodoc.js"></script>
 
-       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
-
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
        <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
        <script src="../js/libs/prism.js"></script>
        <script src="../js/sourceCode.js"></script>
-       <script src="../js/search/search_index.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
 
 
     </body>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { duration } from '../../../../src/functions/duration';
+import { duration } from '@firestitch/date';
 
 
 @Component({

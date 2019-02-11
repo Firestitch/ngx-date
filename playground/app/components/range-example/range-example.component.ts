@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { range } from './../../../../src';
+import * as moment from 'moment';
 
-import * as moment from 'moment-timezone';
+import { range } from '@firestitch/date';
 
 
 @Component({
