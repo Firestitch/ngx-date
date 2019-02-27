@@ -12,9 +12,9 @@ export function parse(value: string): Observable<Object> {
 
   value = value
     .trim()
-    .replace(/(\d+)\s+/g,'$1')
-    .replace(/\s+/,' ')
-    .replace(/^\./,'0.');
+    .replace(/(\d+)\s+/g, '$1')
+    .replace(/\s+/, ' ')
+    .replace(/^\./, '0.');
 
   value.split(' ').forEach((chunk) => {
 

@@ -6,3 +6,5 @@ export * from './range';
 export * from './granularduration';
 export * from './get-format-string';
 export * from './parse';
+export * from './simple-format';
+export * from './utc';
