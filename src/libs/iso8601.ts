@@ -1,10 +1,10 @@
-import * as moment_ from 'moment';
-const moment = moment_;
+import { format } from 'date-fns';
+
 
 export function iso8601(date) {
     if (!date) {
         return '';
     }
 
-    return moment(date).format();
+    return format(date, 'yyyy-MM-ddTHH:mm:ssxxxxx');
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import * as moment from 'moment';
 
 import { range } from '@firestitch/date';
+import { addDays, addMonths, addYears, parse } from 'date-fns';
 
 
 @Component({
@@ -10,47 +10,70 @@ import { range } from '@firestitch/date';
 })
 export class RangeExampleComponent {
 
+  public currentDate = new Date();
+  public formatted = `${this.currentDate.getDate()}/${this.currentDate.getMonth() + 1}/${this.currentDate.getFullYear()}`;
+
   public examples = [
     // DATE
     {
       format: 'date',
       context: 'Same date/time',
-      result: range(moment(), moment(), 'date'),
+      result: range(new Date(), new Date(), 'date'),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
       codeService: "range(range.start, range.end, 'date')"
     },
     {
       format: 'date',
       context: 'Same am/pm',
-      result: range(moment('10:00 AM', 'hh:mm A'), moment('11:00 AM', 'hh:mm A'), 'date'),
+      result: range(
+        parse(this.formatted + ' 10:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        'date'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
       codeService: "range(range.start, range.end, 'date')"
     },
     {
       format: 'date',
       context: 'Diff am/pm',
-      result: range(moment('11:00 AM', 'hh:mm A'), moment('01:00 PM', 'hh:mm A'), 'date'),
+      result: range(
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 01:00 PM', 'dd/M/yyyy hh:mm a', new Date()),
+        'date'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
       codeService: "range(range.start, range.end, 'date')"
     },
     {
       format: 'date',
       context: 'Same month',
-      result: range(moment(), moment().add(1, 'days'), 'date'),
+      result: range(
+        new Date(),
+        addDays(new Date(), 1),
+        'date'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
       codeService: "range(range.start, range.end, 'date')"
     },
     {
       format: 'date',
       context: 'Diff month',
-      result: range(moment(), moment().add(1, 'months'), 'date'),
+      result: range(
+        new Date(),
+        addMonths(new Date(), 1),
+        'date'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
       codeService: "range(range.start, range.end, 'date')"
     },
     {
       format: 'date',
       context: 'Diff year',
-      result: range(moment(), moment().add(1, 'year'), 'date'),
+      result: range(
+        new Date(),
+        addYears(new Date(), 1),
+        'date'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
       codeService: "range(range.start, range.end, 'date')"
     },
@@ -58,42 +81,66 @@ export class RangeExampleComponent {
     {
       format: 'date-time',
       context: 'Same date/time',
-      result: range(moment(), moment(), 'date-time'),
+      result: range(
+        new Date(),
+        new Date(),
+        'date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
       codeService: "range(range.start, range.end, 'date-time')"
     },
     {
       format: 'date-time',
       context: 'Same am/pm',
-      result: range(moment('10:00 AM', 'hh:mm A'), moment('11:00 AM', 'hh:mm A'), 'date-time'),
+      result: range(
+        parse(this.formatted + ' 10:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        'date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
       codeService: "range(range.start, range.end, 'date-time')"
     },
     {
       format: 'date-time',
       context: 'Diff am/pm',
-      result: range(moment('11:00 AM', 'hh:mm A'), moment('01:00 PM', 'hh:mm A'), 'date-time'),
+      result: range(
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 01:00 PM', 'dd/M/yyyy hh:mm a', new Date()),
+        'date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
       codeService: "range(range.start, range.end, 'date-time')"
     },
     {
       format: 'date-time',
       context: 'Same month',
-      result: range(moment(), moment().add(1, 'days'), 'date-time'),
+      result: range(
+        new Date(),
+        addDays(new Date(), 1),
+        'date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
       codeService: "range(range.start, range.end, 'date-time')"
     },
     {
       format: 'date-time',
       context: 'Diff month',
-      result: range(moment(), moment().add(1, 'months'), 'date-time'),
+      result: range(
+        new Date(),
+        addMonths(new Date(), 1),
+        'date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange:' date-time'}}",
       codeService: "range(range.start, range.end, 'date-time')"
     },
     {
       format: 'date-time',
       context: 'Diff year',
-      result: range(moment(), moment().add(1, 'year'), 'date-time'),
+      result: range(
+        new Date(),
+        addYears(new Date(), 1),
+        'date-time',
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
       codeService: "range(range.start, range.end, 'date-time')"
     },
@@ -101,42 +148,62 @@ export class RangeExampleComponent {
     {
       format: 'day-date-time',
       context: 'Same date/time',
-      result: range(moment(), moment(), 'day-date-time'),
+      result: range(new Date(), new Date(), 'day-date-time'),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
       codeService: "range(range.start, range.end, 'day-date-time')"
     },
     {
       format: 'day-date-time',
       context: 'Same am/pm',
-      result: range(moment('10:00 AM', 'hh:mm A'), moment('11:00 AM', 'hh:mm A'), 'day-date-time'),
+      result: range(
+        parse(this.formatted + ' 10:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        'day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
       codeService: "range(range.start, range.end, 'day-date-time')"
     },
     {
       format: 'day-date-time',
       context: 'Diff am/pm',
-      result: range(moment('11:00 AM', 'hh:mm A'), moment('01:00 PM', 'hh:mm A'), 'day-date-time'),
+      result: range(
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 01:00 PM', 'dd/M/yyyy hh:mm a', new Date()),
+        'day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
       codeService: "range(range.start, range.end, 'day-date-time')"
     },
     {
       format: 'day-date-time',
       context: 'Same month',
-      result: range(moment(), moment().add(1, 'days'), 'day-date-time'),
+      result: range(
+        new Date(),
+        addDays(new Date, 1),
+        'day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
       codeService: "range(range.start, range.end, 'day-date-time')"
     },
     {
       format: 'day-date-time',
       context: 'Diff month',
-      result: range(moment(), moment().add(1, 'months'), 'day-date-time'),
+      result: range(
+        new Date(),
+        addMonths(new Date(), 1),
+        'day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange:' day-date-time'}}",
       codeService: "range(range.start, range.end, 'day-date-time')"
     },
     {
       format: 'day-date-time',
       context: 'Diff year',
-      result: range(moment(), moment().add(1, 'year'), 'day-date-time'),
+      result: range(
+        new Date(),
+        addYears(new Date(), 1),
+        'day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
       codeService: "range(range.start, range.end, 'day-date-time')"
     },
@@ -144,42 +211,68 @@ export class RangeExampleComponent {
     {
       format: 'full-day-date-time',
       context: 'Same date/time',
-      result: range(moment(), moment(), 'full-day-date-time'),
+      result: range(
+        new Date(),
+        new Date(),
+        'full-day-date-time'
+      ),
+
       codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
       codeService: "range(range.start, range.end, 'full-day-date-time')"
-    },
+    }
+    ,
     {
       format: 'full-day-date-time',
       context: 'Same am/pm',
-      result: range(moment('10:00 AM', 'hh:mm A'), moment('11:00 AM', 'hh:mm A'), 'full-day-date-time'),
+      result: range(
+        parse(this.formatted + ' 10:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        'full-day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
       codeService: "range(range.start, range.end, 'full-day-date-time')"
     },
     {
       format: 'full-day-date-time',
       context: 'Diff am/pm',
-      result: range(moment('11:00 AM', 'hh:mm A'), moment('01:00 PM', 'hh:mm A'), 'full-day-date-time'),
+      result: range(
+        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
+        parse(this.formatted + ' 01:00 PM', 'dd/M/yyyy hh:mm a', new Date()),
+        'full-day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
       codeService: "range(range.start, range.end, 'full-day-date-time')"
     },
     {
       format: 'full-day-date-time',
       context: 'Same month',
-      result: range(moment(), moment().add(1, 'days'), 'full-day-date-time'),
+      result: range(
+        new Date(),
+        addDays(new Date(), 1),
+        'full-day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
       codeService: "range(range.start, range.end, 'full-day-date-time')"
     },
     {
       format: 'full-day-date-time',
       context: 'Diff month',
-      result: range(moment(), moment().add(1, 'months'), 'full-day-date-time'),
+      result: range(
+        new Date(),
+        addMonths(new Date(), 1),
+        'full-day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange:' full-day-date-time'}}",
       codeService: "range(range.start, range.end, 'full-day-date-time')"
     },
     {
       format: 'full-day-date-time',
       context: 'Diff year',
-      result: range(moment(), moment().add(1, 'year'), 'full-day-date-time'),
+      result: range(
+        new Date(),
+        addYears(new Date(), 1),
+        'full-day-date-time'
+      ),
       codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
       codeService: "range(range.start, range.end, 'full-day-date-time')"
     }

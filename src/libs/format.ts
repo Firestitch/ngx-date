@@ -1,11 +1,9 @@
-import * as moment_ from 'moment';
-const moment = moment_;
+import { format as fnsFormat } from 'date-fns';
+import { getFormatString } from './get-format-string';
 
-import { toMomentFormat } from './tomomentformat';
+export function format(date, formatTo?: string): string {
 
-export function format(date, format?: string): string {
+    const outputFormat = getFormatString(date, formatTo);
 
-    const outputFormat = toMomentFormat(date, format);
-
-    return moment(date).format(outputFormat);
+    return fnsFormat(date, outputFormat);
 }

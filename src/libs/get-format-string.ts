@@ -1,9 +1,6 @@
-import * as moment_ from 'moment-timezone';
-const moment = moment_;
+export function getFormatString(date, formatTo = 'date') {
 
-export function toMomentFormat(date, format = 'date') {
-
-    const formatParts = format.split('-');
+    const formatParts = formatTo.split('-');
 
     let dateFormat = '';
     let timeFormat = '';
@@ -13,7 +10,7 @@ export function toMomentFormat(date, format = 'date') {
 
       // day of week
       if (formatParts.indexOf('day') != -1) {
-        dayofweekFormat = formatParts.indexOf('full') != -1 ? 'dddd' : 'ddd';
+        dayofweekFormat = formatParts.indexOf('full') != -1 ? 'EEEE' : 'EEE';
       } else {
         dayofweekFormat = '';
       }
@@ -25,11 +22,11 @@ export function toMomentFormat(date, format = 'date') {
       if (formatParts.indexOf('dayless') != -1) {
         dayFormat = '';
       } else {
-        dayFormat = formatParts.indexOf('ordinal') != -1 ? ' Do' : ' D';
+        dayFormat = formatParts.indexOf('ordinal') != -1 ? ' do' : ' d';
       }
 
       // year
-      yearFormat = formatParts.indexOf('yearless') != -1 ? '' : ' YYYY';
+      yearFormat = formatParts.indexOf('yearless') != -1 ? '' : ' yyyy';
       if (dayFormat && yearFormat) {
         yearFormat = `,${yearFormat}`;
       }
@@ -38,15 +35,15 @@ export function toMomentFormat(date, format = 'date') {
     }
 
     if (formatParts.indexOf('time') != -1) {
-        timeFormat = formatParts.indexOf('24') != -1 ? 'HH:mm' : 'h:mma';
+        timeFormat = formatParts.indexOf('24') != -1 ? 'HH:mm' : 'h:mmaaa';
 
-        if (formatParts.indexOf('tz') != -1) {
-          timeFormat += ' [' + moment.tz(date, moment.tz.guess()).format('z') + ']';
-        }
+        // if (formatParts.indexOf('tz') != -1) {
+        //   timeFormat += ' [' + moment.tz(date, moment.tz.guess()).format('z') + ']';
+        // }
 
-        if (formatParts.indexOf('gmt') != -1) {
+        if (formatParts.indexOf('tz') != -1 || formatParts.indexOf('gmt') != -1) {
             const offset = new Date().getTimezoneOffset() / 60;
-            timeFormat += ' [GMT' + (offset > -.1 ? '+' : '') + offset + ']';
+            timeFormat += ' \'[GMT' + (offset > -.1 ? '+' : '') + offset + ']\'';
         }
     }
 

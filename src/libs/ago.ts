@@ -1,9 +1,9 @@
-import * as moment_ from 'moment';
-const moment = moment_;
-
 import { round } from 'lodash-es';
+import { differenceInMinutes, differenceInSeconds } from 'date-fns';
+
 import { format } from './format';
 import { duration } from './duration';
+
 
 export function ago(date, frmt = 'date') {
 
@@ -11,11 +11,11 @@ export function ago(date, frmt = 'date') {
       return '';
     }
 
-    const minDiff = round(moment().diff(date, 'minute', true), 0);
-    const hourDiff = round(moment().diff(date, 'hour', true), 0);
+    const minDiff = round(differenceInSeconds(new Date(), date) / 60, 0);
+    const hourDiff = round(differenceInMinutes(new Date(), date) / 60, 0);
 
     if (Math.abs(hourDiff) >= 24) {
-      if (moment(date).year() == moment().year()) {
+      if (date.getFullYear() == new Date().getFullYear()) {
         return format(date, 'date-yearless');
       } else {
         return format(date, frmt);

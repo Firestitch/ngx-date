@@ -4,5 +4,5 @@ export * from './duration';
 export * from './format';
 export * from './range';
 export * from './granularduration';
-export * from './tomomentformat';
+export * from './get-format-string';
 export * from './parse';

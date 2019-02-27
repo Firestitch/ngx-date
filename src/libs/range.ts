@@ -1,61 +1,60 @@
-import * as moment_ from 'moment';
-const moment = moment_;
+import { format as fnsFormat, differenceInMilliseconds } from 'date-fns';
+import { getFormatString } from './get-format-string';
 
-import { toMomentFormat } from './tomomentformat';
 
-export function range(from, to, format = 'date') {
+export function range(from: Date, to: Date, format = 'date') {
 
     const formatParts = format.split('-');
 
-    let fromFormat = toMomentFormat(from, format);
-    let toFormat = toMomentFormat(to, format);
+    let fromFormat = getFormatString(from, format);
+    let toFormat = getFormatString(to, format);
 
-    from = moment(from);
-    to = moment(to);
+    from = new Date(from);
+    to = new Date(to);
 
-    if (from.diff(to) == 0) {
-      return from.format(fromFormat);
+    if (differenceInMilliseconds(from, to) == 0) {
+      return fnsFormat(from, fromFormat);
     }
 
     if (formatParts.indexOf('time') !== -1) {
       // date and time
-      if (from.year() == to.year()) {
+      if (from.getFullYear() == to.getFullYear()) {
         toFormat = toFormat
-          .replace(' YYYY', '')
+          .replace(' yyyy', '')
           .replace(',', '');
 
-        if (from.month() == to.month()) {
-          if (from.date() == to.date()) {
+        if (from.getMonth() == to.getMonth()) {
+          if (from.getDate() == to.getDate()) {
             toFormat = toFormat
                 .replace('MMMM', '')
                 .replace('MMM', '')
-                .replace('dddd', '')
-                .replace('ddd', '')
-                .replace(' Do', '')
-                .replace(' D', '')
+                .replace('EEEE', '')
+                .replace('EEE', '')
+                .replace(' do', '')
+                .replace(' d', '')
                 .trim();
           } else {
             // add comma after day
             toFormat = toFormat
-                .replace(' Do', ' Do,')
-                .replace(' D', ' D,');
+                .replace(' do', ' do,')
+                .replace(' d', ' d,');
           }
         } else {
           // add comma after day
           toFormat = toFormat
-              .replace(' Do', ' Do,')
-              .replace(' D', ' D,');
+              .replace(' do', ' do,')
+              .replace(' d', ' d,');
         }
       }
     } else {
       // date only
-      if (from.year() == to.year()) {
+      if (from.getFullYear() == to.getFullYear()) {
         fromFormat = fromFormat
-          .replace(' YYYY', '')
+          .replace(' yyyy', '')
           .replace(',', '')
           .trim();
 
-        if (from.month() == to.month()) {
+        if (from.getMonth() == to.getMonth()) {
 
           if (formatParts.indexOf('day') == -1) {
             toFormat = toFormat
@@ -64,9 +63,9 @@ export function range(from, to, format = 'date') {
               .trim();
           }
 
-          if (from.date() == to.date()) {
+          if (from.getDate() == to.getDate()) {
             if (formatParts.indexOf('time') == -1) {
-              fromFormat = toMomentFormat(from, format);
+              fromFormat = getFormatString(from, format);
               toFormat = '';
             }
           }
@@ -74,9 +73,9 @@ export function range(from, to, format = 'date') {
       }
     }
 
-    let output = from.format(fromFormat);
+    let output = fnsFormat(from, fromFormat);
     if (toFormat) {
-      output += ' - ' + to.format(toFormat);
+      output += ' - ' + fnsFormat(to, toFormat);
     }
 
     return output;

@@ -1,8 +1,5 @@
 import { Component, Input, ElementRef, OnInit, OnChanges } from '@angular/core';
 
-import * as moment_ from 'moment';
-const moment = moment_;
-
 import { ago, format as fsFormat } from '../../../libs';
 
 
@@ -34,8 +31,8 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
     this.formattedDate = ago(this.date, this.format);
     let tooltipFormat = 'date-time';
-
-    if (moment().format('YYYY') === moment(this.date).format('YYYY')) {
+    debugger;
+    if (new Date().getFullYear() === new Date(this.date).getFullYear()) {
       tooltipFormat = 'date-time-yearless';
     }
 
