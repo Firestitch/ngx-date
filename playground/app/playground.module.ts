@@ -1,5 +1,5 @@
 // Angular
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,7 @@ import { FormatExampleComponent } from './components/format-example/format-examp
 import { AgoExampleComponent } from './components/ago-example/ago-example.component';
 import { DurationExampleComponent } from './components/duration-example/duration-example.component';
 import { RangeExampleComponent } from './components/range-example/range-example.component';
+import { SafeHtmlPipe } from './components/safe-html/safe-html.pipe';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { RangeExampleComponent } from './components/range-example/range-example.
   ],
   declarations: [
     AppComponent,
-
+    SafeHtmlPipe,
     FormatExampleComponent,
     AgoExampleComponent,
     DurationExampleComponent,
@@ -48,6 +49,7 @@ import { RangeExampleComponent } from './components/range-example/range-example.
   ],
   providers: [
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PlaygroundModule {
 }

@@ -31,12 +31,13 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
     this.formattedDate = ago(this.date, this.format);
     let tooltipFormat = 'date-time';
-    debugger;
     if (new Date().getFullYear() === new Date(this.date).getFullYear()) {
       tooltipFormat = 'date-time-yearless';
     }
 
-    this.tooltip = this.showTime ? fsFormat(this.date, tooltipFormat) : null;
-  }
 
+
+
+    this.tooltip = fsFormat(this.date, tooltipFormat) + ' · ' + ago(this.date);
+  }
 }
