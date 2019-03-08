@@ -1,13 +1,13 @@
 import { round, isNumber } from 'lodash-es';
 import { SECONDS } from '../app/constants/seconds';
-import { parse } from './parse';
+import { parseDuration } from './parse-duration';
 
 export function duration(time: any, options?) {
 
     if (!isNumber(time)) {
       let parsedResult;
 
-      parse(time).subscribe((result: any) => {
+      parseDuration(time).subscribe((result: any) => {
         parsedResult = result;
       });
 

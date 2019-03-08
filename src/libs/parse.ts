@@ -1,40 +1,11 @@
-import { Observable, of } from 'rxjs';
-import { SECONDS } from '../app/constants/seconds';
+import { parseISO, isValid } from 'date-fns';
 
 
-export function parse(value: string): Observable<Object> {
+export function parse(date): Date {
 
-  let time = 0;
-
-  if (!value && typeof value !== 'string') {
-    return of({error: 'Invalid duration format'});
-  }
-
-  value = value
-    .trim()
-    .replace(/(\d+)\s+/g, '$1')
-    .replace(/\s+/, ' ')
-    .replace(/^\./, '0.');
-
-  value.split(' ').forEach((chunk) => {
-
-    const matches = chunk.match(/^(\d+\.?\d*)([YMdhms])$/);
-
-    if (!matches) {
-      return;
+    if (typeof date === 'string') {
+        date = parseISO(date);
     }
 
-    const factor = {
-      Y: SECONDS.YEAR,
-      M: SECONDS.MONTH,
-      d: SECONDS.DAY,
-      h: SECONDS.HOUR,
-      m: SECONDS.MINUTE,
-      s: 1
-    }[matches[2]];
-
-    time += Math.round(+matches[1]) * factor;
-  });
-
-  return of({time: time});
-}
+    return isValid(date) ? date : null;
+  }

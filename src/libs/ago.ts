@@ -3,10 +3,12 @@ import { differenceInMinutes, differenceInSeconds } from 'date-fns';
 
 import { format } from './format';
 import { duration } from './duration';
+import { parse } from './parse';
 
 
 export function ago(date, frmt = 'date') {
 
+    date = parse(date);
     if (!date) {
       return '';
     }
