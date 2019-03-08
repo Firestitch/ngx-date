@@ -1,7 +1,7 @@
 {
   "name": "@firestitch/date",
   "title": "Date (Date, Ago, Range)",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-date"
@@ -67,6 +67,7 @@
     "node": ">=6.0.0"
   },
   "peerDependencies": {
-    "lodash-es": ">=4.17.0"
+    "lodash-es": ">=4.17.0",
+    "date-fns": "^2.0.0-alpha.27"
   }
 }
