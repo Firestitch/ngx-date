@@ -53,3 +53,22 @@
     <td>{{ example.codeService }}</td>
   </tr>
 </table>
+
+<br>
+<h3>MaxOutputs</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Input</th>
+    <th>Output</th>
+    <th>Pipe</th>
+    <th>Function</th>
+  </tr>
+  </thead>
+  <tr *ngFor="let example of examplesWithMaxOutputs">
+    <td>{{ example.input }}</td>
+    <td>{{ example.result }}</td>
+    <td>{{ example.codePipe }}</td>
+    <td>{{ example.codeService }}</td>
+  </tr>
+</table>

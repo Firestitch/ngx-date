@@ -1,6 +1,7 @@
 import { Component, Input, ElementRef, OnInit, OnChanges } from '@angular/core';
 
-import { ago, format as fsFormat } from '../../../libs';
+import { ago, duration as fsDuration, format as fsFormat } from '../../../libs';
+import { differenceInSeconds } from 'date-fns';
 
 
 @Component({
@@ -18,7 +19,6 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
   constructor(public elementRef: ElementRef) { }
 
-  // Working for compiled component
   public ngOnInit() {
     this.updateFormatted();
   }
@@ -28,16 +28,56 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
   }
 
   private updateFormatted() {
-
     this.formattedDate = ago(this.date, this.format);
-    let tooltipFormat = 'date-time';
-    if (new Date().getFullYear() === new Date(this.date).getFullYear()) {
-      tooltipFormat = 'date-time-yearless';
+    const tooltipFormat = this.getTooltipFormat();
+    const tooltipAgo = this.getTooltipAgo();
+
+    this.tooltip = fsFormat(this.date, tooltipFormat) + ' · ' + tooltipAgo;
+  }
+
+  /**
+   * Setting format w/o year if year is the same
+   * @returns {string}
+   */
+  private getTooltipFormat(): string {
+    let format = 'date-time';
+    const todayYear = new Date().getFullYear();
+    const dateYear = new Date(this.date).getFullYear();
+
+    if (todayYear === dateYear) {
+      format = 'date-time-yearless';
     }
 
+    return format
+  }
 
+  /**
+   * Forming second part of the tooltip
+   * @returns {string}
+   */
+  private getTooltipAgo(): string {
+    let tooltip = 'now';
 
+    const dateDifference = differenceInSeconds(
+      new Date(),
+      this.date
+    );
 
-    this.tooltip = fsFormat(this.date, tooltipFormat) + ' · ' + ago(this.date);
+    const options = {
+      maxOutputs: 1,
+      suffix: true,
+      years: true,
+      months: true,
+      days: true,
+      hours: true,
+      minutes: true
+    };
+
+    // if difference more than 1 minute
+    if (dateDifference > 59 || dateDifference < 0) {
+      tooltip = fsDuration(dateDifference, options)
+    }
+
+    return tooltip;
   }
 }

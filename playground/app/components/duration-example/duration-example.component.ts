@@ -10,11 +10,13 @@ export class DurationExampleComponent {
   public examples: any[] = [];
   public examplesWithSuffix: any[] = [];
   public examplesNameBased: any[] = [];
+  public examplesWithMaxOutputs: any[] = [];
 
   constructor() {
     this.initExamples();
     this.initExamplesWithSuffix();
     this.initExamplesNameBased();
+    this.initExamplesWithMaxOutputs();
   }
 
   private initExamples() {
@@ -89,6 +91,23 @@ export class DurationExampleComponent {
         codeService: "duration(number, 'year-day-hour-minute')",
         result: duration(194013300, 'year-day-hour-minute' )
       }
+    ]
+  }
+
+  private initExamplesWithMaxOutputs() {
+    this.examplesWithMaxOutputs = [
+      {
+        input: 6000,
+        codePipe: '{{ number | fsDateDuration: {hours: true, minutes: true, seconds: true, maxOutputs: 10} }}',
+        codeService: 'duration(number, {hours: true, minutes: true, seconds: true, maxOutputs: 10})',
+        result: duration(6000, { hours: true, minutes: true, maxOutputs: 10 } )
+      },
+      {
+        input: 18940800,
+        codePipe: '{{ number | fsDateDuration: {months: true, days: true, hours: true, minutes: true, maxOutputs: 2} }}',
+        codeService: 'duration(number, {months: true, days: true, hours: true, minutes: true, maxOutputs: 2})',
+        result: duration(18940800, { months: true, days: true, hours: true, minutes: true, maxOutputs: 2 } )
+      },
     ]
   }
 }

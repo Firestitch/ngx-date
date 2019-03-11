@@ -8,7 +8,7 @@ import { duration } from '../../libs';
 })
 export class FsDateDurationPipe implements PipeTransform {
 
-  transform(value: any, fmt?: Object): String {
+  transform(value: any, fmt?: Object): string {
     return duration(value, fmt);
   }
 }

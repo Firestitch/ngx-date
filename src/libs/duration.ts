@@ -3,7 +3,6 @@ import { SECONDS } from '../app/constants/seconds';
 import { parseDuration } from './parse-duration';
 
 export function duration(time: any, options?) {
-
     if (!isNumber(time)) {
       let parsedResult;
 
@@ -195,6 +194,11 @@ export function duration(time: any, options?) {
           }
         }
       }
+    }
+
+    // to cut off output depends on maxOutput value
+    if (options.maxOutputs && options.maxOutputs < output.length) {
+      output = output.splice(0, options.maxOutputs);
     }
 
     // add suffix if required
