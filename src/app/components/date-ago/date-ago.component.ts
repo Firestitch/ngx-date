@@ -1,6 +1,6 @@
 import { Component, Input, ElementRef, OnInit, OnChanges } from '@angular/core';
 
-import { ago, duration as fsDuration, format as fsFormat } from '../../../libs';
+import { ago, duration as fsDuration, format as fsFormat, parse } from '../../../libs';
 import { differenceInSeconds } from 'date-fns';
 
 
@@ -58,10 +58,12 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
   private getTooltipAgo(): string {
     let tooltip = 'now';
 
-    const dateDifference = differenceInSeconds(
-      new Date(),
-      this.date
-    );
+    const date = parse(this.date);
+    if (!date) {
+      return '';
+    }
+
+    const dateDifference = differenceInSeconds(new Date(), date);
 
     const options = {
       maxOutputs: 1,

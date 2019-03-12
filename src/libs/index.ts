@@ -8,3 +8,4 @@ export * from './get-format-string';
 export * from './parse-duration';
 export * from './simple-format';
 export * from './utc';
+export * from './parse';
