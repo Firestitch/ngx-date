@@ -20,6 +20,7 @@ import { FormatExampleComponent } from './components/format-example/format-examp
 import { AgoExampleComponent } from './components/ago-example/ago-example.component';
 import { DurationExampleComponent } from './components/duration-example/duration-example.component';
 import { RangeExampleComponent } from './components/range-example/range-example.component';
+import { DateExampleComponent } from './components/date-example/date-example.component';
 import { SafeHtmlPipe } from './components/safe-html/safe-html.pipe';
 
 
@@ -45,7 +46,8 @@ import { SafeHtmlPipe } from './components/safe-html/safe-html.pipe';
     FormatExampleComponent,
     AgoExampleComponent,
     DurationExampleComponent,
-    RangeExampleComponent
+    RangeExampleComponent,
+    DateExampleComponent
   ],
   providers: [
   ],

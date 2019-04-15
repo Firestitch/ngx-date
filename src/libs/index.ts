@@ -9,3 +9,4 @@ export * from './parse-duration';
 export * from './simple-format';
 export * from './utc';
 export * from './parse';
+export * from './date';
