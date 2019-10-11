@@ -45,18 +45,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
                         </a>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
                                 <a href="modules/FsDateModule.html" data-type="entity-link">FsDateModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' : 'data-target="#xs-components-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' }>
+                                            'data-target="#components-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' : 'data-target="#xs-components-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' :
-                                            'id="xs-components-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' :
+                                            'id="xs-components-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' }>
                                             <li class="link">
                                                 <a href="components/FsDateAgoComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">FsDateAgoComponent</a>
@@ -65,13 +65,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' : 'data-target="#xs-pipes-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' }>
+                                            'data-target="#pipes-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' : 'data-target="#xs-pipes-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' :
-                                            'id="xs-pipes-links-module-FsDateModule-4431023a239e4d2841bd1fed2b0f89cb"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' :
+                                            'id="xs-pipes-links-module-FsDateModule-a20383a00f2cbb4cdad4fd7af48ef102"' }>
                                             <li class="link">
                                                 <a href="pipes/FsDateAgoPipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">FsDateAgoPipe</a>
@@ -104,7 +104,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span>Injectables</span>
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
-                            <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                            <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
                                     <a href="injectables/FsDateAgoFactory.html" data-type="entity-link">FsDateAgoFactory</a>
                                 </li>
@@ -117,7 +117,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span>Miscellaneous</span>
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
-                        <ul class="links collapse" ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
                             <li class="link">
                                 <a href="miscellaneous/functions.html" data-type="entity-link">Functions</a>
                             </li>

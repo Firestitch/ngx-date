@@ -1,4 +1,11 @@
-import { Component, Input, ElementRef, OnInit, OnChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  OnChanges,
+  OnInit
+} from '@angular/core';
 
 import { ago, duration as fsDuration, format as fsFormat, parse } from '../../../libs';
 import { differenceInSeconds } from 'date-fns';
@@ -6,7 +13,8 @@ import { differenceInSeconds } from 'date-fns';
 
 @Component({
   selector: 'fs-date-ago',
-  templateUrl: './date-ago.component.html'
+  templateUrl: './date-ago.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FsDateAgoComponent implements OnInit, OnChanges {
 
@@ -37,7 +45,6 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
   /**
    * Setting format w/o year if year is the same
-   * @returns {string}
    */
   private getTooltipFormat(): string {
     let format = 'date-time';
@@ -53,7 +60,6 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
   /**
    * Forming second part of the tooltip
-   * @returns {string}
    */
   private getTooltipAgo(): string {
     let tooltip = 'now';
