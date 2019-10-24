@@ -29,8 +29,8 @@ export function duration(time: any, options?) {
                     years: !!options.match(/year/) };
 
         let precision = 0;
-        for (const option of options) {
-            if (option) {
+        for (const option in options) {
+            if (options.hasOwnProperty(option) && option) {
                 precision++;
             }
         }
