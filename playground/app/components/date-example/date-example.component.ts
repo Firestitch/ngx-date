@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { date } from '@firestitch/date';
+import { date, parse, parseLocal, iso8601 } from '@firestitch/date';
 
 
 @Component({
@@ -16,19 +16,20 @@ export class DateExampleComponent {
   private initExamples() {
     this.examples = [
       {
-        input: '2019-04-15',
-        codeService: `date('2019-04-15')`,
-        result: date('2019-04-15')
+        code: `parse('2019-10-31T23:50:20+00:00')`,
+        result: parse('2019-10-31T23:50:20+00:00')
       },
       {
-        input: 'new Date()',
-        codeService: 'date(new Date())',
-        result: date(new Date())
+        code: `parse('INVALID')`,
+        result: String(parse('INVALID'))
       },
       {
-        input: 'not valid value',
-        codeService: `date('not valid value')`,
-        result: `${date('not valid value')}`
+        code: `parseLocal('2019-10-31T00:00:00+00:00')`,
+        result: parseLocal('2019-10-31T00:00:00+00:00')
+      },
+      {
+        code: `iso8601('2019-10-31T23:50:20+00:00')`,
+        result: iso8601(parse('2019-10-31T23:50:20+00:000'))
       }
     ]
   }

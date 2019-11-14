@@ -10,3 +10,4 @@ export * from './simple-format';
 export * from './utc';
 export * from './parse';
 export * from './date';
+export * from './parse-local';

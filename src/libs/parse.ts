@@ -8,4 +8,4 @@ export function parse(date): Date {
     }
 
     return isValid(date) ? date : null;
-  }
+}
