@@ -21,6 +21,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
   @Input() public date = null;
   @Input() public showTime = false;
   @Input() public format = 'date';
+  @Input() public showTooltip = true;
 
   public formattedDate: string = null;
   public tooltip: string = null;
@@ -37,10 +38,13 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
   private updateFormatted() {
     this.formattedDate = ago(this.date, this.format);
-    const tooltipFormat = this.getTooltipFormat();
-    const tooltipAgo = this.getTooltipAgo();
 
-    this.tooltip = fsFormat(this.date, tooltipFormat) + ' · ' + tooltipAgo;
+    if (this.showTooltip) {
+      const tooltipFormat = this.getTooltipFormat();
+      const tooltipAgo = this.getTooltipAgo();
+
+      this.tooltip = fsFormat(this.date, tooltipFormat) + ' · ' + tooltipAgo;
+    }
   }
 
   /**
