@@ -27,15 +27,6 @@ export function duration(time: any, options?) {
                     days: !!options.match(/day/),
                     months: !!options.match(/month/),
                     years: !!options.match(/year/) };
-
-        let precision = 0;
-        for (const option in options) {
-            if (options.hasOwnProperty(option) && option) {
-                precision++;
-            }
-        }
-
-        options.precision = precision;
     }
 
     options = Object.assign({}, options);
