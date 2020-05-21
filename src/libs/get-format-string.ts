@@ -1,54 +1,58 @@
 export function getFormatString(date, formatTo = 'date') {
 
-    const formatParts = formatTo.split('-');
+  const formatParts = formatTo.split('-');
 
-    let dateFormat = '';
-    let timeFormat = '';
+  const hasTime = formatParts.indexOf('time') != -1;
+  const hasDate = formatParts.indexOf('date') != -1;
+  const parts = [];
 
-    if (formatParts.indexOf('date') != -1) {
-      let dayofweekFormat, monthFormat, dayFormat, yearFormat;
+  if (hasDate || hasTime) {
+
+    if (hasDate) {
+      const hasYear = formatParts.indexOf('yearless') === -1;
 
       // day of week
       if (formatParts.indexOf('day') != -1) {
-        dayofweekFormat = formatParts.indexOf('full') != -1 ? 'EEEE' : 'EEE';
-      } else {
-        dayofweekFormat = '';
+        parts.push(formatParts.indexOf('full') != -1 ? 'EEEE' : 'EEE');
       }
 
       // month
-      monthFormat = formatParts.indexOf('full') != -1 ? ' MMMM' : ' MMM';
+      parts.push(formatParts.indexOf('full') != -1 ? 'MMMM' : 'MMM');
 
       // day
-      if (formatParts.indexOf('dayless') != -1) {
-        dayFormat = '';
-      } else {
-        dayFormat = formatParts.indexOf('ordinal') != -1 ? ' do' : ' d';
+      if (formatParts.indexOf('dayless') === -1) {
+
+        let day = formatParts.indexOf('ordinal') != -1 ? 'do' : 'd';
+
+        if (hasYear) {
+          day += ',';
+        }
+
+        parts.push(day);
       }
 
       // year
-      yearFormat = formatParts.indexOf('yearless') != -1 ? '' : ' yyyy';
-      if (dayFormat && yearFormat) {
-        yearFormat = `,${yearFormat}`;
+      if (hasYear) {
+        parts.push('yyyy');
       }
-
-      dateFormat = dayofweekFormat + monthFormat + dayFormat + yearFormat;
     }
 
-    if (formatParts.indexOf('time') != -1) {
-        timeFormat = formatParts.indexOf('24') != -1 ? 'HH:mm' : 'h:mmaaa';
 
-        // if (formatParts.indexOf('tz') != -1) {
-        //   timeFormat += ' [' + moment.tz(date, moment.tz.guess()).format('z') + ']';
-        // }
+    if (hasTime) {
+      parts.push(formatParts.indexOf('24') != -1 ? 'HH:mm' : 'h:mm aaa');
 
-        if (formatParts.indexOf('tz') != -1 || formatParts.indexOf('gmt') != -1) {
-            const offset = new Date().getTimezoneOffset() / 60;
-            timeFormat += ' \'[GMT' + (offset > -.1 ? '+' : '') + offset + ']\'';
-        }
+      // if (formatParts.indexOf('tz') != -1) {
+      //   timeFormat += ' [' + moment.tz(date, moment.tz.guess()).format('z') + ']';
+      // }
+
+      if (formatParts.indexOf('tz') != -1 || formatParts.indexOf('gmt') != -1) {
+        parts.push('(\'GMT\'XXX\')\'');
+      }
     }
 
-    dateFormat = dateFormat.trim();
-    timeFormat = timeFormat.trim();
+  } else {
 
-    return dateFormat + (dateFormat && timeFormat ? ' ' : '') + timeFormat;
+    parts.push(formatTo);
   }
+    return parts.join(' ').trim();
+}

@@ -70,9 +70,9 @@ export class FormatExampleComponent {
       },
       {
         name: 'time-tz',
-        codePipe: '{{ date | fsDateFormat: \'time-tz\' }}',
-        codeService: 'format(date, \'time-tz\')',
-        result: format(new Date(), 'time-tz')
+        codePipe: '{{ date | fsDateFormat: \'date-time-tz\' }}',
+        codeService: 'format(date, \'date-time-tz\')',
+        result: format(new Date(), 'date-time-tz')
       },
       {
         name: 'time-gmt',
@@ -91,6 +91,12 @@ export class FormatExampleComponent {
         codePipe: '{{ date | fsDateFormat: \'full-date-time\' }}',
         codeService: 'format(date, \'full-date-time\')',
         result: format(new Date(), 'full-date-time')
+      },
+      {
+        name: 'full-date-time',
+        codePipe: '{{ date | fsDateFormat: \'yyyy-MM-dd HH:mm:ss.SSSxxx\' }}',
+        codeService: 'format(date, \'yyyy-MM-dd HH:mm:ss.SSSxxx\')',
+        result: format(new Date(), 'yyyy-MM-dd HH:mm:ss.SSSxxx')
       }
     ];
 }
