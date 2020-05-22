@@ -23,6 +23,8 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
   @Input() public format = 'date';
   @Input() public showTooltip = true;
 
+  @Input() public tooltipDateFormat: string = null;
+
   public formattedDate: string = null;
   public tooltip: string = null;
 
@@ -51,6 +53,11 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
    * Setting format w/o year if year is the same
    */
   private getTooltipFormat(): string {
+
+    if (this.tooltipDateFormat) {
+      return this.tooltipDateFormat;
+    }
+
     let format = 'date-time';
     const todayYear = new Date().getFullYear();
     const dateYear = new Date(this.date).getFullYear();
