@@ -1,16 +1,29 @@
 import { format as fnsFormat, differenceInMilliseconds } from 'date-fns';
 import { getFormatString } from './get-format-string';
+import { parse } from './parse';
 
 
-export function range(from: Date, to: Date, format = 'date') {
+export function range(from: Date, to: Date, format = 'date'): string {
+
+    from = parse(from);
+    to = parse(to);
+
+    if (!to && !from) {
+      return '';
+    }
+
+    if (from && !to) {
+      to = from;
+    }
+
+    if (to && !from) {
+      from = to;
+    }
 
     const formatParts = format.split('-');
 
-    let fromFormat = getFormatString(from, format);
-    let toFormat = getFormatString(to, format);
-
-    from = new Date(from);
-    to = new Date(to);
+    let fromFormat = getFormatString(format);
+    let toFormat = getFormatString(format);
 
     if (differenceInMilliseconds(from, to) == 0) {
       return fnsFormat(from, fromFormat);
@@ -65,7 +78,7 @@ export function range(from: Date, to: Date, format = 'date') {
 
           if (from.getDate() == to.getDate()) {
             if (formatParts.indexOf('time') == -1) {
-              fromFormat = getFormatString(from, format);
+              fromFormat = getFormatString(format);
               toFormat = '';
             }
           }

@@ -1,4 +1,4 @@
-export function getFormatString(date, formatTo = 'date') {
+export function getFormatString(formatTo = 'date') {
 
   const formatParts = formatTo.split('-');
 
