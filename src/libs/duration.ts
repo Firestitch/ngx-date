@@ -208,10 +208,8 @@ function numberFormat(number, options: any = {}) {
   const pad = options.pad === undefined ? false : options.pad;
   const thousandsSeperator = options.thousandsSeperator === undefined ? false : options.thousandsSeperator;
 
-  console.log(number, precision, pad, thousandsSeperator);
-
   if(precision >= 0 && pad && thousandsSeperator) {
-    return number.toLocaleString('en-US', {minimumFractionDigits: precision})
+    return round(number, precision).toLocaleString('en-US', {minimumFractionDigits: precision})
   }
 
   if(precision >= 0 && pad) {
@@ -226,5 +224,5 @@ function numberFormat(number, options: any = {}) {
     return number.toLocaleString('en-US');
   }
 
-
+  return number;
 }

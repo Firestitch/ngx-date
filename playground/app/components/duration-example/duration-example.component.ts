@@ -116,26 +116,46 @@ export class DurationExampleComponent {
 
 
   private initExamplesWithPrecision() {
-    const num: number = 60 * 60 * 1000;
+    const num1: number = (60 * 60 * 1000);
+    const num2: number = (60 * 60 * 1000.123456);
     this.examplesWithPrecision = [
       {
-        input: num,
+        input: num1,
         codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2} }}',
         codeService: 'duration(number, {hours: true, precision: 2})',
-        result: duration(num, {hours: true, precision: 2})
+        result: duration(num1, {hours: true, precision: 2})
       },
       {
-        input: num,
+        input: num1,
         codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true} }}',
         codeService: 'duration(number, {hours: true, precision: 2, pad: true})',
-        result: duration(num, {hours: true, precision: 2, pad: true})
+        result: duration(num1, {hours: true, precision: 2, pad: true})
       },
       {
-        input: num,
+        input: num1,
         codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true, thousandsSeperator: true} }}',
         codeService: 'duration(number, {hours: true, precision: 2, pad: true, thousandsSeperator: true})',
-        result: duration(num, {hours: true, precision: 2, pad: true, thousandsSeperator: true})
+        result: duration(num1, {hours: true, precision: 2, pad: true, thousandsSeperator: true})
       },
+      {
+        input: num2,
+        codePipe: '{{ number | fsDateDuration: {hours: true} }}',
+        codeService: 'duration(number, {hours: true})',
+        result: duration(num2, {hours: true})
+      },
+      {
+        input: num2,
+        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2} }}',
+        codeService: 'duration(number, {hours: true, precision: 2})',
+        result: duration(num2, {hours: true, precision: 2})
+      },
+      {
+        input: num2,
+        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true, thousandsSeperator: true} }}',
+        codeService: 'duration(number, {hours: true, precision: 2, pad: true, thousandsSeperator: true})',
+        result: duration(num2, {hours: true, precision: 2, pad: true, thousandsSeperator: true})
+      },
+
     ]
   }
 
