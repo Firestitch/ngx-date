@@ -33,6 +33,8 @@ export function duration(time: any, options?) {
     options.unit = options.unit === undefined ? 'seconds' : options.unit;
     options.abr = options.abr === undefined ? true : options.abr;
     options.suffix = options.suffix === true ? (time > 0 ? ' ago' : ' from now') : '';
+    options.pad = options.pad === undefined ? false : options.pad;
+    options.thousandsSeperator = options.thousandsSeperator === undefined ? false : options.thousandsSeperator;
 
     if (!options.seconds && !options.minutes && !options.hours && !options.days && !options.months && !options.years) {
       options.seconds = true;
@@ -155,7 +157,7 @@ export function duration(time: any, options?) {
     if (enabled.length === 1) {
         const precision = options.precision === undefined ? 1 : options.precision;
         const name = enabled.join('');
-        const value = round(totalSeconds / units[name]['seconds'], precision);
+        const value = numberFormat(totalSeconds / units[name]['seconds'], options);
         output.push(value + (options.abr ? units[name].abr :  ' ' + (value == 1 ? units[name].single : units[name].plural)));
     } else {
         const precision = options.precision === undefined ? enabled.length : options.precision;
@@ -167,9 +169,9 @@ export function duration(time: any, options?) {
             }
 
             if (options[name]) {
-              const value = pieces[name];
+              let value = pieces[name];
               if (value) {
-                  output.push(value + (options.abr ? units[name].abr :  ' ' + (value == 1 ? units[name].single : units[name].plural)));
+                  output.push(numberFormat(value, options) + (options.abr ? units[name].abr :  ' ' + (value == 1 ? units[name].single : units[name].plural)));
               }
             }
           }
@@ -181,7 +183,7 @@ export function duration(time: any, options?) {
       for (const name in units) {
         if (units.hasOwnProperty(name)) {
           if (options[name]) {
-            output = [ '0' + (options.abr ? units[name].abr :  ' ' + (units[name] == 1 ? units[name].single : units[name].plural)) ];
+            output = [ numberFormat(0, options) + (options.abr ? units[name].abr :  ' ' + (units[name] == 1 ? units[name].single : units[name].plural)) ];
           }
         }
       }
@@ -198,4 +200,31 @@ export function duration(time: any, options?) {
     }
 
     return output.join(' ');
+}
+
+
+function numberFormat(number, options: any = {}) {
+  const precision = options.precision === undefined ? -1 : options.precision;
+  const pad = options.pad === undefined ? false : options.pad;
+  const thousandsSeperator = options.thousandsSeperator === undefined ? false : options.thousandsSeperator;
+
+  console.log(number, precision, pad, thousandsSeperator);
+
+  if(precision >= 0 && pad && thousandsSeperator) {
+    return number.toLocaleString('en-US', {minimumFractionDigits: precision})
+  }
+
+  if(precision >= 0 && pad) {
+    return number.toFixed(precision);
+  }
+
+  if(precision >= 0) {
+    return round(number, precision);
+  }
+
+  if(thousandsSeperator) {
+    return number.toLocaleString('en-US');
+  }
+
+
 }

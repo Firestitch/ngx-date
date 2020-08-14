@@ -11,12 +11,14 @@ export class DurationExampleComponent {
   public examplesWithSuffix: any[] = [];
   public examplesNameBased: any[] = [];
   public examplesWithMaxOutputs: any[] = [];
+  public examplesWithPrecision: any[] = [];
 
   constructor() {
     this.initExamples();
     this.initExamplesWithSuffix();
     this.initExamplesNameBased();
     this.initExamplesWithMaxOutputs();
+    this.initExamplesWithPrecision();
   }
 
   private initExamples() {
@@ -110,4 +112,31 @@ export class DurationExampleComponent {
       },
     ]
   }
+
+
+
+  private initExamplesWithPrecision() {
+    const num: number = 60 * 60 * 1000;
+    this.examplesWithPrecision = [
+      {
+        input: num,
+        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2} }}',
+        codeService: 'duration(number, {hours: true, precision: 2})',
+        result: duration(num, {hours: true, precision: 2})
+      },
+      {
+        input: num,
+        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true} }}',
+        codeService: 'duration(number, {hours: true, precision: 2, pad: true})',
+        result: duration(num, {hours: true, precision: 2, pad: true})
+      },
+      {
+        input: num,
+        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true, thousandsSeperator: true} }}',
+        codeService: 'duration(number, {hours: true, precision: 2, pad: true, thousandsSeperator: true})',
+        result: duration(num, {hours: true, precision: 2, pad: true, thousandsSeperator: true})
+      },
+    ]
+  }
+
 }
