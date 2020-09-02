@@ -154,17 +154,18 @@ export function duration(time: any, options?) {
     }
 
     let output = [];
+
     if (enabled.length === 1) {
-        const precision = options.precision === undefined ? 1 : options.precision;
+        options.precision = options.precision === undefined ? 1 : options.precision;
         const name = enabled.join('');
         const value = numberFormat(totalSeconds / units[name]['seconds'], options);
         output.push(value + (options.abr ? units[name].abr :  ' ' + (value == 1 ? units[name].single : units[name].plural)));
     } else {
-        const precision = options.precision === undefined ? enabled.length : options.precision;
+        options.precision = options.precision === undefined ? enabled.length : options.precision;
 
         for (const name in units) {
           if (units.hasOwnProperty(name)) {
-            if (precision && output.length >= precision) {
+            if (options.precision && output.length >= options.precision) {
               continue;
             }
 
@@ -208,19 +209,19 @@ function numberFormat(number, options: any = {}) {
   const pad = options.pad === undefined ? false : options.pad;
   const thousandsSeperator = options.thousandsSeperator === undefined ? false : options.thousandsSeperator;
 
-  if(precision >= 0 && pad && thousandsSeperator) {
+  if (precision >= 0 && pad && thousandsSeperator) {
     return round(number, precision).toLocaleString('en-US', {minimumFractionDigits: precision})
   }
 
-  if(precision >= 0 && pad) {
+  if (precision >= 0 && pad) {
     return number.toFixed(precision);
   }
 
-  if(precision >= 0) {
+  if (precision >= 0) {
     return round(number, precision);
   }
 
-  if(thousandsSeperator) {
+  if (thousandsSeperator) {
     return number.toLocaleString('en-US');
   }
 
