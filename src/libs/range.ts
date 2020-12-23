@@ -25,19 +25,44 @@ export function range(from: Date, to: Date, format = 'date'): string {
     let fromFormat = getFormatString(format);
     let toFormat = getFormatString(format);
 
+    if (formatParts.indexOf('yearless') !== -1) {
+      fromFormat = fromFormat.replace(' yyyy', '');
+      toFormat = toFormat.replace(' yyyy', '');
+    }
+
     if (differenceInMilliseconds(from, to) == 0) {
       return fnsFormat(from, fromFormat);
     }
 
     if (formatParts.indexOf('time') !== -1) {
       // date and time
-      if (from.getFullYear() == to.getFullYear()) {
-        toFormat = toFormat
-          .replace(' yyyy', '')
-          .replace(',', '');
+
+      if (!from.getMinutes()) {
+        fromFormat = fromFormat.replace(':mm', '');
+      }
+
+      if (!to.getMinutes()) {
+        toFormat = toFormat.replace(':mm', '');
+      }
+
+      if (from.getFullYear() === to.getFullYear()) {
+
+        if ((new Date()).getFullYear() === from.getFullYear()) {
+          fromFormat = fromFormat.replace(', yyyy', '');
+        }
+
+        toFormat = toFormat.replace(', yyyy', '');
 
         if (from.getMonth() == to.getMonth()) {
           if (from.getDate() == to.getDate()) {
+
+            if (
+              (from.getHours() <= 12 && to.getHours() <= 12) ||
+              (from.getHours() >= 12 && to.getHours() >= 12)
+            ) {
+              fromFormat = fromFormat.replace(' aaa', '');
+            }
+
             toFormat = toFormat
                 .replace('MMMM', '')
                 .replace('MMM', '')
@@ -77,7 +102,7 @@ export function range(from: Date, to: Date, format = 'date'): string {
           }
 
           if (from.getDate() == to.getDate()) {
-            if (formatParts.indexOf('time') == -1) {
+            if (formatParts.indexOf('time') === -1) {
               fromFormat = getFormatString(format);
               toFormat = '';
             }
@@ -88,7 +113,7 @@ export function range(from: Date, to: Date, format = 'date'): string {
 
     let output = fnsFormat(from, fromFormat);
     if (toFormat) {
-      output += ' - ' + fnsFormat(to, toFormat);
+      output += ' – ' + fnsFormat(to, toFormat);
     }
 
     return output;
