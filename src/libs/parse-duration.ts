@@ -18,7 +18,7 @@ export function parseDuration(value: string): Observable<Object> {
 
   value.split(' ').forEach((chunk) => {
 
-    const matches = chunk.match(/^(\d+\.?\d*)([YMdhms])$/);
+    const matches = chunk.match(/^(\d+\.?\d*)([YMdhms]?)$/);
 
     if (!matches) {
       return;
@@ -33,7 +33,7 @@ export function parseDuration(value: string): Observable<Object> {
       s: 1
     }[matches[2]];
 
-    time += Math.round(+matches[1]) * factor;
+    time += Math.round(+matches[1]) * (factor || 1);
   });
 
   return of({time: time});

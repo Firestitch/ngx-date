@@ -3,6 +3,18 @@ import { SECONDS } from '../app/constants/seconds';
 import { parseDuration } from './parse-duration';
 
 export function duration(time: any, options?) {
+    options = options || {};
+    if (typeof options === 'string') {
+      options = {
+        seconds: !!options.match(/second/),
+        minutes: !!options.match(/minute/),
+        hours: !!options.match(/hour/),
+        days: !!options.match(/day/),
+        months: !!options.match(/month/),
+        years: !!options.match(/year/),
+      };
+    }
+
     if (!isNumber(time)) {
       let parsedResult;
 
@@ -15,18 +27,7 @@ export function duration(time: any, options?) {
       } else {
         time = parsedResult.time;
       }
-
       options.unit = 'seconds';
-    }
-
-    if (typeof options === 'string') {
-
-        options = { seconds: !!options.match(/second/),
-                    minutes: !!options.match(/minute/),
-                    hours: !!options.match(/hour/),
-                    days: !!options.match(/day/),
-                    months: !!options.match(/month/),
-                    years: !!options.match(/year/) };
     }
 
     options = Object.assign({}, options);

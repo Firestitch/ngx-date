@@ -27,7 +27,7 @@ export class DurationExampleComponent {
         input: 30,
         codePipe: '{{ number | fsDateDuration }}',
         codeService: 'duration(number)',
-        result: duration(30 )
+        result: duration('30')
       },
       {
         input: 6000,

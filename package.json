@@ -1,7 +1,7 @@
 {
   "name": "@firestitch/date",
   "title": "Date (Date, Ago, Range)",
-  "version": "8.0.16",
+  "version": "8.0.17",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-date"
