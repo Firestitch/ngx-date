@@ -20,12 +20,20 @@ export class DateExampleComponent {
         result: parse('2019-10-31T23:50:20+00:00')
       },
       {
+        code: `parse('14:00:00')`,
+        result: parse('14:00:00')
+      },
+      {
         code: `parse('INVALID')`,
         result: String(parse('INVALID'))
       },
       {
         code: `parseLocal('2019-10-31T00:00:00+00:00')`,
         result: parseLocal('2019-10-31T00:00:00+00:00')
+      },
+      {
+        code: `parseLocal('22:00:00+00:00')`,
+        result: parseLocal('22:00:00+00:00')
       },
       {
         code: `iso8601('2019-10-31T23:50:20+00:00')`,
