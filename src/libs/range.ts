@@ -57,8 +57,8 @@ export function range(from: Date, to: Date, format = 'date'): string {
           if (from.getDate() == to.getDate()) {
 
             if (
-              (from.getHours() <= 12 && to.getHours() <= 12) ||
-              (from.getHours() >= 12 && to.getHours() >= 12)
+              (from.getHours() < 12 && to.getHours() < 12) ||
+              (from.getHours() > 12 && to.getHours() > 12)
             ) {
               fromFormat = fromFormat.replace(' aaa', '');
             }
