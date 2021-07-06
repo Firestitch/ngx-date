@@ -84,6 +84,8 @@ export function range(from: Date, to: Date, format = 'date'): string {
               .replace(' d', ' d,');
         }
       }
+
+      fromFormat = fromFormat.replace('MM d h', 'MM d · h');
     } else {
       // date only
       if (from.getFullYear() == to.getFullYear()) {
