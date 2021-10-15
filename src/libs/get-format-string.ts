@@ -1,4 +1,6 @@
-export function getFormatString(formatTo = 'date') {
+import { isSameYear } from 'date-fns';
+
+export function getFormatString(formatTo = 'date', date: Date = null) {
 
   const formatParts = formatTo.split('-');
 
@@ -10,6 +12,10 @@ export function getFormatString(formatTo = 'date') {
 
     if (hasDate) {
       const hasYear = formatParts.indexOf('yearless') === -1;
+      const hasYearDiff = formatParts.indexOf('yeardiff') !== -1;
+      const sameYear = date && isSameYear(date, new Date());
+      const showYear = hasYear &&
+        !(hasYearDiff && sameYear);
 
       // day of week
       if (formatParts.indexOf('day') != -1) {
@@ -24,7 +30,7 @@ export function getFormatString(formatTo = 'date') {
 
         let day = formatParts.indexOf('ordinal') != -1 ? 'do' : 'd';
 
-        if (hasYear) {
+        if (showYear) {
           day += ',';
         }
 
@@ -32,7 +38,7 @@ export function getFormatString(formatTo = 'date') {
       }
 
       // year
-      if (hasYear) {
+      if (showYear) {
         parts.push('yyyy');
       }
     }

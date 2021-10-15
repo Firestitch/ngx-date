@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { format } from '@firestitch/date';
 
+import { subYears } from 'date-fns';
+
+
 @Component({
   selector: 'format-example',
   templateUrl: 'format-example.component.html'
@@ -97,6 +100,18 @@ export class FormatExampleComponent {
         codePipe: '{{ date | fsDateFormat: \'yyyy-MM-dd HH:mm:ss.SSSxxx\' }}',
         codeService: 'format(date, \'yyyy-MM-dd HH:mm:ss.SSSxxx\')',
         result: format(new Date(), 'yyyy-MM-dd HH:mm:ss.SSSxxx')
-      }
+      },
+      {
+        name: 'full-date-yeardiff',
+        codePipe: '{{ date | fsDateFormat: \'full-date-yeardiff\' }}',
+        codeService: 'format(date, \'full-date-yeardiff\')',
+        result: format(new Date(), 'full-date-yeardiff')
+      },
+      {
+        name: 'full-date-yeardiff',
+        codePipe: '{{ date | fsDateFormat: \'full-date-yeardiff\' }}',
+        codeService: 'format(date, \'full-date-yeardiff\')',
+        result: format(subYears(new Date(), 2), 'full-date-yeardiff')
+      },
     ];
 }

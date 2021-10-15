@@ -3,7 +3,8 @@ import { getFormatString } from './get-format-string';
 import { parse } from './parse';
 
 export function format(date, formatTo?: string): string {
-    const outputFormat = getFormatString(formatTo);
     date = parse(date);
+    const outputFormat = getFormatString(formatTo, date);
+
     return date ? fnsFormat(date, outputFormat) : null;
 }
