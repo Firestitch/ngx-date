@@ -1,14 +1,20 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   Input,
   OnChanges,
-  OnInit
+  OnInit,
+  OnDestroy,
 } from '@angular/core';
 
-import { ago, duration as fsDuration, format as fsFormat, parse } from '../../../libs';
+import { Observable, interval, Subject } from 'rxjs';
+import { takeWhile, takeUntil } from 'rxjs/operators';
+
 import { differenceInSeconds } from 'date-fns';
+
+import { ago, duration as fsDuration, format as fsFormat, parse } from '../../../libs';
 
 
 @Component({
@@ -16,9 +22,15 @@ import { differenceInSeconds } from 'date-fns';
   templateUrl: './date-ago.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FsDateAgoComponent implements OnInit, OnChanges {
+export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
 
-  @Input() public date = null;
+  @Input()
+  public set date(value) {
+    this._date = parse(value);
+  }
+  public get date(): Date {
+    return this._date;
+  }
   @Input() public showTime = false;
   @Input() public format = 'date';
   @Input() public showTooltip = true;
@@ -28,14 +40,28 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
   public formattedDate: string = null;
   public tooltip: string = null;
 
-  constructor(public elementRef: ElementRef) { }
+  private _period = 60;
+  private _timer$: Observable<number>;
+
+  private _destroy$ = new Subject();
+  private _date: Date = null;
+
+  constructor(
+    public elementRef: ElementRef,
+    private _cd: ChangeDetectorRef,
+  ) { }
 
   public ngOnInit() {
-    this.updateFormatted();
+    this._init();
   }
 
   public ngOnChanges() {
-    this.updateFormatted();
+    this._init();
+  }
+
+  public ngOnDestroy(): void {
+    this._destroy$.next();
+    this._destroy$.complete();
   }
 
   private updateFormatted() {
@@ -47,6 +73,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
       this.tooltip = fsFormat(this.date, tooltipFormat) + ' · ' + tooltipAgo;
     }
+    this._cd.markForCheck();
   }
 
   /**
@@ -75,12 +102,11 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
   private getTooltipAgo(): string {
     let tooltip = 'now';
 
-    const date = parse(this.date);
-    if (!date) {
+    if (!this.date) {
       return '';
     }
 
-    const dateDifference = differenceInSeconds(new Date(), date);
+    const dateDifference = this._difference(this.date);
 
     const options = {
       maxOutputs: 1,
@@ -99,4 +125,39 @@ export class FsDateAgoComponent implements OnInit, OnChanges {
 
     return tooltip;
   }
+
+  private _init(): void {
+    this.updateFormatted();
+    if (this._updateWhile(this.date) && !this._timer$) {
+      this._timerInit();
+    }
+  }
+
+  private _timerInit(): void {
+    this._timer$ = interval(this._period * 1000)
+      .pipe(
+        takeWhile((v, index) => this._updateWhile(this.date)),
+        takeUntil(this._destroy$),
+      );
+
+    this._timer$
+      .subscribe({
+        next: () => {
+          this.updateFormatted();
+        },
+        complete:
+          () => {
+            this._timer$ = null;
+          },
+      });
+  }
+
+  private _difference(date: Date): number {
+    return differenceInSeconds(new Date(), date);
+  }
+
+  private _updateWhile(date: Date): boolean {
+    return Math.abs(this._difference(date)) <= (86400 + this._period);
+  }
+
 }
