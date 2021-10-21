@@ -1,7 +1,7 @@
 {
   "name": "@firestitch/date",
   "title": "Date (Date, Ago, Range)",
-  "version": "8.0.23",
+  "version": "8.0.24",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-date"
@@ -51,8 +51,8 @@
     "@firestitch/message": "^8.0.1",
     "codelyzer": "^5.1.2",
     "cpx": "^1.5.0",
-    "date-fns": "^2.4.1",
-    "date-fns-tz": "^1.0.7",
+    "date-fns": "^2.25.0",
+    "date-fns-tz": "^1.1.6",
     "hammerjs": "^2.0.8",
     "highlight.js": "^9.15.10",
     "lodash-es": "^4.17.15",
