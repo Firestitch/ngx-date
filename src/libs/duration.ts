@@ -56,7 +56,7 @@ export function duration(time: any, options?) {
     if (options.unit === 'minutes') {
         time = time * 60;
     } else if (options.unit === 'hours') {
-        time = time * 60 * 60;
+        time = Math.round(time * 60 * 60);
     }
 
     time = Math.abs(parseInt(time));
@@ -120,7 +120,7 @@ export function duration(time: any, options?) {
     if (options.hours) {
       const hours = remainder / SECONDS.HOUR;
       if (hours >= 1) {
-        if (!options.minutes && !options.seconds) {
+        if (!options.seconds) {
           pieces.hours = Math.round(hours);
         } else {
           pieces.hours = Math.floor(hours);
