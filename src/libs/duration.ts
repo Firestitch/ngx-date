@@ -120,7 +120,7 @@ export function duration(time: any, options?) {
     if (options.hours) {
       const hours = remainder / SECONDS.HOUR;
       if (hours >= 1) {
-        if (!options.seconds) {
+        if (!options.minutes && !options.seconds) {
           pieces.hours = Math.round(hours);
         } else {
           pieces.hours = Math.floor(hours);
