@@ -10,6 +10,7 @@ export class DateExampleComponent {
   public examples: any[] = [];
 
   constructor() {
+    console.log(parseLocal('2022-02-01T00:00:00+00:00'));
     this.initExamples();
   }
 
@@ -28,8 +29,8 @@ export class DateExampleComponent {
         result: String(parse('INVALID'))
       },
       {
-        code: `parseLocal('2019-10-31T00:00:00+00:00')`,
-        result: parseLocal('2019-10-31T00:00:00+00:00')
+        code: `parseLocal('2022-02-01T00:00:00+00:00')`,
+        result: parseLocal('2022-02-01T00:00:00+00:00')
       },
       {
         code: `parseLocal('22:00:00+00:00')`,
