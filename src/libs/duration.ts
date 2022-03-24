@@ -35,7 +35,7 @@ export function duration(time: any, options?) {
     options.abr = options.abr === undefined ? true : options.abr;
     options.suffix = options.suffix === true ? (time > 0 ? ' ago' : ' from now') : '';
     options.pad = options.pad === undefined ? false : options.pad;
-    options.thousandsSeperator = options.thousandsSeperator === undefined ? false : options.thousandsSeperator;
+    options.thousandsSeperator = options.thousandsSeperator === undefined ? true : options.thousandsSeperator;
 
     if (!options.seconds && !options.minutes && !options.hours && !options.days && !options.months && !options.years) {
       options.seconds = true;
@@ -208,10 +208,14 @@ export function duration(time: any, options?) {
 function numberFormat(number, options: any = {}) {
   const precision = options.precision === undefined ? -1 : options.precision;
   const pad = options.pad === undefined ? false : options.pad;
-  const thousandsSeperator = options.thousandsSeperator === undefined ? false : options.thousandsSeperator;
+  const thousandsSeperator = options.thousandsSeperator === undefined ? true : options.thousandsSeperator;
 
-  if (precision >= 0 && pad && thousandsSeperator) {
-    return round(number, precision).toLocaleString('en-US', {minimumFractionDigits: precision})
+  if(thousandsSeperator) {
+    if (precision >= 0) {
+      number = round(number, precision);
+    }
+
+    return number.toLocaleString('en-US', { minimumFractionDigits: pad ? precision : 0 });
   }
 
   if (precision >= 0 && pad) {
@@ -220,10 +224,6 @@ function numberFormat(number, options: any = {}) {
 
   if (precision >= 0) {
     return round(number, precision);
-  }
-
-  if (thousandsSeperator) {
-    return number.toLocaleString('en-US');
   }
 
   return number;

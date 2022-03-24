@@ -133,9 +133,9 @@ export class DurationExampleComponent {
       },
       {
         input: num1,
-        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true, thousandsSeperator: true} }}',
-        codeService: 'duration(number, {hours: true, precision: 2, pad: true, thousandsSeperator: true})',
-        result: duration(num1, {hours: true, precision: 2, pad: true, thousandsSeperator: true})
+        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true, thousandsSeperator: false } }}',
+        codeService: 'duration(number, {hours: true, precision: 2, pad: true, thousandsSeperator: false })',
+        result: duration(num1, {hours: true, precision: 2, pad: true, thousandsSeperator: false })
       },
       {
         input: num2,
@@ -151,9 +151,9 @@ export class DurationExampleComponent {
       },
       {
         input: num2,
-        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true, thousandsSeperator: true} }}',
-        codeService: 'duration(number, {hours: true, precision: 2, pad: true, thousandsSeperator: true})',
-        result: duration(num2, {hours: true, precision: 2, pad: true, thousandsSeperator: true})
+        codePipe: '{{ number | fsDateDuration: {hours: true, precision: 2, pad: true, thousandsSeperator: false } }}',
+        codeService: 'duration(number, {hours: true, precision: 2, pad: true, thousandsSeperator: false })',
+        result: duration(num2, {hours: true, precision: 2, pad: true, thousandsSeperator: false })
       },
 
     ]
