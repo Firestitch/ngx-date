@@ -5,6 +5,10 @@
 // Modules
 export { FsDateModule } from './app/fs-date.module';
 
+export { FsDateAgoDirective } from './app/directives/fs-date-ago.directive';
+
+export { FsDateAgoComponent } from './app/components/date-ago/date-ago.component';
+
 // Constants
 export { SECONDS } from './app/constants/seconds';
 export { TIMEZONES } from './app/constants/timezones';

@@ -50,7 +50,7 @@ import { FsDateAgoFactory } from './services/date-ago-factory.service';
   providers: [],
 })
 export class FsDateModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<FsDateModule> {
     return {
       ngModule: FsDateModule,
       providers: [
