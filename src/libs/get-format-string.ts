@@ -52,7 +52,7 @@ export function getFormatString(formatTo = 'date', date: Date = null) {
       // }
 
       if (formatParts.indexOf('tz') != -1 || formatParts.indexOf('gmt') != -1) {
-        parts.push("'('OOOO')'");
+        parts.push('(OOOO)');
       }
     }
 
