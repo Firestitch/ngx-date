@@ -5,7 +5,8 @@ import { sanitizeDate } from './sanitize-date';
 
 export function parseLocal(date): Date {
     if (typeof date === 'string') {
-        date = utcToZonedTime(sanitizeDate(date), null);
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        date = utcToZonedTime(sanitizeDate(date), timeZone);
     }
 
     return isValid(date) ? date : null;
