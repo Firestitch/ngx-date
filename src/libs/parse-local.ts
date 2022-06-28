@@ -1,14 +1,26 @@
 import { isValid } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz'
+import { parse } from './parse';
 import { sanitizeDate } from './sanitize-date';
 
 
 export function parseLocal(date): Date {
-    if (typeof date === 'string') {
-        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        date = utcToZonedTime(sanitizeDate(date), timeZone);
+  let date1 = date;
+  if (typeof date === 'string') {
+      
+    if(date.match(/^\d{4}-\d{2}-\d{2}$/)) {
+      date += 'T00:00:00';
     }
 
-    return isValid(date) ? date : null;
+    if(!date.match(/[+-]\d{2}:\d{2}$/)) {
+      date += '+00:00';
+    }        
+
+    date1 = parse(sanitizeDate(date));
+    
+    date1 = new Date(date1.getUTCFullYear(), date1.getUTCMonth(), date1.getUTCDate(), date1.getUTCHours(), date1.getUTCMinutes(), date1.getUTCSeconds(), date1.getUTCMilliseconds());
+  }
+
+
+  return isValid(date1) ? date1 : null;
 }
 
