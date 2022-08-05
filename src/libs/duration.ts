@@ -1,4 +1,5 @@
-import { round, isNumber } from 'lodash-es';
+import { round } from '@firestitch/common';
+import { take } from 'rxjs/operators';
 import { SECONDS } from '../app/constants/seconds';
 import { parseDuration } from './parse-duration';
 
@@ -15,10 +16,14 @@ export function duration(time: any, options?) {
       };
     }
 
-    if (!isNumber(time)) {
+    if (typeof time === 'string') {
       let parsedResult;
 
-      parseDuration(time).subscribe((result: any) => {
+      parseDuration(time)
+      .pipe(
+        take(1), 
+      )      
+      .subscribe((result: any) => {
         parsedResult = result;
       });
 

@@ -2,7 +2,7 @@ import { Observable, of } from 'rxjs';
 import { SECONDS } from '../app/constants/seconds';
 
 
-export function parseDuration(value: string): Observable<Object> {
+export function parseDuration(value: String): Observable<Object> {
 
   let time = 0;
 

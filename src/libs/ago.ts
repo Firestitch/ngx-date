@@ -1,9 +1,9 @@
-import { round } from 'lodash-es';
 import { differenceInMinutes, differenceInSeconds } from 'date-fns';
 
 import { format } from './format';
 import { duration } from './duration';
 import { parse } from './parse';
+import { round } from '@firestitch/common';
 
 
 export function ago(date, frmt = 'date') {
