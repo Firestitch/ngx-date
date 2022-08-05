@@ -20,6 +20,7 @@ import { ago, duration as fsDuration, format as fsFormat, parse } from '../../..
 @Component({
   selector: 'fs-date-ago',
   templateUrl: './date-ago.component.html',
+  styleUrls: ['./date-ago.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {

@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 
 import { FsCommonModule } from '@firestitch/common';
+
 import { FsDatePipe } from './pipes/date.pipe';
 import { FsDateRangePipe } from './pipes/date-range.pipe';
 import { FsDateFormatPipe } from './pipes/date-format.pipe';
@@ -19,7 +19,6 @@ import { FsDateAgoFactory } from './services/date-ago-factory.service';
 @NgModule({
   imports: [
     CommonModule,
-    MatTooltipModule,
     FsCommonModule
   ],
   exports: [
