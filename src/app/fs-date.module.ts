@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FsCommonModule } from '@firestitch/common';
+import { FsPopoverModule } from '@firestitch/popover';
 
 import { FsDatePipe } from './pipes/date.pipe';
 import { FsDateRangePipe } from './pipes/date-range.pipe';
@@ -19,7 +20,8 @@ import { FsDateAgoFactory } from './services/date-ago-factory.service';
 @NgModule({
   imports: [
     CommonModule,
-    FsCommonModule
+    FsCommonModule,
+    FsPopoverModule
   ],
   exports: [
     FsDatePipe,

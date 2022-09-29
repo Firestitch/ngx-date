@@ -2,6 +2,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Material
@@ -30,6 +31,7 @@ import { SafeHtmlPipe } from './components/safe-html/safe-html.pipe';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    RouterModule.forRoot([]),
 
     AppMaterialModule,
     FsDateModule,

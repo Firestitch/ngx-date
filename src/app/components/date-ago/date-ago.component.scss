@@ -1,34 +1,7 @@
-.tooltip {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  border-radius: 4px;
-  margin: 10px;
-  max-width: 250px;
-  padding-left: 8px;
-  padding-right: 8px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  background: rgba(97,97,97,.9);
-  white-space: nowrap;  
-  display: none;
-  z-index: 1;
-}
-
 .date-container {
   position: relative;
 
   &.has-tooltip {
     cursor: pointer;
-    
-    &:hover {
-      .tooltip {
-        display: block;
-      }
-    }
   }
 }
