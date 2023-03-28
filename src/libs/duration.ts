@@ -59,9 +59,11 @@ export function duration(time: any, options?) {
     }
 
     if (options.unit === 'minutes') {
-        time = time * 60;
+      time = time * 60;
     } else if (options.unit === 'hours') {
-        time = Math.round(time * 60 * 60);
+      time = Math.round(time * 60 * 60);
+    } else if (options.unit === 'days') {
+      time = Math.round(time * 60 * 60 * 24);
     }
 
     time = Math.abs(parseInt(time));
