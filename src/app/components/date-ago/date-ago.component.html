@@ -1,8 +1,4 @@
-<span class="date-container" [ngClass]="{ 'has-tooltip': !!tooltip }">
-  <fs-popover [template]="tooltipTmpl" theme="dark" [size]="'small'">
-    {{ formattedDate }}
-  </fs-popover>
-
-  <ng-template #tooltipTmpl>{{tooltip}}</ng-template>
+<span class="date-container" [ngClass]="{ 'has-tooltip': !!tooltip }" [matTooltip]="tooltip">
+  {{formattedDate}}
 </span>
 
