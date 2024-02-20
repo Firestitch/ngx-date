@@ -18,37 +18,30 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-
-    MatTooltipModule,
-
-    FsCommonModule,
-  ],
-  exports: [
-    FsDatePipe,
-    FsDateAgoPipe,
-    FsDateDurationPipe,
-    FsDateFormatPipe,
-    FsDateRangePipe,
-    FsDateAgoDirective,
-    FsDateAgoComponent
-  ],
-  entryComponents: [
-    FsDateAgoComponent
-  ],
-  declarations: [
-    FsDatePipe,
-    FsDateAgoPipe,
-    FsDateDurationPipe,
-    FsDateFormatPipe,
-    FsDateRangePipe,
-
-    FsDateAgoDirective,
-
-    FsDateAgoComponent
-  ],
-  providers: [],
+    imports: [
+        CommonModule,
+        MatTooltipModule,
+        FsCommonModule,
+    ],
+    exports: [
+        FsDatePipe,
+        FsDateAgoPipe,
+        FsDateDurationPipe,
+        FsDateFormatPipe,
+        FsDateRangePipe,
+        FsDateAgoDirective,
+        FsDateAgoComponent
+    ],
+    declarations: [
+        FsDatePipe,
+        FsDateAgoPipe,
+        FsDateDurationPipe,
+        FsDateFormatPipe,
+        FsDateRangePipe,
+        FsDateAgoDirective,
+        FsDateAgoComponent
+    ],
+    providers: []
 })
 export class FsDateModule {
   static forRoot(): ModuleWithProviders<FsDateModule> {

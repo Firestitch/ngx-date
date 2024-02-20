@@ -23,33 +23,28 @@ import { SafeHtmlPipe } from './components/safe-html/safe-html.pipe';
 
 
 @NgModule({
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    RouterModule.forRoot([]),
-
-    AppMaterialModule,
-    FsDateModule,
-
-    FsExampleModule.forRoot(),
-    FsMessageModule.forRoot(),
-  ],
-  entryComponents: [
-  ],
-  declarations: [
-    AppComponent,
-    SafeHtmlPipe,
-    FormatExampleComponent,
-    AgoExampleComponent,
-    DurationExampleComponent,
-    RangeExampleComponent,
-    DateExampleComponent
-  ],
-  providers: [
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        RouterModule.forRoot([]),
+        AppMaterialModule,
+        FsDateModule,
+        FsExampleModule.forRoot(),
+        FsMessageModule.forRoot(),
+    ],
+    declarations: [
+        AppComponent,
+        SafeHtmlPipe,
+        FormatExampleComponent,
+        AgoExampleComponent,
+        DurationExampleComponent,
+        RangeExampleComponent,
+        DateExampleComponent
+    ],
+    providers: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PlaygroundModule {
 }
