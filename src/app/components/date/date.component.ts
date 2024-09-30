@@ -29,6 +29,7 @@ export class FsDateComponent implements OnInit, OnChanges, OnDestroy {
   public set date(value) {
     this._date = parse(value);
   }
+
   public get date(): Date {
     return this._date;
   }
@@ -64,6 +65,14 @@ export class FsDateComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private _updateFormatted() {
+    if(!this.date) {
+      this.formattedDate = null;
+      this.tooltip = null;
+      this.year = null;
+
+      return;
+    }
+
     let localFormat = this.format;
     if(localFormat.indexOf('-yearnewline') > -1) {
       localFormat += '-yearless';
