@@ -1,6 +1,7 @@
+import { round } from '@firestitch/common';
+
 import { differenceInMinutes, differenceInSeconds } from 'date-fns';
 
-import { round } from '@firestitch/common';
 import { duration } from './duration';
 import { format } from './format';
 import { parse } from './parse';
@@ -17,21 +18,22 @@ export function ago(date, frmt = 'date', options: any = {}) {
   const hourDiff = round(differenceInMinutes(new Date(), date) / 60, 0);
 
   if (Math.abs(hourDiff) >= 24) {
-    if (date.getFullYear() == new Date().getFullYear()) {
+    if (date.getFullYear() === new Date().getFullYear()) {
       return format(date, 'date-yearless');
-    } else {
-      return format(date, frmt);
     }
+ 
+    return format(date, frmt);
 
-  } else if (hourDiff == 0 && minDiff == 0) {
+  } else if (hourDiff === 0 && minDiff === 0) {
     return 'now';
-  } else {
-    return duration(minDiff, {
-      unit: 'minutes',
-      suffix: true,
-      minutes: true,
-      hours: true,
-      ...options,
-    });
   }
+ 
+  return duration(minDiff, {
+    unit: 'minutes',
+    suffix: true,
+    minutes: true,
+    hours: true,
+    ...options,
+  });
+  
 }

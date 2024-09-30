@@ -72,7 +72,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
       const tooltipFormat = this._getTooltipFormat();
       const tooltipAgo = this._getTooltipAgo();
 
-      this.tooltip = `${fsFormat(this.date, tooltipFormat)  } · ${  tooltipAgo}`;
+      this.tooltip = `${fsFormat(this.date, tooltipFormat)  } · ${tooltipAgo}`;
     }
     this._cd.markForCheck();
   }

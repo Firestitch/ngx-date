@@ -79,6 +79,7 @@ export class FsDateComponent implements OnInit, OnChanges, OnDestroy {
         null;
     }
 
+    this.tooltip = `${format(this.date, 'date-time')}`;
     this.formattedDate = format(this.date, localFormat);
     this._cd.markForCheck();
   }
