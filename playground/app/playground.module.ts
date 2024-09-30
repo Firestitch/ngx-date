@@ -12,7 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AgoExampleComponent } from './components/ago-example/ago-example.component';
 import { DateExampleComponent } from './components/date-example/date-example.component';
-import { DateFormatComponentExampleComponent } from './components/date-format-component-example';
 import { DurationExampleComponent } from './components/duration-example/duration-example.component';
 import { FormatExampleComponent } from './components/format-example/format-example.component';
 import { RangeExampleComponent } from './components/range-example/range-example.component';
@@ -40,7 +39,6 @@ import { AppMaterialModule } from './material.module';
     DurationExampleComponent,
     RangeExampleComponent,
     DateExampleComponent,
-    DateFormatComponentExampleComponent,
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

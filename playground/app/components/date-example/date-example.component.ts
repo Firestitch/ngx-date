@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { iso8601, parse, parseLocal } from '@firestitch/date';
 
@@ -6,11 +6,14 @@ import { iso8601, parse, parseLocal } from '@firestitch/date';
 @Component({
   selector: 'date-example',
   templateUrl: './date-example.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DateExampleComponent {
+
   public examples: any[] = [];
 
   constructor() {
+    console.log(parseLocal('2022-02-01T00:00:00+00:00'));
     this._initExamples();
   }
 
