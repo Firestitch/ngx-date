@@ -1,55 +1,54 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { FsCommonModule } from '@firestitch/common';
 
-import { FsDatePipe } from './pipes/date.pipe';
-import { FsDateRangePipe } from './pipes/date-range.pipe';
-import { FsDateFormatPipe } from './pipes/date-format.pipe';
-import { FsDateDurationPipe } from './pipes/date-duration.pipe';
-import { FsDateAgoPipe } from './pipes/date-ago.pipe';
-
+import { FsDateAgoComponent, FsDateComponent } from './components';
 import { FsDateAgoDirective } from './directives/fs-date-ago.directive';
-
-import { FsDateAgoComponent } from './components/date-ago/date-ago.component';
-
+import { FsDateAgoPipe } from './pipes/date-ago.pipe';
+import { FsDateDurationPipe } from './pipes/date-duration.pipe';
+import { FsDateFormatPipe } from './pipes/date-format.pipe';
+import { FsDateRangePipe } from './pipes/date-range.pipe';
+import { FsDatePipe } from './pipes/date.pipe';
 import { FsDateAgoFactory } from './services/date-ago-factory.service';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MatTooltipModule,
-        FsCommonModule,
-    ],
-    exports: [
-        FsDatePipe,
-        FsDateAgoPipe,
-        FsDateDurationPipe,
-        FsDateFormatPipe,
-        FsDateRangePipe,
-        FsDateAgoDirective,
-        FsDateAgoComponent
-    ],
-    declarations: [
-        FsDatePipe,
-        FsDateAgoPipe,
-        FsDateDurationPipe,
-        FsDateFormatPipe,
-        FsDateRangePipe,
-        FsDateAgoDirective,
-        FsDateAgoComponent
-    ],
-    providers: []
+  imports: [
+    CommonModule,
+    MatTooltipModule,
+    FsCommonModule,
+  ],
+  declarations: [
+    FsDatePipe,
+    FsDateAgoPipe,
+    FsDateDurationPipe,
+    FsDateFormatPipe,
+    FsDateRangePipe,
+    FsDateAgoDirective,
+    FsDateAgoComponent,
+    FsDateComponent,
+  ],
+  exports: [
+    FsDatePipe,
+    FsDateAgoPipe,
+    FsDateDurationPipe,
+    FsDateFormatPipe,
+    FsDateRangePipe,
+    FsDateAgoDirective,
+    FsDateComponent,
+    FsDateAgoComponent,
+  ],
 })
 export class FsDateModule {
-  static forRoot(): ModuleWithProviders<FsDateModule> {
+  public static forRoot(): ModuleWithProviders<FsDateModule> {
     return {
       ngModule: FsDateModule,
       providers: [
-        FsDateAgoFactory
-      ]
+        FsDateAgoFactory,
+      ],
     };
   }
 }

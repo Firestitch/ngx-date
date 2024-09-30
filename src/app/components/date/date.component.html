@@ -1,0 +1,4 @@
+<span class="date-container" [ngClass]="{ 'has-tooltip': !!tooltip }" [matTooltip]="tooltip">{{formattedDate}}</span>
+<ng-container *ngIf="year">
+<div class="small">{{year}}</div>
+</ng-container>

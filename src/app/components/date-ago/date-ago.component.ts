@@ -5,12 +5,12 @@ import {
   ElementRef,
   Input,
   OnChanges,
-  OnInit,
   OnDestroy,
+  OnInit,
 } from '@angular/core';
 
-import { Observable, interval, Subject } from 'rxjs';
-import { takeWhile, takeUntil } from 'rxjs/operators';
+import { interval, Observable, Subject } from 'rxjs';
+import { takeUntil, takeWhile } from 'rxjs/operators';
 
 import { differenceInSeconds } from 'date-fns';
 
@@ -65,14 +65,14 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
     this._destroy$.complete();
   }
 
-  private updateFormatted() {
+  private _updateFormatted() {
     this.formattedDate = ago(this.date, this.format);
 
     if (this.showTooltip) {
-      const tooltipFormat = this.getTooltipFormat();
-      const tooltipAgo = this.getTooltipAgo();
+      const tooltipFormat = this._getTooltipFormat();
+      const tooltipAgo = this._getTooltipAgo();
 
-      this.tooltip = fsFormat(this.date, tooltipFormat) + ' · ' + tooltipAgo;
+      this.tooltip = `${fsFormat(this.date, tooltipFormat)  } · ${  tooltipAgo}`;
     }
     this._cd.markForCheck();
   }
@@ -80,7 +80,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
   /**
    * Setting format w/o year if year is the same
    */
-  private getTooltipFormat(): string {
+  private _getTooltipFormat(): string {
 
     if (this.tooltipDateFormat) {
       return this.tooltipDateFormat;
@@ -94,13 +94,13 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
       format = 'date-time-yearless';
     }
 
-    return format
+    return format;
   }
 
   /**
    * Forming second part of the tooltip
    */
-  private getTooltipAgo(): string {
+  private _getTooltipAgo(): string {
     let tooltip = 'now';
 
     if (!this.date) {
@@ -116,19 +116,19 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
       months: true,
       days: true,
       hours: true,
-      minutes: true
+      minutes: true,
     };
 
     // if difference more than 1 minute
     if (dateDifference > 59 || dateDifference < 0) {
-      tooltip = fsDuration(dateDifference, options)
+      tooltip = fsDuration(dateDifference, options);
     }
 
     return tooltip;
   }
 
   private _init(): void {
-    this.updateFormatted();
+    this._updateFormatted();
     if (this._updateWhile(this.date) && !this._timer$) {
       this._timerInit();
     }
@@ -144,7 +144,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
     this._timer$
       .subscribe({
         next: () => {
-          this.updateFormatted();
+          this._updateFormatted();
         },
         complete:
           () => {

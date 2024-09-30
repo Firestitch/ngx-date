@@ -1,0 +1,42 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>
+      Ouput
+    </th>
+    <th>Code</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>  
+      <fs-date [date]="date"></fs-date>
+    </td>
+    <td>
+      <div [innerText]="'<fs-date [date]=&quot;date&quot;></fs-date>'"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>  
+      <fs-date [date]="date" [format]="'date-yearnewline'"></fs-date>
+    </td>
+    <td>
+      <div [innerText]="'<fs-date [date]=&quot;date&quot; [format]=&quot;\'date-yearnewline\'&quot;></fs-date>'"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>  
+      <fs-date [date]="date" [format]="'date-yeardiff-yearnewline'"></fs-date>
+    </td>
+    <td>
+      <div [innerText]="'<fs-date [date]=&quot;date&quot; [format]=&quot;\'date-yeardiff-yearnewline\'&quot;></fs-date>'"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>  
+      <fs-date [date]="dateFuture" [format]="'date-yeardiff-yearnewline'"></fs-date>
+    </td>
+    <td>
+      <div [innerText]="'<fs-date [date]=&quot;dateFuture&quot; [format]=&quot;\'date-yeardiff-yearnewline\'&quot;></fs-date>'"></div>
+    </td>
+  </tr>
+</table>
