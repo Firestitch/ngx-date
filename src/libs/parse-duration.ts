@@ -1,13 +1,13 @@
-import { Observable, of } from 'rxjs';
+
 import { SECONDS } from '../app/constants/seconds';
 
 
-export function parseDuration(value: String): Observable<Object> {
+export function parseDuration(value: string): { error?: string, time?: number } {
 
   let time = 0;
 
   if (!value && typeof value !== 'string') {
-    return of({error: 'Invalid duration format'});
+    return { error: 'Invalid duration format' };
   }
 
   value = value
@@ -21,7 +21,7 @@ export function parseDuration(value: String): Observable<Object> {
     const matches = chunk.match(/^(\d+\.?\d*)([YMdhms]?)$/);
 
     if (!matches) {
-      return;
+      return { error: 'Invalid duration format' };
     }
 
     const factor = {
@@ -30,11 +30,11 @@ export function parseDuration(value: String): Observable<Object> {
       d: SECONDS.DAY,
       h: SECONDS.HOUR,
       m: SECONDS.MINUTE,
-      s: 1
+      s: 1,
     }[matches[2]];
 
     time += Math.round(+matches[1]) * (factor || 1);
   });
 
-  return of({time: time});
+  return { time: time };
 }

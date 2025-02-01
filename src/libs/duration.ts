@@ -1,64 +1,38 @@
+/* eslint-disable complexity */
+/* eslint-disable max-statements */
 import { round } from '@firestitch/common';
-
-import { take } from 'rxjs/operators';
 
 import { SECONDS } from '../app/constants/seconds';
 
 import { parseDuration } from './parse-duration';
 
-export function duration(time: any, options?) {
-  options = options || {};
-  if (typeof options === 'string') {
-    options = {
-      seconds: !!options.match(/second/),
-      minutes: !!options.match(/minute/),
-      hours: !!options.match(/hour/),
-      days: !!options.match(/day/),
-      months: !!options.match(/month/),
-      years: !!options.match(/year/),
-    };
-  }
+interface DurationOptions { 
+  seconds?: boolean,
+  minutes?: boolean,
+  hours?: boolean,
+  days?: boolean,
+  months?: boolean,
+  years?: boolean,
+  suffix?: any,
+  maxOutputs?: number,
+  abr?: boolean,
+  unit?: string,
+  precision?: number,
+  pad?: boolean,
+  thousandsSeperator?: boolean,
+}
+
+export function duration(time: any, _options?: DurationOptions | string) {
+  const options = _getOptions(time, _options);
 
   if (typeof time === 'string') {
-    let parsedResult;
+    const parsedResult = parseDuration(time);
 
-    parseDuration(time)
-      .pipe(
-        take(1), 
-      )      
-      .subscribe((result: any) => {
-        parsedResult = result;
-      });
-
-    if (parsedResult && parsedResult.error || !parsedResult.time) {
-      return 'error';
+    if (parsedResult.error) {
+      return null;
     } 
+
     time = parsedResult.time;
-      
-    options.unit = 'seconds';
-  }
-
-  options = { ...options };
-  options.unit = options.unit === undefined ? 'seconds' : options.unit;
-  options.abr = options.abr === undefined ? true : options.abr;
-  options.suffix = options.suffix === true ? (time > 0 ? ' ago' : ' from now') : '';
-  options.pad = options.pad === undefined ? false : options.pad;
-  options.thousandsSeperator = options.thousandsSeperator === undefined ? true : options.thousandsSeperator;
-
-  if (!options.seconds && !options.minutes && !options.hours && !options.days && !options.months && !options.years) {
-    options.seconds = true;
-    options.minutes = false;
-    options.hours = false;
-    options.days = false;
-    options.months = false;
-    options.years = false;
-  } else {
-    options.seconds = options.seconds === undefined ? false : options.seconds;
-    options.minutes = options.minutes === undefined ? false : options.minutes;
-    options.hours = options.hours === undefined ? false : options.hours;
-    options.days = options.days === undefined ? false : options.days;
-    options.months = options.months === undefined ? false : options.months;
-    options.years = options.years === undefined ? false : options.years;
   }
 
   switch (options.unit) {
@@ -77,28 +51,9 @@ export function duration(time: any, options?) {
   
       break;
     }
-  // No default
   }
 
   time = Math.abs(parseInt(time));
-
-  const units = {
-    years:      { abr: 'Y', single: 'year', plural: 'years', seconds: SECONDS.YEAR, next: 'months' },
-    months:     { abr: 'M', single: 'month', plural: 'months', seconds: SECONDS.MONTH, next: 'days' },
-    days:       { abr: 'd', single: 'day', plural: 'days', seconds: SECONDS.DAY, next: 'hours' },
-    hours:      { abr: 'h', single: 'hour', plural: 'hours', seconds: SECONDS.HOUR, next: 'months' },
-    minutes:    { abr: 'm', single: 'minute', plural: 'minutes', seconds: SECONDS.MINUTE, next: 'seconds' },
-    seconds:    { abr: 's', single: 'second', plural: 'seconds', seconds: 1, next: null },
-  };
-
-  const pieces = {
-    years: 0,
-    months: 0,
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  };
 
   let remainder = time;
 
@@ -146,14 +101,12 @@ export function duration(time: any, options?) {
 
   const enabled = [];
   let totalSeconds = 0;
-  for (const name in units) {
-    if (units.hasOwnProperty(name)) {
-      if (options[name]) {
-        enabled.push(name);
-      }
-      totalSeconds += pieces[name] * units[name].seconds;
+  Object.keys(units).forEach((name) => {
+    if (options[name]) {
+      enabled.push(name);
     }
-  }
+    totalSeconds += pieces[name] * units[name].seconds;
+  });
 
   let output = [];
 
@@ -161,35 +114,31 @@ export function duration(time: any, options?) {
     options.precision = options.precision === undefined ? 1 : options.precision;
     const name = enabled.join('');
     const value = numberFormat(totalSeconds / units[name]['seconds'], options);
-    output.push(value + (options.abr ? units[name].abr :  ` ${  value == 1 ? units[name].single : units[name].plural}`));
+    output.push(value + (options.abr ? units[name].abr :  ` ${parseInt(value) === 1 ? units[name].single : units[name].plural}`));
   } else {
     options.precision = options.precision === undefined ? enabled.length : options.precision;
 
-    for (const name in units) {
-      if (units.hasOwnProperty(name)) {
-        if (options.precision && output.length >= options.precision) {
-          continue;
-        }
+    Object.keys(units).forEach((name) => {
+      if (options.precision && output.length >= options.precision) {
+        return;
+      }
 
-        if (options[name]) {
-          const value = pieces[name];
-          if (value) {
-            output.push(numberFormat(value, options) + (options.abr ? units[name].abr :  ` ${  value == 1 ? units[name].single : units[name].plural}`));
-          }
+      if (options[name]) {
+        const value = pieces[name];
+        if (value) {
+          output.push(numberFormat(value, options) + (options.abr ? units[name].abr :  ` ${parseInt(value) === 1 ? units[name].single : units[name].plural}`));
         }
       }
-    }
+    });
   }
 
   // there are no values so show zero of the smallest unit (i.e. "0s")
   if (output.length === 0) {
-    for (const name in units) {
-      if (units.hasOwnProperty(name)) {
-        if (options[name]) {
-          output = [numberFormat(0, options) + (options.abr ? units[name].abr :  ` ${  units[name] == 1 ? units[name].single : units[name].plural}`)];
-        }
+    Object.keys(units).forEach((name) => {
+      if (options[name]) {
+        output = [numberFormat(0, options) + (options.abr ? units[name].abr :  ` ${parseInt(units[name]) === 1 ? units[name].single : units[name].plural}`)];
       }
-    }
+    });
   }
 
   // to cut off output depends on maxOutput value
@@ -229,3 +178,60 @@ function numberFormat(number, options: any = {}) {
 
   return number;
 }
+
+function _getOptions(time, options: DurationOptions | string): DurationOptions {
+  if(typeof options === 'string') {
+    return {
+      seconds: !!options.match(/second/),
+      minutes: !!options.match(/minute/),
+      hours: !!options.match(/hour/),
+      days: !!options.match(/day/),
+      months: !!options.match(/mont h/),
+      years: !!options.match(/year/),
+    };
+  }
+
+  options = { ...options };
+  options.unit = options.unit === undefined || typeof time === 'string' ? 'seconds' : options.unit;
+  options.abr = options.abr === undefined ? true : options.abr;
+  options.suffix = options.suffix ? (time > 0 ? ' ago' : ' from now') : '';
+  options.pad = options.pad === undefined ? false : options.pad;
+  options.thousandsSeperator = options.thousandsSeperator === undefined ? true : options.thousandsSeperator;
+
+  if (!options.seconds && !options.minutes && !options.hours && !options.days && !options.months && !options.years) {
+    options.seconds = true;
+    options.minutes = false;
+    options.hours = false;
+    options.days = false;
+    options.months = false;
+    options.years = false;
+  } else {
+    options.seconds = options.seconds === undefined ? false : options.seconds;
+    options.minutes = options.minutes === undefined ? false : options.minutes;
+    options.hours = options.hours === undefined ? false : options.hours;
+    options.days = options.days === undefined ? false : options.days;
+    options.months = options.months === undefined ? false : options.months;
+    options.years = options.years === undefined ? false : options.years;
+  }
+
+  return options;
+}
+
+
+const units = {
+  years:      { abr: 'Y', single: 'year', plural: 'years', seconds: SECONDS.YEAR, next: 'months' },
+  months:     { abr: 'M', single: 'month', plural: 'months', seconds: SECONDS.MONTH, next: 'days' },
+  days:       { abr: 'd', single: 'day', plural: 'days', seconds: SECONDS.DAY, next: 'hours' },
+  hours:      { abr: 'h', single: 'hour', plural: 'hours', seconds: SECONDS.HOUR, next: 'months' },
+  minutes:    { abr: 'm', single: 'minute', plural: 'minutes', seconds: SECONDS.MINUTE, next: 'seconds' },
+  seconds:    { abr: 's', single: 'second', plural: 'seconds', seconds: 1, next: null },
+};
+
+const pieces = {
+  years: 0,
+  months: 0,
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+};
