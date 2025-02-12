@@ -33,6 +33,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
     return this._date;
   }
   @Input() public showTime = false;
+  @Input() public suffix = true;
   @Input() public format = 'date';
   @Input() public showTooltip = true;
 
@@ -66,7 +67,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private _updateFormatted() {
-    this.formattedDate = ago(this.date, this.format);
+    this.formattedDate = ago(this.date, this.format, { suffix: this.suffix });
 
     if (this.showTooltip) {
       const tooltipFormat = this._getTooltipFormat();
