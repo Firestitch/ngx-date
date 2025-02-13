@@ -29,14 +29,15 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
   public set date(value) {
     this._date = parse(value);
   }
+
   public get date(): Date {
     return this._date;
   }
+  
   @Input() public showTime = false;
   @Input() public suffix = true;
   @Input() public format = 'date';
   @Input() public showTooltip = true;
-
   @Input() public tooltipDateFormat: string = null;
 
   public formattedDate: string = null;
@@ -109,7 +110,6 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     const dateDifference = this._difference(this.date);
-
     const options = {
       maxOutputs: 1,
       suffix: true,
@@ -138,7 +138,7 @@ export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
   private _timerInit(): void {
     this._timer$ = interval(this._period * 1000)
       .pipe(
-        takeWhile((v, index) => this._updateWhile(this.date)),
+        takeWhile(() => this._updateWhile(this.date)),
         takeUntil(this._destroy$),
       );
 

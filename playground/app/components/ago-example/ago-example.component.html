@@ -1,107 +1,173 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Input</th>
-      <th>Pipe Output</th>
-      <th>Pipe</th>
-      <th>Component Output</th>
-      <th>Component</th>
+      <th>
+        Input
+      </th>
+      <th>
+        Pipe Output
+      </th>
+      <th>
+        Pipe
+      </th>
+      <th>
+        Component Output
+      </th>
+      <th>
+        Component
+      </th>
     </tr>
   </thead>
-
   <tr>
-      <td>1 year ago</td>
-      <td>{{oneYearAgo | fsDateAgo}}</td>
-      <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
-      <td>
-        <fs-date-ago [date]="oneYearAgo"></fs-date-ago>
-      </td>
-      <td>
-          &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
-      </td>
-    </tr>
-
+    <td>
+      1 year ago
+    </td>
+    <td>
+      {{ oneYearAgo | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
+    <td>
+      <fs-date-ago [date]="oneYearAgo"></fs-date-ago>
+    </td>
+    <td>
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+    </td>
+  </tr>
   <tr>
-    <td>1 month ago</td>
-    <td>{{oneMonthAgo | fsDateAgo}}</td>
-    <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
+    <td>
+      1 month ago
+    </td>
+    <td>
+      {{ oneMonthAgo | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
     <td>
       <fs-date-ago [date]="oneMonthAgo"></fs-date-ago>
     </td>
     <td>
-        &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
     </td>
   </tr>
-
   <tr>
-      <td>1 day ago</td>
-    <td>{{oneDayAgo | fsDateAgo}}</td>
-    <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
+    <td>
+      1 day ago
+    </td>
+    <td>
+      {{ oneDayAgo | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
     <td>
       <fs-date-ago [date]="oneDayAgo"></fs-date-ago>
     </td>
     <td>
-        &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
     </td>
   </tr>
-
   <tr>
-    <td>1 hour ago</td>
-    <td>{{oneHourAgo | fsDateAgo}}</td>
-    <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
+    <td>
+      1 hour ago
+    </td>
+    <td>
+      {{ oneHourAgo | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
     <td>
       <fs-date-ago [date]="oneHourAgo"></fs-date-ago>
     </td>
     <td>
-        &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
     </td>
   </tr>
-
   <tr>
-    <td>1 minute ago</td>
-    <td>{{oneMinuteAgo | fsDateAgo}}</td>
-    <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
+    <td>
+      1 minute ago
+    </td>
+    <td>
+      {{ oneMinuteAgo | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
     <td>
       <fs-date-ago [date]="oneMinuteAgo"></fs-date-ago>
     </td>
     <td>
-        &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
     </td>
   </tr>
-
   <tr>
-    <td>Now</td>
-    <td>{{date | fsDateAgo}}</td>
-    <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
+    <td>
+      Now
+    </td>
+    <td>
+      {{ date | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
     <td>
       <fs-date-ago [date]="date"></fs-date-ago>
     </td>
     <td>
-        &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
     </td>
   </tr>
-
   <tr>
-    <td>1 month from now</td>
-    <td>{{oneMonthFuture | fsDateAgo}}</td>
-    <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
+    <td>
+      1 month from now
+    </td>
+    <td>
+      {{ oneMonthFuture | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
     <td>
       <fs-date-ago [date]="oneMonthFuture"></fs-date-ago>
     </td>
     <td>
-        &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
     </td>
   </tr>
-
   <tr>
-    <td>1 year from now</td>
-    <td>{{oneYearFuture | fsDateAgo}}</td>
-    <td><code ngNonBindable>{{date | fsDateAgo}}</code></td>
+    <td>
+      1 year from now
+    </td>
+    <td>
+      {{ oneYearFuture | fsDateAgo }}
+    </td>
+    <td>
+      <code ngNonBindable>
+        {{ date | fsDateAgo }}
+      </code>
+    </td>
     <td>
       <fs-date-ago [date]="oneYearFuture"></fs-date-ago>
     </td>
     <td>
-        &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
+      &lt;fs-date-ago [date]="date"&gt;&lt;/fs-date-ago&gt;
     </td>
   </tr>
 </table>

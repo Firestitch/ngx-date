@@ -54,13 +54,25 @@ export function duration(time: any, _options?: DurationOptions | string) {
   }
 
   time = Math.abs(parseInt(time));
+  const pieces: {
+    years?: number;
+    months?: number;
+    days?: number;
+    hours?: number;
+    minutes?: number;
+    seconds?: number;
+  } = {};
 
   let remainder = time;
 
   if (options.years) {
     const years = remainder / SECONDS.YEAR;
     if (years >= 1) {
-      pieces.years = !options.months && !options.days && !options.hours && !options.minutes && !options.seconds ? Math.round(years) : Math.floor(years);
+      pieces.years = !options.months && 
+      !options.days && 
+      !options.hours && 
+      !options.minutes &&
+       !options.seconds ? Math.round(years) : Math.floor(years);
       remainder = remainder - (pieces.years * SECONDS.YEAR);
     }
   }
@@ -217,7 +229,6 @@ function _getOptions(time, options: DurationOptions | string): DurationOptions {
   return options;
 }
 
-
 const units = {
   years:      { abr: 'Y', single: 'year', plural: 'years', seconds: SECONDS.YEAR, next: 'months' },
   months:     { abr: 'M', single: 'month', plural: 'months', seconds: SECONDS.MONTH, next: 'days' },
@@ -225,13 +236,4 @@ const units = {
   hours:      { abr: 'h', single: 'hour', plural: 'hours', seconds: SECONDS.HOUR, next: 'months' },
   minutes:    { abr: 'm', single: 'minute', plural: 'minutes', seconds: SECONDS.MINUTE, next: 'seconds' },
   seconds:    { abr: 's', single: 'second', plural: 'seconds', seconds: 1, next: null },
-};
-
-const pieces = {
-  years: 0,
-  months: 0,
-  days: 0,
-  hours: 0,
-  minutes: 0,
-  seconds: 0,
 };

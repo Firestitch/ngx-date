@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 
 import {
@@ -8,23 +8,24 @@ import {
   subHours,
   subMinutes,
   subMonths,
-  subYears
+  subYears,
 } from 'date-fns';
 
 @Component({
   selector: 'ago-example',
-  templateUrl: 'ago-example.component.html'
+  templateUrl: './ago-example.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgoExampleComponent {
 
-  date = new Date();
-  oneYearAgo = subYears(this.date, 1);
-  oneMinuteAgo = subMinutes(this.date, 1);
-  oneHourAgo = subHours(this.date, 1);
-  oneDayAgo = subDays(this.date, 1);
-  oneMonthAgo = subMonths(this.date, 1);
-  oneMonthFuture = addMonths(this.date, 1);
-  oneYearFuture = addYears(this.date, 1);
+  public date = new Date();
+  public oneYearAgo = subYears(this.date, 1);
+  public oneMinuteAgo = subMinutes(this.date, 1);
+  public oneHourAgo = subHours(this.date, 1);
+  public oneDayAgo = subDays(this.date, 1);
+  public oneMonthAgo = subMonths(this.date, 1);
+  public oneMonthFuture = addMonths(this.date, 1);
+  public oneYearFuture = addYears(this.date, 1);
 
-
+  public signingDate = new Date('2025-02-13T19:10:28+00:00');
 }
