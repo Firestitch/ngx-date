@@ -54,14 +54,14 @@ export function duration(time: any, _options?: DurationOptions | string) {
   }
 
   time = Math.abs(parseInt(time));
-  const pieces: {
-    years?: number;
-    months?: number;
-    days?: number;
-    hours?: number;
-    minutes?: number;
-    seconds?: number;
-  } = {};
+  const pieces = {
+    years: 0,
+    months: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
 
   let remainder = time;
 
