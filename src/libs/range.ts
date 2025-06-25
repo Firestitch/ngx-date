@@ -80,12 +80,10 @@ function dateOnly(formatParts, fromFormat, toFormat, from: Date, to: Date, forma
   // date only
   if (from.getFullYear() === to.getFullYear()) {
     fromFormat = fromFormat
-      .replace(' yyyy', '')
-      .replace(',', '')
+      .replace(', yyyy', '')
       .trim();
 
     if (from.getMonth() === to.getMonth()) {
-
       if (formatParts.indexOf('day') === -1) {
         toFormat = toFormat
           .replace('MMMM', '')
@@ -95,7 +93,7 @@ function dateOnly(formatParts, fromFormat, toFormat, from: Date, to: Date, forma
 
       if (from.getDate() === to.getDate()) {
         if (formatParts.indexOf('time') === -1) {
-          fromFormat = getFormatString(format);
+          fromFormat = getFormatString(format, from);
           toFormat = '';
         }
       }
