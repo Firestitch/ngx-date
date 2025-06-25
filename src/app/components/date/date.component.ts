@@ -36,6 +36,8 @@ export class FsDateComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() public format = 'date';
 
+  @Input() public timezone: string = null;
+
   public formattedDate: string = null;
   public tooltip: string = null;
   public year: string = null;
@@ -89,7 +91,7 @@ export class FsDateComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     this.tooltip = `${format(this.date, 'date-time')}`;
-    this.formattedDate = format(this.date, localFormat);
+    this.formattedDate = format(this.date, localFormat, { timezone: this.timezone });
     this._cd.markForCheck();
   }
 

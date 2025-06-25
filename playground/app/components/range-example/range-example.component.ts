@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
 import { range } from '@firestitch/date';
-import { addDays, addMonths, addYears, parse, setHours, setYear } from 'date-fns';
+
+import { addDays, addMonths, addYears, parse, setHours } from 'date-fns';
 
 
 @Component({
   selector: 'range-example',
-  templateUrl: 'range-example.component.html'
+  templateUrl: 'range-example.component.html',
 })
 export class RangeExampleComponent {
 
@@ -19,15 +20,22 @@ export class RangeExampleComponent {
       format: 'date',
       context: 'Yearless',
       result: range(new Date(), new Date(), 'date-yearless'),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date-yearless'}}",
-      codeService: "range(range.start, range.end, 'date-yearless')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-yearless\'}}',
+      codeService: 'range(range.start, range.end, \'date-yearless\')',
+    },
+    {
+      format: 'date',
+      context: 'Current year',
+      result: range(new Date(), new Date(), 'date-yeardiff'),
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-yeardiff\'}}',
+      codeService: 'range(range.start, range.end, \'date-yeardiff\')',
     },
     {
       format: 'date',
       context: 'Same date/time',
       result: range(new Date(), new Date(), 'date'),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
-      codeService: "range(range.start, range.end, 'date')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date\'}}',
+      codeService: 'range(range.start, range.end, \'date\')',
     },
     {
       format: 'date',
@@ -35,10 +43,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addDays(new Date(), 1),
-        'date'
+        'date',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
-      codeService: "range(range.start, range.end, 'date')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date\'}}',
+      codeService: 'range(range.start, range.end, \'date\')',
     },
     {
       format: 'date',
@@ -46,10 +54,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addMonths(new Date(), 1),
-        'date'
+        'date',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
-      codeService: "range(range.start, range.end, 'date')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date\'}}',
+      codeService: 'range(range.start, range.end, \'date\')',
     },
     {
       format: 'date',
@@ -57,10 +65,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addYears(new Date(), 1),
-        'date'
+        'date',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date'}}",
-      codeService: "range(range.start, range.end, 'date')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date\'}}',
+      codeService: 'range(range.start, range.end, \'date\')',
     },
     // DATE-TIME
     {
@@ -69,10 +77,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         new Date(),
-        'date-time'
+        'date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
-      codeService: "range(range.start, range.end, 'date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-time\'}}',
+      codeService: 'range(range.start, range.end, \'date-time\')',
     },
     {
       format: 'date-time',
@@ -80,10 +88,10 @@ export class RangeExampleComponent {
       result: range(
         setHours(new Date(), 10),
         setHours(new Date(), 11),
-        'date-time'
+        'date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
-      codeService: "range(range.start, range.end, 'date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-time\'}}',
+      codeService: 'range(range.start, range.end, \'date-time\')',
     },
     {
       format: 'date-time',
@@ -91,21 +99,21 @@ export class RangeExampleComponent {
       result: range(
         addYears(setHours(new Date(), 10), 1),
         addYears(setHours(new Date(), 11), 1),
-        'date-time'
+        'date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
-      codeService: "range(range.start, range.end, 'date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-time\'}}',
+      codeService: 'range(range.start, range.end, \'date-time\')',
     },
     {
       format: 'date-time',
       context: 'Diff am/pm',
       result: range(
-        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
-        parse(this.formatted + ' 01:00 PM', 'dd/M/yyyy hh:mm a', new Date()),
-        'date-time'
+        parse(`${this.formatted  } 11:00 AM`, 'dd/M/yyyy hh:mm a', new Date()),
+        parse(`${this.formatted  } 01:00 PM`, 'dd/M/yyyy hh:mm a', new Date()),
+        'date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
-      codeService: "range(range.start, range.end, 'date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-time\'}}',
+      codeService: 'range(range.start, range.end, \'date-time\')',
     },
     {
       format: 'date-time',
@@ -113,10 +121,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addDays(new Date(), 1),
-        'date-time'
+        'date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
-      codeService: "range(range.start, range.end, 'date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-time\'}}',
+      codeService: 'range(range.start, range.end, \'date-time\')',
     },
     {
       format: 'date-time',
@@ -124,10 +132,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addMonths(new Date(), 1),
-        'date-time'
+        'date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange:' date-time'}}",
-      codeService: "range(range.start, range.end, 'date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange:\' date-time\'}}',
+      codeService: 'range(range.start, range.end, \'date-time\')',
     },
     {
       format: 'date-time',
@@ -137,38 +145,38 @@ export class RangeExampleComponent {
         addYears(new Date(), 1),
         'date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'date-time'}}",
-      codeService: "range(range.start, range.end, 'date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-time\'}}',
+      codeService: 'range(range.start, range.end, \'date-time\')',
     },
     // DAY-DATE-TIME
     {
       format: 'day-date-time',
       context: 'Same date/time',
       result: range(new Date(), new Date(), 'day-date-time'),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
-      codeService: "range(range.start, range.end, 'day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'day-date-time\')',
     },
     {
       format: 'day-date-time',
       context: 'Same am/pm',
       result: range(
-        parse(this.formatted + ' 10:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
-        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
-        'day-date-time'
+        parse(`${this.formatted  } 10:00 AM`, 'dd/M/yyyy hh:mm a', new Date()),
+        parse(`${this.formatted  } 11:00 AM`, 'dd/M/yyyy hh:mm a', new Date()),
+        'day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
-      codeService: "range(range.start, range.end, 'day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'day-date-time\')',
     },
     {
       format: 'day-date-time',
       context: 'Diff am/pm',
       result: range(
-        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
-        parse(this.formatted + ' 01:00 PM', 'dd/M/yyyy hh:mm a', new Date()),
-        'day-date-time'
+        parse(`${this.formatted  } 11:00 AM`, 'dd/M/yyyy hh:mm a', new Date()),
+        parse(`${this.formatted  } 01:00 PM`, 'dd/M/yyyy hh:mm a', new Date()),
+        'day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
-      codeService: "range(range.start, range.end, 'day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'day-date-time\')',
     },
     {
       format: 'day-date-time',
@@ -176,10 +184,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addDays(new Date, 1),
-        'day-date-time'
+        'day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
-      codeService: "range(range.start, range.end, 'day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'day-date-time\')',
     },
     {
       format: 'day-date-time',
@@ -187,10 +195,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addMonths(new Date(), 1),
-        'day-date-time'
+        'day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange:' day-date-time'}}",
-      codeService: "range(range.start, range.end, 'day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange:\' day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'day-date-time\')',
     },
     {
       format: 'day-date-time',
@@ -198,10 +206,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addYears(new Date(), 1),
-        'day-date-time'
+        'day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'day-date-time'}}",
-      codeService: "range(range.start, range.end, 'day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'day-date-time\')',
     },
     // FULL-DAY-DATE-TIME
     {
@@ -210,34 +218,34 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         new Date(),
-        'full-day-date-time'
+        'full-day-date-time',
       ),
 
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
-      codeService: "range(range.start, range.end, 'full-day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'full-day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'full-day-date-time\')',
     }
     ,
     {
       format: 'full-day-date-time',
       context: 'Same am/pm',
       result: range(
-        parse(this.formatted + ' 10:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
-        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
-        'full-day-date-time'
+        parse(`${this.formatted  } 10:00 AM`, 'dd/M/yyyy hh:mm a', new Date()),
+        parse(`${this.formatted  } 11:00 AM`, 'dd/M/yyyy hh:mm a', new Date()),
+        'full-day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
-      codeService: "range(range.start, range.end, 'full-day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'full-day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'full-day-date-time\')',
     },
     {
       format: 'full-day-date-time',
       context: 'Diff am/pm',
       result: range(
-        parse(this.formatted + ' 11:00 AM', 'dd/M/yyyy hh:mm a', new Date()),
-        parse(this.formatted + ' 01:00 PM', 'dd/M/yyyy hh:mm a', new Date()),
-        'full-day-date-time'
+        parse(`${this.formatted  } 11:00 AM`, 'dd/M/yyyy hh:mm a', new Date()),
+        parse(`${this.formatted  } 01:00 PM`, 'dd/M/yyyy hh:mm a', new Date()),
+        'full-day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
-      codeService: "range(range.start, range.end, 'full-day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'full-day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'full-day-date-time\')',
     },
     {
       format: 'full-day-date-time',
@@ -245,10 +253,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addDays(new Date(), 1),
-        'full-day-date-time'
+        'full-day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
-      codeService: "range(range.start, range.end, 'full-day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'full-day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'full-day-date-time\')',
     },
     {
       format: 'full-day-date-time',
@@ -256,10 +264,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addMonths(new Date(), 1),
-        'full-day-date-time'
+        'full-day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange:' full-day-date-time'}}",
-      codeService: "range(range.start, range.end, 'full-day-date-time')"
+      codePipe: '{{[range.start, range.end] | fsDateRange:\' full-day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'full-day-date-time\')',
     },
     {
       format: 'full-day-date-time',
@@ -267,10 +275,10 @@ export class RangeExampleComponent {
       result: range(
         new Date(),
         addYears(new Date(), 1),
-        'full-day-date-time'
+        'full-day-date-time',
       ),
-      codePipe: "{{[range.start, range.end] | fsDateRange: 'full-day-date-time'}}",
-      codeService: "range(range.start, range.end, 'full-day-date-time')"
-    }
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'full-day-date-time\'}}',
+      codeService: 'range(range.start, range.end, \'full-day-date-time\')',
+    },
   ];
 }

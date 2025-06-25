@@ -1,111 +1,291 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Output</th>
-      <th>Component Usage</th>
+      <th>
+        Output
+      </th>
+      <th>
+        Component Usage
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><fs-date [date]="date"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="date"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="date"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="full-date"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="full-date"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="day-date"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="day-date"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="full-day-date"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="full-day-date"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="full-date-yearless"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="full-date-yearless"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="full-date-dayless"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="full-date-dayless"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="full-date-dayless-yearless"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="full-date-dayless-yearless"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="time"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="time"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="time-24"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="time-24"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="date-time-tz"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="date-time-tz"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="time-gmt"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="time-gmt"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="date-time"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="date-time"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="full-date-time"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="full-date-time"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="yyyy-MM-dd HH:mm:ss.SSSxxx"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="yyyy-MM-dd HH:mm:ss.SSSxxx"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="date" format="full-date-yeardiff"></fs-date></td>
-      <td><code>&lt;fs-date [date]="date" format="full-date-yeardiff"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>
-    <tr>
-      <td><fs-date [date]="twoYearsPast" format="full-date-yeardiff"></fs-date></td>
-      <td><code>&lt;fs-date [date]="twoYearsAgo" format="full-date-yeardiff"&gt;&lt;/fs-date&gt;</code></td>
-    </tr>  
-    <tr>
-      <td>  
+      <td>
         <fs-date [date]="date"></fs-date>
       </td>
       <td>
-        <code>&lt;fs-date [date]="date"&gt;&lt;/fs-date&gt;</code>
+        <code>
+          &lt;fs-date [date]="date"&gt;&lt;/fs-date&gt;
+        </code>
       </td>
     </tr>
     <tr>
-      <td>  
-        <fs-date [date]="date" [format]="'date-yearnewline'"></fs-date>
+      <td>
+        <fs-date
+          [date]="date"
+          format="date">
+        </fs-date>
       </td>
       <td>
-        <code>&lt;fs-date [date]="date" [format]="'date-yearnewline'"&gt;&lt;/fs-date&gt;</code>
+        <code>
+          &lt;fs-date [date]="date" format="date"&gt;&lt;/fs-date&gt;
+        </code>
       </td>
     </tr>
     <tr>
-      <td>  
-        <fs-date [date]="date" [format]="'date-yeardiff-yearnewline'"></fs-date>
+      <td>
+        <fs-date
+          [date]="date"
+          format="full-date">
+        </fs-date>
       </td>
       <td>
-        <code>&lt;fs-date [date]="date" [format]="'date-yeardiff-yearnewline'"&gt;&lt;/fs-date&gt;</code>
+        <code>
+          &lt;fs-date [date]="date" format="full-date"&gt;&lt;/fs-date&gt;
+        </code>
       </td>
     </tr>
     <tr>
-      <td>  
-        <fs-date [date]="twoYearsFuture" [format]="'date-yeardiff-yearnewline'"></fs-date>
+      <td>
+        <fs-date
+          [date]="date"
+          format="day-date">
+        </fs-date>
       </td>
       <td>
-        <code>&lt;fs-date [date]="dateFuture" [format]="'date-yeardiff-yearnewline'"&gt;&lt;/fs-date&gt;</code>
+        <code>
+          &lt;fs-date [date]="date" format="day-date"&gt;&lt;/fs-date&gt;
+        </code>
       </td>
     </tr>
-
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="full-day-date">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="full-day-date"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="full-date-yearless">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="full-date-yearless"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="full-date-dayless">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="full-date-dayless"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="full-date-dayless-yearless">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="full-date-dayless-yearless"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="time">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="time"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="time-24">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="time-24"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="date-time-tz">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="date-time-tz"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="time-gmt">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="time-gmt"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="date-time">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="date-time"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="full-date-time">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="full-date-time"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="yyyy-MM-dd HH:mm:ss.SSSxxx">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="yyyy-MM-dd HH:mm:ss.SSSxxx"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          format="full-date-yeardiff">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" format="full-date-yeardiff"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="twoYearsPast"
+          format="full-date-yeardiff">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="twoYearsAgo" format="full-date-yeardiff"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date [date]="date"></fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          [format]="'date-yearnewline'">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" [format]="'date-yearnewline'"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="date"
+          [format]="'date-yeardiff-yearnewline'">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date" [format]="'date-yeardiff-yearnewline'"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date
+          [date]="twoYearsFuture"
+          [format]="'date-yeardiff-yearnewline'">
+        </fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="dateFuture" [format]="'date-yeardiff-yearnewline'"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <fs-date [date]="utcDate"></fs-date>
+      </td>
+      <td>
+        <code>
+          &lt;fs-date [date]="date"&gt;&lt;/fs-date&gt;
+        </code>
+      </td>
+    </tr>
   </tbody>
 </table>

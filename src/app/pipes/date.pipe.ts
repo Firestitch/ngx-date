@@ -1,9 +1,9 @@
-import { Pipe } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 import { FsDateFormatPipe } from './date-format.pipe';
 
 
 @Pipe({
-    name: 'fsDate'
+  name: 'fsDate',
 })
-export class FsDatePipe extends FsDateFormatPipe {}
+export class FsDatePipe extends FsDateFormatPipe implements PipeTransform {}
