@@ -34,7 +34,7 @@ export class FsDateComponent implements OnInit, OnChanges, OnDestroy {
     return this._date;
   }
 
-  @Input() public format = 'date';
+  @Input() public format = 'date-yeardiff';
 
   @Input() public timezone: string = null;
 
