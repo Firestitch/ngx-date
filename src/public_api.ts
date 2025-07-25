@@ -2,7 +2,7 @@ export { FsDateModule } from './app/fs-date.module';
 
 export { FsDateAgoDirective } from './app/directives/fs-date-ago.directive';
 
-export { FsDateAgoComponent, FsDateComponent } from './app/components';
+export { FsDateAgoComponent, FsDateComponent, FsDateRangeComponent } from './app/components';
 
 export { SECONDS } from './app/constants/seconds';
 export { TIMEZONES } from './app/constants/timezones';

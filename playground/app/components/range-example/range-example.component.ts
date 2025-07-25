@@ -71,6 +71,17 @@ export class RangeExampleComponent {
       codePipe: '{{[range.start, range.end] | fsDateRange: \'date\'}}',
       codeService: 'range(range.start, range.end, \'date\')',
     },
+    {
+      format: 'date',
+      context: 'Same year not current year',
+      result: range(
+        addYears(this.currentDate, 1),
+        addYears(addDays(this.currentDate, 3), 1),
+        'date-yeardiff',
+      ),
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date\'}}',
+      codeService: 'range(range.start, range.end, \'date\')',
+    },
     // DATE-TIME
     {
       format: 'date-time',

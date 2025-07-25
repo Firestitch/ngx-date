@@ -9,13 +9,14 @@ export function range(from: Date, to: Date, format = 'date'): string {
 
   const formatParts = format.split('-');
 
-  let fromFormat = getFormatString(format);
-  let toFormat = getFormatString(format);
+  let fromFormat = getFormatString(format, from);
+  let toFormat = getFormatString(format, to);
 
   if (
     formatParts.indexOf('yearless') !== -1 || (
       formatParts.indexOf('yeardiff') !== -1 &&
-    from.getFullYear() === to.getFullYear()
+      from.getFullYear() === to.getFullYear() && 
+      (new Date()).getFullYear() === from.getFullYear()
     )
   ) {
     fromFormat = fromFormat.replace(', yyyy', '');
