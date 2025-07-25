@@ -4,13 +4,9 @@ import { getFormatString } from './get-format-string';
 import { parse } from './parse';
 
 
-export function range(from: Date, to: Date, format = 'date'): string {
+export function range(from: Date, to: Date, format: string = 'date'): string {
   ({ from, to } = sanitize(from, to));
-
-  const formatParts = format.split('-');
-
-  let fromFormat = getFormatString(format, from);
-  let toFormat = getFormatString(format, to);
+  let formatParts = format.split('-');
 
   if (
     formatParts.indexOf('yearless') !== -1 || (
@@ -19,13 +15,13 @@ export function range(from: Date, to: Date, format = 'date'): string {
       (new Date()).getFullYear() === from.getFullYear()
     )
   ) {
-    fromFormat = fromFormat.replace(', yyyy', '');
-    toFormat = toFormat.replace(', yyyy', '');
+    formatParts.push('yearless');
   } else {
-    format = formatParts
-      .filter((part) => part !== 'yeardiff')
-      .join('-');
+    formatParts = formatParts.filter((part) => part !== 'yeardiff');
   }
+
+  let fromFormat = getFormatString(formatParts.join('-'), from);
+  let toFormat = getFormatString(formatParts.join('-'), to);
 
   if (differenceInMilliseconds(from, to) === 0) {
     return fnsFormat(from, fromFormat);

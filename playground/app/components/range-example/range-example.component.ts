@@ -62,7 +62,7 @@ export class RangeExampleComponent {
     },
     {
       format: 'date',
-      context: 'Diff year',
+      context: 'Different years',
       result: range(
         this.currentDate,
         addYears(this.currentDate, 1),
@@ -70,6 +70,18 @@ export class RangeExampleComponent {
       ),
       codePipe: '{{[range.start, range.end] | fsDateRange: \'date\'}}',
       codeService: 'range(range.start, range.end, \'date\')',
+    },
+
+    {
+      format: 'date',
+      context: 'Different years one not current year',
+      result: range(
+        this.currentDate,
+        addYears(this.currentDate, 1),
+        'date-yeardiff',
+      ),
+      codePipe: '{{[range.start, range.end] | fsDateRange: \'date-yeardiff\'}}',
+      codeService: 'range(range.start, range.end, \'date-yeardiff\')',
     },
     {
       format: 'date',

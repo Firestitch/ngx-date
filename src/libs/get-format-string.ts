@@ -9,7 +9,6 @@ export function getFormatString(formatTo = 'date', date: Date = null) {
   const parts = [];
 
   if (hasDate || hasTime) {
-
     if (hasDate) {
       parts.push(...dateParts(date, formatParts));
     }
@@ -23,7 +22,6 @@ export function getFormatString(formatTo = 'date', date: Date = null) {
     }
 
   } else {
-
     parts.push(formatTo);
   }
 
