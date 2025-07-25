@@ -21,6 +21,10 @@ export function range(from: Date, to: Date, format = 'date'): string {
   ) {
     fromFormat = fromFormat.replace(', yyyy', '');
     toFormat = toFormat.replace(', yyyy', '');
+  } else {
+    format = formatParts
+      .filter((part) => part !== 'yeardiff')
+      .join('-');
   }
 
   if (differenceInMilliseconds(from, to) === 0) {
