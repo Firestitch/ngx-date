@@ -7,8 +7,8 @@ import { range } from '../../libs';
   name: 'fsDateRange',
 })
 export class FsDateRangePipe implements PipeTransform {
-  public transform(value: any[], format?: string): string {
-    return range(value[0], value[1], format);
+  public transform(value: any[], format?: string, timezone?: string): string {
+    return range(value[0], value[1], format, timezone);
   }
 }
 

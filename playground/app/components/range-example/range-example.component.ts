@@ -16,11 +16,10 @@ export class RangeExampleComponent {
   public formatted = `${this.currentDate.getDate()}/${this.currentDate.getMonth() + 1}/${this.currentDate.getFullYear()}`;
 
   public examples = [
-    // DATE
     {
       format: 'date',
       context: 'Yearless',
-      result: range(this.currentDate, this.currentDate, 'date-yearless'),
+      result: range(this.currentDate, this.currentDate, 'date-yearless' ),
       codePipe: '{{[range.start, range.end] | fsDateRange: \'date-yearless\'}}',
       codeService: 'range(range.start, range.end, \'date-yearless\')',
     },

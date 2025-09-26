@@ -1,10 +1,15 @@
 import { differenceInMilliseconds, format as fnsFormat } from 'date-fns';
+import { formatInTimeZone } from 'date-fns-tz';
 
 import { getFormatString } from './get-format-string';
 import { parse } from './parse';
 
 
-export function range(from: Date, to: Date, format: string = 'date'): string {
+function formatDate(date: Date, format: string, timezone: string): string {
+  return timezone ? formatInTimeZone(date, timezone, format) : fnsFormat(date, format);
+}
+
+export function range(from: Date, to: Date, format: string = 'date', timezone?: string): string {
   ({ from, to } = sanitize(from, to));
   let formatParts = format.split('-');
 
@@ -24,7 +29,7 @@ export function range(from: Date, to: Date, format: string = 'date'): string {
   let toFormat = getFormatString(formatParts.join('-'), to);
 
   if (differenceInMilliseconds(from, to) === 0) {
-    return fnsFormat(from, fromFormat);
+    return formatDate(from, fromFormat, timezone);
   }
 
   if (formatParts.indexOf('time') !== -1) {
@@ -33,9 +38,9 @@ export function range(from: Date, to: Date, format: string = 'date'): string {
     ({ fromFormat, toFormat } = dateOnly(formatParts, fromFormat, toFormat, from, to, format));
   }
 
-  let output = fnsFormat(from, fromFormat);
+  let output = formatDate(from, fromFormat, timezone);
   if (toFormat) {
-    output += ` – ${fnsFormat(to, toFormat)}`;
+    output += ` – ${formatDate(to, toFormat, timezone)}`;
   }
 
   return output;
