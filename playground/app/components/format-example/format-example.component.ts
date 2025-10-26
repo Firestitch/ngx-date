@@ -3,12 +3,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { subYears } from 'date-fns';
 import { parse } from 'src/libs';
+import { FsDateComponent } from '../../../../src/app/components/date/date.component';
 
 
 @Component({
-  selector: 'format-example',
-  templateUrl: './format-example.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'format-example',
+    templateUrl: './format-example.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FsDateComponent],
 })
 export class FormatExampleComponent {
   

@@ -4,8 +4,9 @@ import { duration } from '@firestitch/date';
 
 
 @Component({
-  selector: 'duration-example',
-  templateUrl: 'duration-example.component.html',
+    selector: 'duration-example',
+    templateUrl: 'duration-example.component.html',
+    standalone: true,
 })
 export class DurationExampleComponent {
   public examples: any[] = [];

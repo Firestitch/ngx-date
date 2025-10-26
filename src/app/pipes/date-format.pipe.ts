@@ -4,7 +4,8 @@ import { format } from '../../libs';
 
 
 @Pipe({
-  name: 'fsDateFormat',
+    name: 'fsDateFormat',
+    standalone: true,
 })
 export class FsDateFormatPipe implements PipeTransform {
 

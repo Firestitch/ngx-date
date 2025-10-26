@@ -16,33 +16,31 @@ import { FsDateAgoFactory } from './services/date-ago-factory.service';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatTooltipModule,
-    FsCommonModule,
-  ],
-  declarations: [
-    FsDatePipe,
-    FsDateAgoPipe,
-    FsDateDurationPipe,
-    FsDateFormatPipe,
-    FsDateRangePipe,
-    FsDateAgoDirective,
-    FsDateAgoComponent,
-    FsDateComponent,
-    FsDateRangeComponent,
-  ],
-  exports: [
-    FsDatePipe,
-    FsDateAgoPipe,
-    FsDateDurationPipe,
-    FsDateFormatPipe,
-    FsDateRangePipe,
-    FsDateAgoDirective,
-    FsDateComponent,
-    FsDateAgoComponent,
-    FsDateRangeComponent,
-  ],
+    imports: [
+        CommonModule,
+        MatTooltipModule,
+        FsCommonModule,
+        FsDatePipe,
+        FsDateAgoPipe,
+        FsDateDurationPipe,
+        FsDateFormatPipe,
+        FsDateRangePipe,
+        FsDateAgoDirective,
+        FsDateAgoComponent,
+        FsDateComponent,
+        FsDateRangeComponent,
+    ],
+    exports: [
+        FsDatePipe,
+        FsDateAgoPipe,
+        FsDateDurationPipe,
+        FsDateFormatPipe,
+        FsDateRangePipe,
+        FsDateAgoDirective,
+        FsDateComponent,
+        FsDateAgoComponent,
+        FsDateRangeComponent,
+    ],
 })
 export class FsDateModule {
   public static forRoot(): ModuleWithProviders<FsDateModule> {

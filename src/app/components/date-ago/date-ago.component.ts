@@ -15,13 +15,17 @@ import { takeUntil, takeWhile } from 'rxjs/operators';
 import { differenceInSeconds } from 'date-fns';
 
 import { ago, duration as fsDuration, format as fsFormat, parse } from '../../../libs';
+import { NgClass } from '@angular/common';
+import { MatTooltip } from '@angular/material/tooltip';
 
 
 @Component({
-  selector: 'fs-date-ago',
-  templateUrl: './date-ago.component.html',
-  styleUrls: ['./date-ago.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fs-date-ago',
+    templateUrl: './date-ago.component.html',
+    styleUrls: ['./date-ago.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass, MatTooltip],
 })
 export class FsDateAgoComponent implements OnInit, OnChanges, OnDestroy {
 

@@ -4,7 +4,8 @@ import { ago } from '../../libs';
 
 
 @Pipe({
-  name: 'fsDateAgo'
+    name: 'fsDateAgo',
+    standalone: true
 })
 export class FsDateAgoPipe implements PipeTransform {
   transform(value: any, format?: string): string {

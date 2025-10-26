@@ -4,9 +4,10 @@ import { iso8601, parse, parseLocal } from '@firestitch/date';
 
 
 @Component({
-  selector: 'date-example',
-  templateUrl: './date-example.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'date-example',
+    templateUrl: './date-example.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
 })
 export class DateExampleComponent {
 

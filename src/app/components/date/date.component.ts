@@ -15,13 +15,16 @@ import { takeUntil, takeWhile } from 'rxjs/operators';
 import { differenceInSeconds } from 'date-fns';
 
 import { format, parse } from '../../../libs';
+import { MatTooltip } from '@angular/material/tooltip';
 
 
 @Component({
-  selector: 'fs-date',
-  templateUrl: './date.component.html',
-  styleUrls: ['./date.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fs-date',
+    templateUrl: './date.component.html',
+    styleUrls: ['./date.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatTooltip],
 })
 export class FsDateComponent implements OnInit, OnChanges, OnDestroy {
 

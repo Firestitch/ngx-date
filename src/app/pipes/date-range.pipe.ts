@@ -4,7 +4,8 @@ import { range } from '../../libs';
 
 
 @Pipe({
-  name: 'fsDateRange',
+    name: 'fsDateRange',
+    standalone: true,
 })
 export class FsDateRangePipe implements PipeTransform {
   public transform(value: any[], format?: string, timezone?: string): string {

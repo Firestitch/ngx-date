@@ -13,13 +13,16 @@ import { Subject } from 'rxjs';
 
 
 import { format, parse } from '../../../libs';
+import { MatTooltip } from '@angular/material/tooltip';
 
 
 @Component({
-  selector: 'fs-date-range',
-  templateUrl: './date-range.component.html',
-  styleUrls: ['./date-range.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fs-date-range',
+    templateUrl: './date-range.component.html',
+    styleUrls: ['./date-range.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatTooltip],
 })
 export class FsDateRangeComponent implements OnInit, OnChanges, OnDestroy {
 

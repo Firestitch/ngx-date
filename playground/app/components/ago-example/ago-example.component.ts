@@ -10,11 +10,15 @@ import {
   subMonths,
   subYears,
 } from 'date-fns';
+import { FsDateAgoComponent } from '../../../../src/app/components/date-ago/date-ago.component';
+import { FsDateAgoPipe } from '../../../../src/app/pipes/date-ago.pipe';
 
 @Component({
-  selector: 'ago-example',
-  templateUrl: './ago-example.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'ago-example',
+    templateUrl: './ago-example.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FsDateAgoComponent, FsDateAgoPipe],
 })
 export class AgoExampleComponent {
 

@@ -6,9 +6,10 @@ import { addDays, addMonths, addYears, parse, setHours } from 'date-fns';
 
 
 @Component({
-  selector: 'range-example',
-  templateUrl: './range-example.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'range-example',
+    templateUrl: './range-example.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
 })
 export class RangeExampleComponent {
 

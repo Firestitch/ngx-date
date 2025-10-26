@@ -15,7 +15,8 @@ import { FsDateAgoFactory } from '../services/date-ago-factory.service';
 
 
 @Directive({
-  selector: '[fsDateAgo]'
+    selector: '[fsDateAgo]',
+    standalone: true
 })
 export class FsDateAgoDirective implements OnInit, OnChanges {
 

@@ -4,7 +4,8 @@ import { duration } from '../../libs';
 
 
 @Pipe({
-  name: 'fsDateDuration'
+    name: 'fsDateDuration',
+    standalone: true
 })
 export class FsDateDurationPipe implements PipeTransform {
 
