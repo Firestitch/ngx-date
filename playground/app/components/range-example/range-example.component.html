@@ -18,21 +18,23 @@
       </th>
     </tr>
   </thead>
-  <tr *ngFor="let example of examples">
-    <td>
-      {{ example.format }}
-    </td>
-    <td>
-      {{ example.context }}
-    </td>
-    <td>
-      {{ example.result }}
-    </td>
-    <td>
-      {{ example.codePipe }}
-    </td>
-    <td>
-      {{ example.codeService }}
-    </td>
-  </tr>
+  @for (example of examples; track example) {
+    <tr>
+      <td>
+        {{ example.format }}
+      </td>
+      <td>
+        {{ example.context }}
+      </td>
+      <td>
+        {{ example.result }}
+      </td>
+      <td>
+        {{ example.codePipe }}
+      </td>
+      <td>
+        {{ example.codeService }}
+      </td>
+    </tr>
+  }
 </table>

@@ -1,94 +1,104 @@
 <h3>Duration</h3>
 <table class="table">
   <thead>
-  <tr>
-    <th>Input</th>
-    <th>Output</th>
-    <th>Pipe</th>
-    <th>Function</th>
-  </tr>
+    <tr>
+      <th>Input</th>
+      <th>Output</th>
+      <th>Pipe</th>
+      <th>Function</th>
+    </tr>
   </thead>
-  <tr *ngFor="let example of examples">
-    <td>{{example.input}}</td>
-    <td>{{example.result}}</td>
-    <td>{{example.codePipe}}</td>
-    <td>{{example.codeService}}</td>
-  </tr>
+  @for (example of examples; track example) {
+    <tr>
+      <td>{{example.input}}</td>
+      <td>{{example.result}}</td>
+      <td>{{example.codePipe}}</td>
+      <td>{{example.codeService}}</td>
+    </tr>
+  }
 </table>
 
 <br>
-<h3>Duration With Suffix</h3>
-<table class="table">
-  <thead>
-  <tr>
-    <th>Input</th>
-    <th>Output</th>
-    <th>Pipe</th>
-    <th>Function</th>
-  </tr>
-  </thead>
-  <tr *ngFor="let example of examplesWithSuffix">
-    <td>{{example.input}}</td>
-    <td>{{example.result}}</td>
-    <td>{{example.codePipe}}</td>
-    <td>{{example.codeService}}</td>
-  </tr>
-</table>
+  <h3>Duration With Suffix</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Input</th>
+        <th>Output</th>
+        <th>Pipe</th>
+        <th>Function</th>
+      </tr>
+    </thead>
+    @for (example of examplesWithSuffix; track example) {
+      <tr>
+        <td>{{example.input}}</td>
+        <td>{{example.result}}</td>
+        <td>{{example.codePipe}}</td>
+        <td>{{example.codeService}}</td>
+      </tr>
+    }
+  </table>
 
-<br>
-<h3>Name Based Durations</h3>
-<table class="table">
-  <thead>
-  <tr>
-    <th>Input</th>
-    <th>Output</th>
-    <th>Pipe</th>
-    <th>Function</th>
-  </tr>
-  </thead>
-  <tr *ngFor="let example of examplesNameBased">
-    <td>{{example.input}}</td>
-    <td>{{example.result}}</td>
-    <td>{{example.codePipe}}</td>
-    <td>{{example.codeService}}</td>
-  </tr>
-</table>
+  <br>
+    <h3>Name Based Durations</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Input</th>
+          <th>Output</th>
+          <th>Pipe</th>
+          <th>Function</th>
+        </tr>
+      </thead>
+      @for (example of examplesNameBased; track example) {
+        <tr>
+          <td>{{example.input}}</td>
+          <td>{{example.result}}</td>
+          <td>{{example.codePipe}}</td>
+          <td>{{example.codeService}}</td>
+        </tr>
+      }
+    </table>
 
-<br>
-<h3>MaxOutputs</h3>
-<table class="table">
-  <thead>
-  <tr>
-    <th>Input</th>
-    <th>Output</th>
-    <th>Pipe</th>
-    <th>Function</th>
-  </tr>
-  </thead>
-  <tr *ngFor="let example of examplesWithMaxOutputs">
-    <td>{{example.input}}</td>
-    <td>{{example.result}}</td>
-    <td>{{example.codePipe}}</td>
-    <td>{{example.codeService}}</td>
-  </tr>
-</table>
+    <br>
+      <h3>MaxOutputs</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Output</th>
+            <th>Pipe</th>
+            <th>Function</th>
+          </tr>
+        </thead>
+        @for (example of examplesWithMaxOutputs; track example) {
+          <tr>
+            <td>{{example.input}}</td>
+            <td>{{example.result}}</td>
+            <td>{{example.codePipe}}</td>
+            <td>{{example.codeService}}</td>
+          </tr>
+        }
+      </table>
 
 
-<br>
-<h3>Precision</h3>
-<table class="table">
-  <thead>
-  <tr>
-    <th>Input</th>
-    <th>Output</th>
-    <th>Pipe</th>
-    <th>Function</th>
-  </tr>
-  </thead>
-  <tr *ngFor="let example of examplesWithPrecision">
-    <td>{{example.input}}</td>
-    <td>{{example.result}}</td>
-    <td>{{example.codePipe}}</td>
-    <td>{{example.codeService}}</td>
-  </tr>
-</table>
+      <br>
+        <h3>Precision</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Input</th>
+              <th>Output</th>
+              <th>Pipe</th>
+              <th>Function</th>
+            </tr>
+          </thead>
+          @for (example of examplesWithPrecision; track example) {
+            <tr>
+              <td>{{example.input}}</td>
+              <td>{{example.result}}</td>
+              <td>{{example.codePipe}}</td>
+              <td>{{example.codeService}}</td>
+            </tr>
+          }
+        </table>

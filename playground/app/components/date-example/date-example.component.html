@@ -1,12 +1,14 @@
 <table class="table">
   <thead>
-  <tr>
-    <th>Code</th>
-    <th>Result</th>
-  </tr>
-  </thead>
-  <tr *ngFor="let example of examples">
-    <td>{{ example.code }}</td>
-    <td>{{ example.result }}</td>
+    <tr>
+      <th>Code</th>
+      <th>Result</th>
     </tr>
+  </thead>
+  @for (example of examples; track example) {
+    <tr>
+      <td>{{ example.code }}</td>
+      <td>{{ example.result }}</td>
+    </tr>
+  }
 </table>
