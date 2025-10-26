@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Injectable, Inject } from '@angular/core';
+import { ComponentFactoryResolver, Injectable, inject } from '@angular/core';
 
 import { FsDateAgoComponent } from '../components/date-ago/date-ago.component';
 
@@ -9,7 +9,9 @@ export class FsDateAgoFactory {
   private factoryResolver = null;
   private rootViewContainer = null;
 
-  constructor(@Inject(ComponentFactoryResolver) factoryResolver) {
+  constructor() {
+    const factoryResolver = inject(ComponentFactoryResolver);
+
     this.factoryResolver = factoryResolver;
   }
 

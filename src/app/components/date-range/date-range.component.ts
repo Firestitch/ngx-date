@@ -1,13 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, inject } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
@@ -25,6 +16,9 @@ import { MatTooltip } from '@angular/material/tooltip';
     imports: [MatTooltip],
 })
 export class FsDateRangeComponent implements OnInit, OnChanges, OnDestroy {
+  elementRef = inject(ElementRef);
+  private _cd = inject(ChangeDetectorRef);
+
 
   @Input()
   public set date(value) {
@@ -45,11 +39,6 @@ export class FsDateRangeComponent implements OnInit, OnChanges, OnDestroy {
 
   private _destroy$ = new Subject();
   private _date: Date = null;
-
-  constructor(
-    public elementRef: ElementRef,
-    private _cd: ChangeDetectorRef,
-  ) { }
 
   public ngOnInit() {
     this._init();

@@ -1,14 +1,4 @@
-import {
-  ComponentRef,
-  Directive,
-  ElementRef,
-  Inject,
-  Input,
-  OnChanges,
-  OnInit,
-  Renderer2,
-  ViewContainerRef
-} from '@angular/core';
+import { ComponentRef, Directive, ElementRef, Input, OnChanges, OnInit, Renderer2, ViewContainerRef, inject } from '@angular/core';
 
 import { FsDateAgoComponent } from '../components/date-ago/date-ago.component';
 import { FsDateAgoFactory } from '../services/date-ago-factory.service';
@@ -19,20 +9,17 @@ import { FsDateAgoFactory } from '../services/date-ago-factory.service';
     standalone: true
 })
 export class FsDateAgoDirective implements OnInit, OnChanges {
+  private fsDateAgoFactory = inject(FsDateAgoFactory);
+  private renderer = inject(Renderer2);
+  private elementRef = inject(ElementRef);
+  private viewContainerRef = inject(ViewContainerRef);
+
 
   @Input() public date = null;
   @Input() public showTime = false;
   @Input() public format = 'date';
 
   private dateAgoRef: ComponentRef<FsDateAgoComponent> = null;
-
-  constructor(
-    private fsDateAgoFactory: FsDateAgoFactory,
-    private renderer: Renderer2,
-    private elementRef: ElementRef,
-    @Inject(ViewContainerRef) private viewContainerRef
-  ) {
-  }
 
   public ngOnInit() {
   }
